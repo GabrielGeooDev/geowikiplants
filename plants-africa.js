@@ -50,7 +50,7 @@ const PLANTS_AFRICA = [
   common: 'African Palmyra Palm',
   continent: 'africa',
   category: 'palms',
-  diff: 2,
+  diff: 1,
   freq: 3,
   desc: 'Description ici. <em>Nom italique possible.</em>',
   tips: [
@@ -61,7 +61,7 @@ const PLANTS_AFRICA = [
   family: 'Arecaceae',
   genus: 'Borassus',
   countries: ['Ghana', 'Nigeria', 'Kenya'],
-  inat: 'https://www.inaturalist.org/taxa/...',
+  inat: 'https://www.inaturalist.org/taxa/340320-Borassus-aethiopum',
   wiki: 'https://en.wikipedia.org/wiki/...',
   photos: [],
   maps: []
@@ -77,9 +77,7 @@ const PLANTS_AFRICA = [
     freq: 1,
     desc: '<em>Texte en gras</em> à faire plus tard.',
     tips: [
-      'test',
-      'test',
-      'test'
+      'large leaves that grow upward',
     ],
     similar: [],
     family: 'Arecaceae',
@@ -87,7 +85,7 @@ const PLANTS_AFRICA = [
     countries: ['South Africa'],
     inat: 'https://www.inaturalist.org/taxa/365973-Raphia-australis',
     wiki: 'https://en.wikipedia.org/wiki/Raphia_australis',
-    photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Raphia_australis.jpg/1280px-Raphia_australis.jpg'
+    photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Raphia_australis.jpg/1280px-Raphia_australis.jpg', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774715372/Capture_d_%C3%A9cran_2026-03-28_172858_ru8f7n.png'
       // URLs directes vers tes images (imgur, cloudinary, etc.)
       // 'https://i.imgur.com/XXXXXXX.jpg',
     ],

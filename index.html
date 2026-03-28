@@ -319,8 +319,22 @@
   </div>
 </div>
 
-<script src="plants.js"></script>
+<script src="plants-africa.js"></script>
+<script src="plants-south-america.js"></script>
+<script src="plants-asia.js"></script>
+<script src="plants-europe.js"></script>
+<script src="plants-north-america.js"></script>
+<script src="plants-oceania.js"></script>
 <script>
+// Merge all continent arrays into one global PLANTS array
+const PLANTS = [
+  ...(typeof PLANTS_AFRICA       !== 'undefined' ? PLANTS_AFRICA       : []),
+  ...(typeof PLANTS_SOUTH_AMERICA !== 'undefined' ? PLANTS_SOUTH_AMERICA : []),
+  ...(typeof PLANTS_ASIA          !== 'undefined' ? PLANTS_ASIA          : []),
+  ...(typeof PLANTS_EUROPE        !== 'undefined' ? PLANTS_EUROPE        : []),
+  ...(typeof PLANTS_NORTH_AMERICA !== 'undefined' ? PLANTS_NORTH_AMERICA : []),
+  ...(typeof PLANTS_OCEANIA       !== 'undefined' ? PLANTS_OCEANIA       : []),
+];
 // ═══════════════ COUNTRY FLAGS ═══════════════
 const CTRY={
   "Afghanistan":"🇦🇫","Albania":"🇦🇱","Algeria":"🇩🇿","Angola":"🇦🇴","Argentina":"🇦🇷",

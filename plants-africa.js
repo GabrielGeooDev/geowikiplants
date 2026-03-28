@@ -43,7 +43,30 @@ const PLANTS_AFRICA = [
       // { label: 'Ghana',  img: 'https://i.imgur.com/YYYYYYY.png' },
     ]
   },
-  
+
+{
+  id: 'borassus-aethiopum',
+  sci: 'Borassus aethiopum',
+  common: 'African Palmyra Palm',
+  continent: 'africa',
+  category: 'palms',
+  diff: 2,
+  freq: 3,
+  desc: 'Description ici. <em>Nom italique possible.</em>',
+  tips: [
+  'Trunk swollen in the middle',
+  'Fan-shaped leaves',
+  ],
+  similar: ['Hyphaene thebaica'],
+  family: 'Arecaceae',
+  genus: 'Borassus',
+  countries: ['Ghana', 'Nigeria', 'Kenya'],
+  inat: 'https://www.inaturalist.org/taxa/...',
+  wiki: 'https://en.wikipedia.org/wiki/...',
+  photos: [],
+  maps: []
+  },
+    
   // ── EXEMPLE ─────────────────────────────────────────────────
   // {
   //   id: 'borassus-aethiopum',

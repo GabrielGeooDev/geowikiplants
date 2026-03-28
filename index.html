@@ -233,7 +233,18 @@
   <button class="add-btn" id="adminLockBtn" onclick="showPwdModal()" style="background:var(--bg3);border:1px solid var(--border);color:var(--text3);font-size:11px;padding:6px 12px" title="Admin login">🔒</button>
 </nav>
 
-<!-- PASSWORD MODAL -->
+<!-- COPY TO PLANTS.JS MODAL -->
+<div id="copyOverlay" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px">
+  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:28px;width:100%;max-width:640px;box-shadow:var(--shadow-lg)">
+    <div style="font-family:var(--font-display);font-size:20px;color:var(--text);margin-bottom:6px">✓ Plant created</div>
+    <div style="font-size:13px;color:var(--text2);margin-bottom:16px">Copy this block and paste it inside the <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;color:var(--accent2)">PLANTS = [&nbsp;]</code> array in your <strong>plants.js</strong> file, then re-upload it to GitHub.</div>
+    <textarea id="copyBlock" readonly onclick="this.select()" style="width:100%;height:240px;background:var(--bg3);border:1px solid var(--border);color:var(--accent2);font-family:var(--font-mono);font-size:12px;padding:12px;border-radius:var(--r);resize:none;outline:none;line-height:1.6"></textarea>
+    <div style="display:flex;gap:10px;margin-top:14px">
+      <button onclick="navigator.clipboard.writeText(document.getElementById('copyBlock').value).then(()=>toast('📋 Copied!'))" style="flex:1;background:var(--accent3);border:none;color:var(--text);padding:10px;border-radius:var(--r);font-family:var(--font-body);font-size:14px;font-weight:600;cursor:pointer">📋 Copy to clipboard</button>
+      <button onclick="document.getElementById('copyOverlay').style.display='none';goPlant(PLANTS[PLANTS.length-1].id)" style="background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:10px 16px;border-radius:var(--r);font-family:var(--font-body);font-size:14px;cursor:pointer">View plant →</button>
+    </div>
+  </div>
+</div>
 <div id="pwdOverlay" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);align-items:center;justify-content:center">
   <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:32px;width:320px;box-shadow:var(--shadow-lg)">
     <div style="font-family:var(--font-display);font-size:20px;color:var(--text);margin-bottom:6px">Admin access</div>
@@ -439,6 +450,7 @@
   </div>
 </div>
 
+<script src="plants.js"></script>
 <script>
 // ═══════════════════════ COUNTRY DATA ═══════════════════════
 const COUNTRIES=[
@@ -523,25 +535,8 @@ const CONTINENTS={
   ]}
 };
 
-// ═══════════════════════ PERSISTENCE ═══════════════════════
-const SK='geoflora_v3';
-function save(){try{localStorage.setItem(SK,JSON.stringify(PLANTS));}catch(e){toast('⚠️ Storage full — try removing large images');}}
-function load(){try{const r=localStorage.getItem(SK);if(r)return JSON.parse(r);}catch(e){}return null;}
-
-const SEED=[{
-  id:'acrocomia-intumescens',sci:'Acrocomia intumescens',common:'Macaúba-Barriguda Palm',
-  continent:'south-america',category:'palms',diff:3,freq:1,
-  desc:'<em>Acrocomia intumescens</em> is a solitary palm of 8–15 m, very typical of north-eastern Brazil. It belongs to the same family as the Macaw Palm, explaining its resemblance. Recognised by its thick, bottle-shaped stipe. Crown composed of long drooping pinnate leaves. Found along the coast of Pernambuco and Paraíba.',
-  tips:['Swollen bottle-shaped trunk — unmistakable silhouette','Long arching pinnate leaves forming a rounded crown','Restricted to the NE Brazilian coastal strip'],
-  similar:['Acrocomia aculeata','Syagrus coronata'],
-  family:'Arecaceae',genus:'Acrocomia',
-  countries:['Brazil'],
-  inat:'https://www.inaturalist.org/taxa/82497-Acrocomia-intumescens',
-  wiki:'https://en.wikipedia.org/wiki/Acrocomia_intumescens',
-  photos:[],maps:[]
-}];
-
-let PLANTS=load()||SEED;
+// PLANTS is loaded from plants.js (included via <script> tag before this script)
+// No localStorage — data is shared for all visitors via GitHub
 
 // ═══════════════════════ STATE ═══════════════════════
 const S={view:'home',continent:null,category:null,plant:null,diffF:'all',cntryF:null,fDiff:1,fFreq:1,fCntries:[]};
@@ -758,13 +753,13 @@ function trigMap(pid){
       const p=PLANTS.find(x=>x.id===pid);if(!p)return;
       if(!p.maps)p.maps=[];
       p.maps.push({label:_mLabel,img:ev.target.result});
-      save();renderPlant(p);toast('🗺️ Map added: '+_mLabel);
+      renderPlant(p);toast('🗺️ Map added (session only — add URL to plants.js to persist)');
     };r.readAsDataURL(f);
   };inp.click();
 }
 function delMap(pid,i){
   const p=PLANTS.find(x=>x.id===pid);if(!p||!p.maps)return;
-  p.maps.splice(i,1);save();renderPlant(p);toast('Map removed');
+  p.maps.splice(i,1);renderPlant(p);toast('Map removed');
 }
 
 // ═══════════════════════ PHOTO ACTIONS ═══════════════════════
@@ -773,11 +768,11 @@ function addPhoto(pid){
   inp.onchange=e=>{
     const f=e.target.files[0];if(!f)return;
     const r=new FileReader();
-    r.onload=ev=>{const p=PLANTS.find(x=>x.id===pid);if(!p)return;p.photos.push(ev.target.result);save();renderPlant(p);toast('📷 Photo added');};
+    r.onload=ev=>{const p=PLANTS.find(x=>x.id===pid);if(!p)return;p.photos.push(ev.target.result);renderPlant(p);toast('📷 Photo added (session only — add URL to plants.js to persist)');};
     r.readAsDataURL(f);
   };inp.click();
 }
-function delPhoto(pid,i){const p=PLANTS.find(x=>x.id===pid);if(!p)return;p.photos.splice(i,1);save();renderPlant(p);toast('Photo removed');}
+function delPhoto(pid,i){const p=PLANTS.find(x=>x.id===pid);if(!p)return;p.photos.splice(i,1);renderPlant(p);toast('Photo removed');}
 function lb(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').classList.add('open');}
 function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
 
@@ -832,18 +827,28 @@ function submitPlant(){
   const desc=document.getElementById('f-desc').value.trim();
   if(!sci||!common||!continent||!category||!desc){toast('⚠️ Please fill required fields');return;}
   const id=sci.toLowerCase().replace(/[^a-z0-9]+/g,'-');
-  const existing=PLANTS.find(p=>p.id===id);
+  const tips=document.getElementById('f-tips').value.split('\n').map(t=>t.trim()).filter(Boolean);
+  const similar=document.getElementById('f-similar').value.split(',').map(s=>s.trim()).filter(Boolean);
   const plant={
-    id,sci,common,continent,category,diff:S.fDiff,freq:S.fFreq,desc,
-    tips:document.getElementById('f-tips').value.split('\n').map(t=>t.trim()).filter(Boolean),
-    similar:document.getElementById('f-similar').value.split(',').map(s=>s.trim()).filter(Boolean),
-    family:document.getElementById('f-family').value.trim(),genus:document.getElementById('f-genus').value.trim(),
+    id,sci,common,continent,category,diff:S.fDiff,freq:S.fFreq,desc,tips,similar,
+    family:document.getElementById('f-family').value.trim(),
+    genus:document.getElementById('f-genus').value.trim(),
     countries:[...S.fCntries],
-    inat:document.getElementById('f-inat').value.trim(),wiki:document.getElementById('f-wiki').value.trim(),
-    photos:existing?existing.photos:[],maps:existing?existing.maps:[]
+    inat:document.getElementById('f-inat').value.trim(),
+    wiki:document.getElementById('f-wiki').value.trim(),
+    photos:[],maps:[]
   };
+  // Add to live PLANTS array for preview in this session
+  const existing=PLANTS.find(p=>p.id===id);
   if(existing)PLANTS[PLANTS.indexOf(existing)]=plant;else PLANTS.push(plant);
-  save();updateStats();toast('✓ Saved: '+sci);goPlant(id);
+  updateStats();
+
+  // Generate the JS block to copy into plants.js
+  const block=`  {\n    id: '${plant.id}',\n    sci: '${plant.sci}',\n    common: '${plant.common}',\n    continent: '${plant.continent}',\n    category: '${plant.category}',\n    diff: ${plant.diff},\n    freq: ${plant.freq},\n    desc: '${plant.desc.replace(/'/g,"\\'")}',\n    tips: ${JSON.stringify(plant.tips)},\n    similar: ${JSON.stringify(plant.similar)},\n    family: '${plant.family}',\n    genus: '${plant.genus}',\n    countries: ${JSON.stringify(plant.countries)},\n    inat: '${plant.inat}',\n    wiki: '${plant.wiki}',\n    photos: [],\n    maps: []\n  },`;
+
+  // Show copy modal
+  document.getElementById('copyBlock').value=block;
+  document.getElementById('copyOverlay').style.display='flex';
 }
 
 // ═══════════════════════ SEARCH ═══════════════════════

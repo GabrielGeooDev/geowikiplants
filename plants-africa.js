@@ -66,7 +66,35 @@ const PLANTS_AFRICA = [
   photos: [],
   maps: []
   },
-    
+
+{
+    id: 'raphia-australis',
+    sci: 'Raphia australis',
+    common: 'Kosi Palm',
+    continent: 'africa',
+    category: 'palms',
+    diff: 3,
+    freq: 1,
+    desc: '<em>Texte en gras</em> à faire plus tard.',
+    tips: [
+      'test',
+      'test',
+      'test'
+    ],
+    similar: [],
+    family: 'Arecaceae',
+    genus: 'Raphia',
+    countries: ['South Africa'],
+    inat: 'https://www.inaturalist.org/taxa/365973-Raphia-australis',
+    wiki: 'https://en.wikipedia.org/wiki/Raphia_australis',
+    photos: ['https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Raphia_australis.jpg/1280px-Raphia_australis.jpg'
+      // URLs directes vers tes images (imgur, cloudinary, etc.)
+      // 'https://i.imgur.com/XXXXXXX.jpg',
+    ],
+    maps: [
+      { label: 'South Africa', img: 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774714653/raffiamap_pomj8c.png' },
+    ]
+  },
   // ── EXEMPLE ─────────────────────────────────────────────────
   // {
   //   id: 'borassus-aethiopum',

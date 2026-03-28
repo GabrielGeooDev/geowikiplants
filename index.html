@@ -6,270 +6,213 @@
 <title>Geowikiplants — Plant Wiki for GeoGuessr</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
+  :root{
     --bg:#0e1a0f;--bg2:#131f14;--bg3:#182119;--surface:#1e2b1f;--surface2:#243026;
     --border:#2e3d30;--accent:#7ec850;--accent2:#a8d87a;--accent3:#4a9e2f;
     --gold:#d4a843;--gold2:#f0c96a;--text:#e8f0e9;--text2:#a8b8aa;--text3:#6a7a6c;
-    --red:#e05252;--font-display:'Playfair Display',Georgia,serif;
-    --font-body:'DM Sans',sans-serif;--font-mono:'DM Mono',monospace;
-    --r:8px;--r2:14px;--shadow:0 4px 24px rgba(0,0,0,.5);--shadow-lg:0 12px 48px rgba(0,0,0,.7);
+    --red:#e05252;
+    --font-display:'Playfair Display',Georgia,serif;
+    --font-body:'DM Sans',sans-serif;
+    --font-mono:'DM Mono',monospace;
+    --r:8px;--r2:14px;
+    --shadow:0 4px 24px rgba(0,0,0,.5);
+    --shadow-lg:0 12px 48px rgba(0,0,0,.7);
   }
   *{margin:0;padding:0;box-sizing:border-box}
   body{background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:15px;line-height:1.65;min-height:100vh}
   ::-webkit-scrollbar{width:6px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
 
-  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(14,26,15,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:16px;padding:0 24px;height:56px}
-  .nav-logo{font-family:var(--font-display);font-size:22px;color:var(--accent);cursor:pointer;display:flex;align-items:center;gap:8px;text-decoration:none;letter-spacing:-.3px}
-  .nav-logo span{color:var(--text2);font-size:13px;font-family:var(--font-body);font-weight:300;margin-left:4px}
-  .nav-breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--text3);margin-left:8px;flex:1;overflow:hidden}
-  .nav-breadcrumb .crumb{color:var(--text2);cursor:pointer;transition:color .2s;white-space:nowrap}.nav-breadcrumb .crumb:hover{color:var(--accent)}
-  .nav-breadcrumb .sep{color:var(--border)}.nav-breadcrumb .current{color:var(--accent2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-style:italic}
+  /* ── NAV ── */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(14,26,15,.93);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:16px;padding:0 24px;height:56px}
+  .nav-logo{font-family:var(--font-display);font-size:21px;color:var(--accent);cursor:pointer;display:flex;align-items:center;gap:8px;letter-spacing:-.3px;text-decoration:none}
+  .nav-logo span{color:var(--text3);font-size:12px;font-family:var(--font-body);font-weight:300;margin-left:2px}
+  .nav-breadcrumb{display:flex;align-items:center;gap:8px;font-size:13px;margin-left:8px;flex:1;overflow:hidden}
+  .crumb{color:var(--text2);cursor:pointer;transition:color .2s;white-space:nowrap}.crumb:hover{color:var(--accent)}
+  .sep{color:var(--border)}.current{color:var(--accent2);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-style:italic}
   .nav-search{margin-left:auto;position:relative}
-  .nav-search input{background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:13px;padding:7px 36px 7px 12px;border-radius:20px;width:200px;outline:none;cursor:pointer;transition:border-color .2s}
+  .nav-search input{background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:13px;padding:7px 36px 7px 14px;border-radius:20px;width:210px;outline:none;cursor:pointer;transition:border-color .2s}
   .nav-search input::placeholder{color:var(--text3)}
-  .nav-search-icon{position:absolute;right:11px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;pointer-events:none}
-  .add-btn{background:var(--accent3);color:var(--text);border:none;padding:8px 16px;border-radius:20px;font-family:var(--font-body);font-size:13px;font-weight:600;cursor:pointer;transition:background .2s;white-space:nowrap}
-  .add-btn:hover{background:var(--accent);color:var(--bg)}
+  .nav-si{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:14px;pointer-events:none}
 
-  .view{display:none;padding-top:56px;min-height:100vh;animation:fadeIn .3s ease}
+  /* ── VIEWS ── */
+  .view{display:none;padding-top:56px;min-height:100vh;animation:fadeIn .28s ease}
   .view.active{display:block}
   #view-home{display:none;flex-direction:column;align-items:center;padding:56px 24px 60px}
   #view-home.active{display:flex}
-  @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes fadeIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
 
-  .home-hero{text-align:center;margin-bottom:40px;margin-top:20px}
-  .home-hero h1{font-family:var(--font-display);font-size:clamp(32px,5vw,56px);color:var(--text);line-height:1.1;margin-bottom:10px}
+  /* ── HOME ── */
+  .home-hero{text-align:center;margin-bottom:36px;margin-top:24px}
+  .home-hero h1{font-family:var(--font-display);font-size:clamp(30px,5vw,54px);color:var(--text);line-height:1.1;margin-bottom:10px}
   .home-hero h1 em{color:var(--accent);font-style:italic}
-  .home-hero p{color:var(--text2);font-size:16px;max-width:480px;margin:0 auto}
-  .map-stats{color:var(--text3);font-size:13px;font-family:var(--font-mono);margin-bottom:24px}
+  .home-hero p{color:var(--text2);font-size:15px;max-width:460px;margin:0 auto}
+  .map-stats{color:var(--text3);font-size:13px;font-family:var(--font-mono);margin-bottom:22px}
   .map-stats strong{color:var(--accent2)}
-  .world-map-container{width:100%;max-width:1000px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;box-shadow:var(--shadow-lg)}
-  .world-map-container svg{width:100%;height:auto;display:block}
-  .continent-zone{cursor:pointer;transition:filter .25s}
-  .continent-zone:hover{filter:brightness(1.5)}
-  .continent-label{font-family:var(--font-body);font-weight:700;font-size:13px;fill:var(--text);pointer-events:none;text-anchor:middle;text-transform:uppercase;letter-spacing:1.2px}
-  .continent-sublabel{font-family:var(--font-mono);font-size:10px;fill:var(--text2);pointer-events:none;text-anchor:middle}
+  .wmc{width:100%;max-width:1000px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;box-shadow:var(--shadow-lg)}
+  .wmc svg{width:100%;height:auto;display:block}
+  .cz{cursor:pointer;transition:filter .22s}.cz:hover{filter:brightness(1.55)}
+  .clabel{font-family:var(--font-body);font-weight:700;font-size:13px;fill:var(--text);pointer-events:none;text-anchor:middle;text-transform:uppercase;letter-spacing:1.2px}
+  .csub{font-family:var(--font-mono);font-size:10px;fill:var(--text2);pointer-events:none;text-anchor:middle}
 
-  .section-header{display:flex;align-items:flex-end;gap:16px;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid var(--border)}
-  .section-header h2{font-family:var(--font-display);font-size:32px;color:var(--text)}
-  .section-subtitle{color:var(--text2);font-size:14px;margin-top:4px}
-  .categories-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
-  .cat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:22px;cursor:pointer;transition:all .25s;display:flex;align-items:flex-start;gap:14px;position:relative;overflow:hidden}
-  .cat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--cat-color,var(--accent3));opacity:0;transition:opacity .25s}
+  /* ── CONTINENT ── */
+  .sec-header{display:flex;align-items:flex-end;gap:16px;margin-bottom:26px;padding-bottom:14px;border-bottom:1px solid var(--border)}
+  .sec-header h2{font-family:var(--font-display);font-size:30px;color:var(--text)}
+  .sec-sub{color:var(--text2);font-size:13px;margin-top:4px}
+  .cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+  .cat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:20px;cursor:pointer;transition:all .22s;display:flex;align-items:flex-start;gap:14px;position:relative;overflow:hidden}
+  .cat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--cc,var(--accent3));opacity:0;transition:opacity .22s}
   .cat-card:hover{border-color:var(--accent3);transform:translateY(-2px);box-shadow:var(--shadow);background:var(--surface2)}
   .cat-card:hover::before{opacity:1}
-  .cat-icon{width:44px;height:44px;border-radius:var(--r);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-  .cat-name{font-size:15px;font-weight:600;color:var(--text);margin-bottom:2px}
-  .cat-sci{font-family:var(--font-mono);font-size:11px;color:var(--accent2);margin-bottom:5px}
+  .cat-icon{width:42px;height:42px;border-radius:var(--r);background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+  .cat-name{font-size:14px;font-weight:600;color:var(--text);margin-bottom:2px}
+  .cat-sci{font-family:var(--font-mono);font-size:11px;color:var(--accent2);margin-bottom:4px}
   .cat-count{font-size:12px;color:var(--text3)}
 
-  /* LIST */
+  /* ── LIST ── */
   .list-controls{display:flex;gap:10px;margin-bottom:10px;align-items:center;flex-wrap:wrap}
-  .search-bar{flex:1;min-width:180px;background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:14px;padding:10px 14px;border-radius:var(--r);outline:none;transition:border-color .2s}
-  .search-bar:focus{border-color:var(--accent)}
-  .search-bar::placeholder{color:var(--text3)}
-  .diff-filter{display:flex;gap:6px;flex-wrap:wrap}
-  .diff-btn{background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:8px 12px;border-radius:var(--r);font-size:12px;cursor:pointer;transition:all .2s}
-  .diff-btn.active{background:var(--accent3);border-color:var(--accent3);color:var(--text)}
+  .search-bar{flex:1;min-width:180px;background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:14px;padding:9px 14px;border-radius:var(--r);outline:none;transition:border-color .2s}
+  .search-bar:focus{border-color:var(--accent)}.search-bar::placeholder{color:var(--text3)}
+  .diff-filter{display:flex;gap:5px;flex-wrap:wrap}
+  .df-btn{background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:7px 11px;border-radius:var(--r);font-size:12px;cursor:pointer;transition:all .18s}
+  .df-btn.active{background:var(--accent3);border-color:var(--accent3);color:var(--text)}
 
-  /* COUNTRY FILTER BAR */
-  .country-filter-bar{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:18px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r)}
-  .cfilter-label{font-size:11px;color:var(--text3);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
-  .country-btn{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:4px 10px;border-radius:20px;font-size:12px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:4px}
-  .country-btn.active{background:rgba(126,200,80,.2);border-color:var(--accent);color:var(--accent2)}
+  .cfilter{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:16px;padding:10px 14px;background:var(--surface);border:1px solid var(--border);border-radius:var(--r)}
+  .cfilter-lbl{font-size:11px;color:var(--text3);font-family:var(--font-mono);text-transform:uppercase;letter-spacing:1px;white-space:nowrap}
+  .cbtn{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:4px 10px;border-radius:20px;font-size:12px;cursor:pointer;transition:all .14s;display:flex;align-items:center;gap:4px}
+  .cbtn.active{background:rgba(126,200,80,.2);border-color:var(--accent);color:var(--accent2)}
 
   .plant-list{display:grid;gap:2px}
-  .plant-item{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid transparent;border-radius:var(--r);padding:11px 14px;cursor:pointer;transition:all .18s}
-  .plant-item:hover{background:var(--surface2);border-color:var(--border);transform:translateX(4px)}
-  .plant-item-num{font-family:var(--font-mono);font-size:11px;color:var(--text3);width:30px;flex-shrink:0}
-  .plant-item-thumb{width:44px;height:44px;border-radius:var(--r);background:var(--bg3);flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:20px}
-  .plant-item-thumb img{width:100%;height:100%;object-fit:cover}
-  .plant-item-name{flex:1;min-width:0}
-  .plant-item-sci{font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .plant-item-common{font-size:12px;color:var(--text2)}
-  .plant-item-flags{display:flex;gap:2px;flex-wrap:wrap;margin-top:2px;font-size:15px;line-height:1}
-  .plant-item-tags{display:flex;gap:6px;align-items:center;flex-shrink:0}
-  .diff-stars{display:flex;gap:1px}
-  .diff-stars .s{color:var(--border);font-size:12px}
-  .diff-stars .s.filled{color:var(--gold)}
-  .freq-tag{font-size:11px;padding:3px 8px;border-radius:10px;font-family:var(--font-mono)}
-  .freq-common{background:rgba(126,200,80,.15);color:var(--accent2)}
-  .freq-rare{background:rgba(224,82,82,.12);color:var(--red)}
-  .freq-uncommon{background:rgba(212,168,67,.12);color:var(--gold2)}
+  .pi{display:flex;align-items:center;gap:14px;background:var(--surface);border:1px solid transparent;border-radius:var(--r);padding:10px 14px;cursor:pointer;transition:all .16s}
+  .pi:hover{background:var(--surface2);border-color:var(--border);transform:translateX(4px)}
+  .pi-num{font-family:var(--font-mono);font-size:11px;color:var(--text3);width:28px;flex-shrink:0}
+  .pi-thumb{width:42px;height:42px;border-radius:var(--r);background:var(--bg3);flex-shrink:0;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:19px}
+  .pi-thumb img{width:100%;height:100%;object-fit:cover}
+  .pi-name{flex:1;min-width:0}
+  .pi-sci{font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pi-common{font-size:12px;color:var(--text2)}
+  .pi-flags{display:flex;gap:2px;flex-wrap:wrap;margin-top:2px;font-size:14px;line-height:1}
+  .pi-tags{display:flex;gap:5px;align-items:center;flex-shrink:0}
+  .dstars{display:flex;gap:1px}
+  .dstars .s{color:var(--border);font-size:12px}.dstars .s.on{color:var(--gold)}
+  .ftag{font-size:11px;padding:3px 8px;border-radius:10px;font-family:var(--font-mono)}
+  .fc{background:rgba(126,200,80,.15);color:var(--accent2)}
+  .fu{background:rgba(212,168,67,.12);color:var(--gold2)}
+  .fr{background:rgba(224,82,82,.12);color:var(--red)}
 
-  /* PLANT PAGE */
-  .plant-header{margin-bottom:28px;border-bottom:1px solid var(--border);padding-bottom:22px}
-  .plant-category-tag{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:12px;padding:4px 12px;border-radius:20px;margin-bottom:14px;font-family:var(--font-mono)}
-  .plant-title-sci{font-family:var(--font-display);font-size:clamp(26px,4vw,46px);font-style:italic;color:var(--text);line-height:1.15;margin-bottom:6px}
-  .plant-title-common{font-size:17px;color:var(--text2);font-weight:300}
-  .plant-meta-bar{display:flex;gap:20px;flex-wrap:wrap;margin-top:18px;padding-top:18px;border-top:1px solid var(--border)}
-  .meta-item{display:flex;flex-direction:column;gap:4px}
-  .meta-label{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text3);font-family:var(--font-mono)}
-  .meta-value{display:flex;align-items:center;gap:4px;font-size:14px;color:var(--text)}
-  .stars-row{display:flex;gap:2px}
-  .star{font-size:15px;color:var(--border)}.star.on{color:var(--gold)}
-  .plant-body{display:grid;grid-template-columns:1fr 360px;gap:28px}
-  @media(max-width:800px){.plant-body{grid-template-columns:1fr}}
+  /* ── PLANT PAGE ── */
+  .plant-wrap{max-width:1080px;margin:0 auto;padding:20px 24px 80px}
+  .plant-header{margin-bottom:24px;border-bottom:1px solid var(--border);padding-bottom:20px}
+  .plant-cat-tag{display:inline-flex;align-items:center;gap:6px;background:var(--bg3);border:1px solid var(--border);color:var(--text2);font-size:11px;padding:3px 12px;border-radius:20px;margin-bottom:12px;font-family:var(--font-mono)}
+  .plant-sci{font-family:var(--font-display);font-size:clamp(24px,4vw,44px);font-style:italic;color:var(--text);line-height:1.15;margin-bottom:5px}
+  .plant-common{font-size:17px;color:var(--text2);font-weight:300}
+  .plant-meta{display:flex;gap:20px;flex-wrap:wrap;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+  .mi{display:flex;flex-direction:column;gap:4px}
+  .ml{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--text3);font-family:var(--font-mono)}
+  .mv{display:flex;align-items:center;gap:4px;font-size:14px;color:var(--text)}
+  .srow{display:flex;gap:2px}
+  .star{font-size:14px;color:var(--border)}.star.on{color:var(--gold)}
 
-  /* PHOTOS */
-  .plant-photos{margin-bottom:24px}
+  /* NEW LAYOUT: left main col + right sidebar */
+  .plant-body{display:grid;grid-template-columns:1fr 320px;gap:28px;align-items:start}
+  @media(max-width:820px){.plant-body{grid-template-columns:1fr}}
+
+  /* Left: photos → maps → (nothing else) */
+  .plant-main{}
+
+  /* PHOTOS GRID */
+  .photos-section{margin-bottom:24px}
+  .sec-title{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);font-family:var(--font-mono);margin-bottom:10px}
   .photos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
-  .photo-slot{aspect-ratio:4/3;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;cursor:pointer;position:relative;transition:transform .18s;display:flex;align-items:center;justify-content:center}
+  .photo-slot{aspect-ratio:4/3;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;cursor:pointer;transition:transform .16s;display:flex;align-items:center;justify-content:center}
   .photo-slot:hover{transform:scale(1.02)}
-  /* KEY FIX: contain so full image is always visible, no cropping */
   .photo-slot img{width:100%;height:100%;object-fit:contain}
-  .photo-del{position:absolute;top:6px;right:6px;background:rgba(0,0,0,.65);border:none;color:#fff;border-radius:50%;width:22px;height:22px;cursor:pointer;font-size:11px;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity .15s}
-  .photo-slot:hover .photo-del{opacity:1}
-  .photo-add-btn{border:2px dashed var(--border);background:none;aspect-ratio:4/3;border-radius:var(--r2);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;cursor:pointer;color:var(--text3);font-family:var(--font-body);font-size:13px;transition:all .2s}
-  .photo-add-btn:hover{border-color:var(--accent3);color:var(--accent2)}
+  .photo-empty{aspect-ratio:4/3;background:var(--surface);border:1px dashed var(--border);border-radius:var(--r2);display:flex;align-items:center;justify-content:center;color:var(--text3);font-size:13px;flex-direction:column;gap:6px}
 
-  /* MAP GALLERY */
+  /* MAPS — in main col, below photos */
+  .maps-section{margin-bottom:8px}
   .map-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
-  .map-tab{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:4px 10px;border-radius:20px;font-size:11px;font-family:var(--font-mono);cursor:pointer;transition:all .15s;display:inline-flex;align-items:center;gap:5px}
+  .map-tab{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:4px 12px;border-radius:20px;font-size:11px;font-family:var(--font-mono);cursor:pointer;transition:all .14s}
   .map-tab.active{background:rgba(126,200,80,.2);border-color:var(--accent);color:var(--accent2)}
-  .map-tab-del{color:var(--text3);font-size:10px;line-height:1;background:none;border:none;cursor:pointer;padding:0}
-  .map-tab-del:hover{color:var(--red)}
-  /* KEY FIX: image shown in full, no fixed aspect-ratio clipping */
-  .map-frame{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;display:flex;align-items:center;justify-content:center;min-height:120px}
-  .map-frame img{width:100%;height:auto;max-height:320px;object-fit:contain;display:block}
-  .map-empty{padding:28px;text-align:center;color:var(--text3);font-size:13px}
-  .map-add-row{display:flex;gap:8px;margin-top:10px}
-  .map-loc-input{flex:1;background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:12px;padding:7px 10px;border-radius:var(--r);outline:none;transition:border-color .2s}
-  .map-loc-input:focus{border-color:var(--accent)}
-  .map-loc-input::placeholder{color:var(--text3)}
-  .map-add-btn{background:var(--accent3);border:none;color:var(--text);padding:7px 12px;border-radius:var(--r);font-size:12px;font-family:var(--font-body);cursor:pointer;white-space:nowrap;transition:background .2s}
-  .map-add-btn:hover{background:var(--accent);color:var(--bg)}
+  /* Map frame: natural height, no cropping, full image visible */
+  .map-frame{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;display:flex;align-items:center;justify-content:center}
+  .map-frame img{width:100%;height:auto;max-height:480px;object-fit:contain;display:block}
+  .map-empty-box{padding:40px;text-align:center;color:var(--text3);font-size:13px;background:var(--surface);border:1px dashed var(--border);border-radius:var(--r2)}
 
-  .section-title{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);font-family:var(--font-mono);margin-bottom:10px}
-  .description-block{background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent3);border-radius:var(--r);padding:18px;font-size:15px;line-height:1.75;color:var(--text);margin-bottom:22px}
-  .description-block em{color:var(--accent2);font-style:italic}
-  .id-tips{margin-bottom:22px}
-  .tip-list{list-style:none;display:flex;flex-direction:column;gap:7px}
-  .tip-item{display:flex;gap:10px;align-items:flex-start;background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:11px 14px;font-size:14px;color:var(--text2)}
-  .tip-icon{color:var(--accent);flex-shrink:0}
-  .similar-species{margin-bottom:22px}
-  .similar-list{display:flex;gap:8px;flex-wrap:wrap}
-  .similar-tag{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:6px 14px;font-family:var(--font-display);font-style:italic;font-size:14px;color:var(--text2);cursor:pointer;transition:all .2s}
-  .similar-tag:hover{border-color:var(--accent3);color:var(--accent2)}
+  /* RIGHT SIDEBAR */
+  .plant-sidebar{display:flex;flex-direction:column;gap:14px;position:sticky;top:70px}
+  .sc{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden}
+  .sc-h{padding:11px 16px;border-bottom:1px solid var(--border);font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);font-family:var(--font-mono)}
+  .sc-b{padding:14px 16px}
 
-  .sidebar-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;margin-bottom:14px}
-  .sidebar-card-header{padding:12px 16px;border-bottom:1px solid var(--border);font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--text3);font-family:var(--font-mono)}
-  .sidebar-card-body{padding:14px}
-  .taxo-table{width:100%}
-  .taxo-table tr{border-bottom:1px solid var(--border)}
-  .taxo-table tr:last-child{border-bottom:none}
-  .taxo-table td{padding:7px 0;font-size:13px}
-  .taxo-table td:first-child{color:var(--text3);font-family:var(--font-mono);font-size:11px;width:90px}
-  .taxo-table td:last-child{color:var(--text);font-style:italic}
+  .desc-block{font-size:14px;line-height:1.8;color:var(--text)}
+  .desc-block em{color:var(--accent2);font-style:italic}
+
+  .tip-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .tip-item{display:flex;gap:10px;align-items:flex-start;font-size:13px;color:var(--text2);padding:9px 12px;background:var(--bg3);border-radius:var(--r)}
+  .tip-icon{color:var(--accent);flex-shrink:0;font-size:12px;margin-top:2px}
+
+  .sim-list{display:flex;gap:7px;flex-wrap:wrap}
+  .sim-tag{background:var(--bg3);border:1px solid var(--border);border-radius:20px;padding:5px 13px;font-family:var(--font-display);font-style:italic;font-size:13px;color:var(--text2);cursor:pointer;transition:all .18s}
+  .sim-tag:hover{border-color:var(--accent3);color:var(--accent2)}
+
+  .taxo-tbl{width:100%}
+  .taxo-tbl tr{border-bottom:1px solid var(--border)}.taxo-tbl tr:last-child{border-bottom:none}
+  .taxo-tbl td{padding:7px 0;font-size:13px}
+  .taxo-tbl td:first-child{color:var(--text3);font-family:var(--font-mono);font-size:10px;width:80px}
+  .taxo-tbl td:last-child{color:var(--text);font-style:italic}
+
   .ext-links{display:flex;flex-direction:column;gap:7px}
-  .ext-link{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:var(--r);background:var(--bg3);border:1px solid var(--border);text-decoration:none;color:var(--text2);font-size:13px;transition:all .2s}
+  .ext-link{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:var(--r);background:var(--bg3);border:1px solid var(--border);text-decoration:none;color:var(--text2);font-size:13px;transition:all .18s}
   .ext-link:hover{border-color:var(--accent3);color:var(--accent2)}
 
-  /* ADD FORM */
-  #view-add{max-width:800px;margin:0 auto;padding:56px 24px 80px}
-  #view-add.active{display:block}
-  .form-section{margin-bottom:28px}
-  .form-section h3{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent2);font-family:var(--font-mono);margin-bottom:14px;padding-bottom:7px;border-bottom:1px solid var(--border)}
-  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-  @media(max-width:600px){.form-grid{grid-template-columns:1fr}}
-  .form-field{display:flex;flex-direction:column;gap:5px}
-  .form-field.full{grid-column:1/-1}
-  .form-label{font-size:12px;color:var(--text2);font-weight:500}
-  .form-input,.form-select,.form-textarea{background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:14px;padding:9px 13px;border-radius:var(--r);outline:none;transition:border-color .2s}
-  .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--accent)}
-  .form-select option{background:var(--surface2)}
-  .form-textarea{resize:vertical;min-height:90px}
-  .stars-input{display:flex;gap:5px}
-  .star-btn{background:none;border:none;font-size:22px;cursor:pointer;color:var(--border);transition:color .15s;padding:0}
-  .star-btn.on{color:var(--gold)}
-  .form-submit{background:var(--accent3);color:var(--text);border:none;padding:13px 28px;border-radius:var(--r);font-family:var(--font-body);font-size:15px;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;gap:8px}
-  .form-submit:hover{background:var(--accent);color:var(--bg)}
-
-  /* COUNTRY CHIPS INPUT */
-  .countries-input-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:7px;display:flex;flex-wrap:wrap;gap:5px;min-height:42px;cursor:text;transition:border-color .2s}
-  .countries-input-wrap:focus-within{border-color:var(--accent)}
-  .country-chip{background:rgba(126,200,80,.15);border:1px solid rgba(126,200,80,.3);color:var(--accent2);padding:2px 8px;border-radius:20px;font-size:12px;display:flex;align-items:center;gap:4px}
-  .country-chip button{background:none;border:none;color:var(--text3);cursor:pointer;font-size:11px;padding:0}
-  .country-chip button:hover{color:var(--red)}
-  .countries-text-input{border:none;background:none;color:var(--text);font-family:var(--font-body);font-size:14px;outline:none;min-width:120px;flex:1;padding:1px 4px}
-  .countries-text-input::placeholder{color:var(--text3)}
-  .country-suggestions{position:absolute;background:var(--bg2);border:1px solid var(--border);border-radius:var(--r);z-index:50;max-height:180px;overflow-y:auto;width:100%;box-shadow:var(--shadow);top:100%;left:0;margin-top:2px}
-  .csugg-item{padding:8px 14px;cursor:pointer;font-size:13px;display:flex;align-items:center;gap:8px;transition:background .1s}
-  .csugg-item:hover{background:var(--surface)}
-
-  /* SEARCH */
-  .search-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding-top:80px}
+  /* ── SEARCH OVERLAY ── */
+  .search-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding-top:80px}
   .search-overlay.open{display:flex}
   .search-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);width:100%;max-width:600px;box-shadow:var(--shadow-lg);overflow:hidden}
-  .search-input-big{width:100%;background:none;border:none;border-bottom:1px solid var(--border);color:var(--text);font-family:var(--font-display);font-style:italic;font-size:20px;padding:18px 22px;outline:none}
-  .search-input-big::placeholder{color:var(--text3)}
-  .search-results-list{max-height:380px;overflow-y:auto}
-  .search-result{display:flex;gap:12px;align-items:center;padding:12px 18px;cursor:pointer;transition:background .12s;border-bottom:1px solid var(--border)}
-  .search-result:hover{background:var(--surface)}
+  .sib{width:100%;background:none;border:none;border-bottom:1px solid var(--border);color:var(--text);font-family:var(--font-display);font-style:italic;font-size:20px;padding:18px 22px;outline:none}
+  .sib::placeholder{color:var(--text3)}
+  .srl{max-height:380px;overflow-y:auto}
+  .sr{display:flex;gap:12px;align-items:center;padding:12px 18px;cursor:pointer;transition:background .12s;border-bottom:1px solid var(--border)}
+  .sr:hover{background:var(--surface)}
   .sr-sci{font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--text)}
   .sr-info{font-size:12px;color:var(--text2)}
 
-  .back-btn{display:inline-flex;align-items:center;gap:7px;color:var(--text2);font-size:14px;cursor:pointer;background:none;border:none;font-family:var(--font-body);margin-bottom:22px;transition:color .2s;padding:0}
-  .back-btn:hover{color:var(--accent)}
-  .toast{position:fixed;bottom:24px;right:24px;z-index:300;background:var(--accent3);color:var(--text);padding:11px 18px;border-radius:var(--r);font-size:14px;font-weight:500;transform:translateY(80px);opacity:0;transition:all .3s;box-shadow:var(--shadow)}
-  .toast.show{transform:translateY(0);opacity:1}
+  /* ── LIGHTBOX ── */
   .lightbox{position:fixed;inset:0;z-index:250;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center}
   .lightbox.open{display:flex}
   .lightbox img{max-width:92vw;max-height:92vh;border-radius:var(--r2);box-shadow:var(--shadow-lg);object-fit:contain}
-  .lb-close{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.12);border:none;color:#fff;font-size:20px;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+  .lb-close{position:absolute;top:18px;right:18px;background:rgba(255,255,255,.1);border:none;color:#fff;font-size:20px;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+
+  /* ── MISC ── */
+  .back-btn{display:inline-flex;align-items:center;gap:7px;color:var(--text2);font-size:14px;cursor:pointer;background:none;border:none;font-family:var(--font-body);margin-bottom:20px;transition:color .18s;padding:0}
+  .back-btn:hover{color:var(--accent)}
+  .toast{position:fixed;bottom:24px;right:24px;z-index:300;background:var(--accent3);color:var(--text);padding:10px 18px;border-radius:var(--r);font-size:14px;font-weight:500;transform:translateY(80px);opacity:0;transition:all .28s;box-shadow:var(--shadow)}
+  .toast.show{transform:translateY(0);opacity:1}
+  .inner{max-width:960px;margin:0 auto;padding:20px 24px 60px}
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" onclick="goHome()">🌿 Geowikiplants <span>Plant Wiki</span></a>
-  <div class="nav-breadcrumb" id="breadcrumb"></div>
+  <a class="nav-logo" onclick="goHome()">🌿 Geowikiplants <span>for GeoGuessr</span></a>
+  <div class="nav-breadcrumb" id="bc"></div>
   <div class="nav-search">
-    <input type="text" placeholder="Search… (⌘K)" id="navSearch" onclick="openSearch()" readonly>
-    <span class="nav-search-icon">⌕</span>
+    <input type="text" placeholder="Search… (⌘K)" onclick="openSearch()" readonly>
+    <span class="nav-si">⌕</span>
   </div>
-  <!-- Hidden admin button — revealed after password -->
-  <button class="add-btn" id="adminBtn" onclick="openAddForm()" style="display:none">＋ Add plant</button>
-  <button class="add-btn" id="adminLockBtn" onclick="showPwdModal()" style="background:var(--bg3);border:1px solid var(--border);color:var(--text3);font-size:11px;padding:6px 12px" title="Admin login">🔒</button>
 </nav>
-
-<!-- COPY TO PLANTS.JS MODAL -->
-<div id="copyOverlay" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:20px">
-  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:28px;width:100%;max-width:640px;box-shadow:var(--shadow-lg)">
-    <div style="font-family:var(--font-display);font-size:20px;color:var(--text);margin-bottom:6px">✓ Plant created</div>
-    <div style="font-size:13px;color:var(--text2);margin-bottom:16px">Copy this block and paste it inside the <code style="background:var(--bg3);padding:2px 6px;border-radius:4px;color:var(--accent2)">PLANTS = [&nbsp;]</code> array in your <strong>plants.js</strong> file, then re-upload it to GitHub.</div>
-    <textarea id="copyBlock" readonly onclick="this.select()" style="width:100%;height:240px;background:var(--bg3);border:1px solid var(--border);color:var(--accent2);font-family:var(--font-mono);font-size:12px;padding:12px;border-radius:var(--r);resize:none;outline:none;line-height:1.6"></textarea>
-    <div style="display:flex;gap:10px;margin-top:14px">
-      <button onclick="navigator.clipboard.writeText(document.getElementById('copyBlock').value).then(()=>toast('📋 Copied!'))" style="flex:1;background:var(--accent3);border:none;color:var(--text);padding:10px;border-radius:var(--r);font-family:var(--font-body);font-size:14px;font-weight:600;cursor:pointer">📋 Copy to clipboard</button>
-      <button onclick="document.getElementById('copyOverlay').style.display='none';goPlant(PLANTS[PLANTS.length-1].id)" style="background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:10px 16px;border-radius:var(--r);font-family:var(--font-body);font-size:14px;cursor:pointer">View plant →</button>
-    </div>
-  </div>
-</div>
-<div id="pwdOverlay" style="display:none;position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);align-items:center;justify-content:center">
-  <div style="background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);padding:32px;width:320px;box-shadow:var(--shadow-lg)">
-    <div style="font-family:var(--font-display);font-size:20px;color:var(--text);margin-bottom:6px">Admin access</div>
-    <div style="font-size:13px;color:var(--text3);margin-bottom:20px">Enter the password to unlock editing</div>
-    <input type="password" id="pwdInput" placeholder="Password…" onkeydown="if(event.key==='Enter')checkPwd()"
-      style="width:100%;background:var(--surface);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:15px;padding:10px 14px;border-radius:var(--r);outline:none;margin-bottom:12px;box-sizing:border-box">
-    <div id="pwdError" style="color:var(--red);font-size:12px;margin-bottom:10px;display:none">Wrong password.</div>
-    <div style="display:flex;gap:10px">
-      <button onclick="checkPwd()" style="flex:1;background:var(--accent3);border:none;color:var(--text);padding:10px;border-radius:var(--r);font-family:var(--font-body);font-size:14px;font-weight:600;cursor:pointer">Unlock</button>
-      <button onclick="hidePwdModal()" style="background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:10px 16px;border-radius:var(--r);font-family:var(--font-body);font-size:14px;cursor:pointer">Cancel</button>
-    </div>
-  </div>
-</div>
 
 <div class="toast" id="toast"></div>
 
-<div class="lightbox" id="lightbox" onclick="closeLightbox()">
-  <button class="lb-close" onclick="event.stopPropagation();closeLightbox()">✕</button>
+<div class="lightbox" id="lightbox" onclick="closeLb()">
+  <button class="lb-close" onclick="event.stopPropagation();closeLb()">✕</button>
   <img id="lb-img" src="" alt="">
 </div>
 
 <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)this.classList.remove('open')">
   <div class="search-box">
-    <input class="search-input-big" placeholder="Search species, country…" id="searchInput" oninput="filterSearch(this.value)">
-    <div class="search-results-list" id="searchResults"></div>
+    <input class="sib" placeholder="Search species, country…" id="searchInput" oninput="filterSearch(this.value)">
+    <div class="srl" id="searchResults"></div>
   </div>
 </div>
 
@@ -280,7 +223,7 @@
     <p>A botanical reference wiki. Click a continent to explore species by category.</p>
   </div>
   <div class="map-stats"><strong id="stat-count">0</strong> species indexed &nbsp;·&nbsp; <strong>6</strong> regions</div>
-  <div class="world-map-container">
+  <div class="wmc">
     <svg viewBox="0 0 1000 520" xmlns="http://www.w3.org/2000/svg">
       <defs>
         <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1e2b1f" stroke-width="0.5"/></pattern>
@@ -288,45 +231,45 @@
       </defs>
       <rect width="1000" height="520" fill="url(#og)"/>
       <rect width="1000" height="520" fill="url(#grid)" opacity="0.4"/>
-      <line x1="0" y1="260" x2="1000" y2="260" stroke="#2a4040" stroke-width="1" stroke-dasharray="4,8" opacity=".6"/>
+      <line x1="0" y1="260" x2="1000" y2="260" stroke="#2a4040" stroke-width="1" stroke-dasharray="4,8" opacity=".5"/>
       <!-- NORTH AMERICA -->
-      <g class="continent-zone" onclick="goContinent('north-america')">
+      <g class="cz" onclick="goContinent('north-america')">
         <path d="M 75 58 L 285 58 L 305 80 L 315 132 L 294 182 L 272 222 L 242 252 L 202 262 L 172 272 L 148 262 L 118 242 L 93 212 L 73 180 L 63 140 L 68 88 Z" fill="#2a1f1a" stroke="#3d2d28" stroke-width="1.5"/>
         <path d="M 202 262 L 242 252 L 242 282 L 232 322 L 212 342 L 192 332 L 175 302 L 172 272 Z" fill="#251d19" stroke="#3d2d28" stroke-width="1.5"/>
-        <text class="continent-label" x="190" y="166" fill="#e8a890">NORTH AMERICA</text>
-        <text class="continent-sublabel" x="190" y="182" id="svg-na-count">0 species</text>
+        <text class="clabel" x="190" y="166" fill="#e8a890">NORTH AMERICA</text>
+        <text class="csub" x="190" y="182" id="svg-na">0 species</text>
       </g>
       <!-- SOUTH AMERICA -->
-      <g class="continent-zone" onclick="goContinent('south-america')">
+      <g class="cz" onclick="goContinent('south-america')">
         <path d="M 172 350 L 258 344 L 284 364 L 288 404 L 278 444 L 258 474 L 232 492 L 206 492 L 186 474 L 168 444 L 162 404 L 164 368 Z" fill="#1a2230" stroke="#28303d" stroke-width="1.5"/>
-        <text class="continent-label" x="225" y="418" fill="#8dc8e8">SOUTH AMERICA</text>
-        <text class="continent-sublabel" x="225" y="434" id="svg-sa-count">0 species</text>
+        <text class="clabel" x="225" y="418" fill="#8dc8e8">SOUTH AMERICA</text>
+        <text class="csub" x="225" y="434" id="svg-sa">0 species</text>
       </g>
       <!-- EUROPE -->
-      <g class="continent-zone" onclick="goContinent('europe')">
+      <g class="cz" onclick="goContinent('europe')">
         <path d="M 438 52 L 522 52 L 544 68 L 548 100 L 538 122 L 512 138 L 490 143 L 464 138 L 444 122 L 430 100 L 428 72 Z" fill="#1a2a1a" stroke="#2a3d2a" stroke-width="1.5"/>
-        <text class="continent-label" x="488" y="98" fill="#9cd870">EUROPE</text>
-        <text class="continent-sublabel" x="488" y="114" id="svg-eu-count">0 species</text>
+        <text class="clabel" x="488" y="98" fill="#9cd870">EUROPE</text>
+        <text class="csub" x="488" y="114" id="svg-eu">0 species</text>
       </g>
       <!-- AFRICA -->
-      <g class="continent-zone" onclick="goContinent('africa')">
+      <g class="cz" onclick="goContinent('africa')">
         <path d="M 448 158 L 542 152 L 564 172 L 572 214 L 568 264 L 558 314 L 542 364 L 522 404 L 500 428 L 478 434 L 458 428 L 440 404 L 426 364 L 418 314 L 414 264 L 416 214 L 426 172 Z" fill="#2a2010" stroke="#3d3020" stroke-width="1.5"/>
-        <text class="continent-label" x="492" y="288" fill="#f0d080">AFRICA</text>
-        <text class="continent-sublabel" x="492" y="304" id="svg-af-count">0 species</text>
+        <text class="clabel" x="492" y="288" fill="#f0d080">AFRICA</text>
+        <text class="csub" x="492" y="304" id="svg-af">0 species</text>
       </g>
       <!-- ASIA -->
-      <g class="continent-zone" onclick="goContinent('asia')">
+      <g class="cz" onclick="goContinent('asia')">
         <path d="M 558 52 L 855 52 L 878 78 L 882 132 L 866 178 L 842 212 L 812 242 L 782 258 L 742 268 L 702 272 L 662 268 L 626 252 L 596 232 L 572 202 L 556 168 L 548 122 L 550 78 Z" fill="#28162a" stroke="#3a2540" stroke-width="1.5"/>
         <path d="M 782 258 L 812 242 L 824 272 L 818 314 L 802 334 L 786 322 L 776 292 Z" fill="#251528" stroke="#3a2540" stroke-width="1.5"/>
-        <text class="continent-label" x="714" y="162" fill="#e890f0">ASIA</text>
-        <text class="continent-sublabel" x="714" y="178" id="svg-as-count">0 species</text>
+        <text class="clabel" x="714" y="162" fill="#e890f0">ASIA</text>
+        <text class="csub" x="714" y="178" id="svg-as">0 species</text>
       </g>
       <!-- OCEANIA -->
-      <g class="continent-zone" onclick="goContinent('oceania')">
+      <g class="cz" onclick="goContinent('oceania')">
         <path d="M 788 332 L 872 322 L 914 342 L 922 378 L 912 412 L 882 428 L 846 422 L 816 402 L 800 372 L 788 348 Z" fill="#102a25" stroke="#203d35" stroke-width="1.5"/>
         <path d="M 932 392 L 952 382 L 962 398 L 956 418 L 940 422 L 928 410 Z" fill="#102a25" stroke="#203d35" stroke-width="1.5"/>
-        <text class="continent-label" x="856" y="380" fill="#6df0c8">OCEANIA</text>
-        <text class="continent-sublabel" x="856" y="396" id="svg-oc-count">0 species</text>
+        <text class="clabel" x="856" y="380" fill="#6df0c8">OCEANIA</text>
+        <text class="csub" x="856" y="396" id="svg-oc">0 species</text>
       </g>
     </svg>
   </div>
@@ -334,35 +277,35 @@
 
 <!-- CONTINENT -->
 <div class="view" id="view-continent">
-  <div style="max-width:960px;margin:0 auto;padding:20px 24px 60px">
+  <div class="inner">
     <button class="back-btn" onclick="goHome()">← Back to map</button>
-    <div class="section-header">
-      <span style="font-size:32px" id="cont-flag"></span>
-      <div><h2 id="cont-name"></h2><div class="section-subtitle" id="cont-subtitle"></div></div>
+    <div class="sec-header">
+      <span style="font-size:30px" id="cont-flag"></span>
+      <div><h2 id="cont-name"></h2><div class="sec-sub" id="cont-sub"></div></div>
     </div>
-    <div class="categories-grid" id="categoriesGrid"></div>
+    <div class="cat-grid" id="catGrid"></div>
   </div>
 </div>
 
 <!-- LIST -->
 <div class="view" id="view-list">
-  <div style="max-width:960px;margin:0 auto;padding:20px 24px 60px">
-    <button class="back-btn" id="list-back-btn">← Back</button>
-    <div class="section-header">
-      <div><h2 id="list-title"></h2><div class="section-subtitle" id="list-subtitle"></div></div>
+  <div class="inner">
+    <button class="back-btn" id="list-back">← Back</button>
+    <div class="sec-header">
+      <div><h2 id="list-title"></h2><div class="sec-sub" id="list-sub"></div></div>
     </div>
     <div class="list-controls">
       <input class="search-bar" type="text" placeholder="Filter species…" oninput="filterList(this.value)" id="listFilter">
       <div class="diff-filter">
-        <button class="diff-btn active" onclick="filterDiff(this,'all')">All</button>
-        <button class="diff-btn" onclick="filterDiff(this,'easy')">★ Easy</button>
-        <button class="diff-btn" onclick="filterDiff(this,'medium')">★★</button>
-        <button class="diff-btn" onclick="filterDiff(this,'hard')">★★★</button>
+        <button class="df-btn active" onclick="fDiff(this,'all')">All</button>
+        <button class="df-btn" onclick="fDiff(this,'easy')">★ Easy</button>
+        <button class="df-btn" onclick="fDiff(this,'medium')">★★</button>
+        <button class="df-btn" onclick="fDiff(this,'hard')">★★★</button>
       </div>
     </div>
-    <div class="country-filter-bar" id="countryFilterBar" style="display:none">
-      <span class="cfilter-label">🌍 Country</span>
-      <div id="countryBtns" style="display:flex;gap:6px;flex-wrap:wrap"></div>
+    <div class="cfilter" id="cfilter" style="display:none">
+      <span class="cfilter-lbl">🌍 Country</span>
+      <div id="cbtns" style="display:flex;gap:6px;flex-wrap:wrap"></div>
     </div>
     <div class="plant-list" id="plantList"></div>
   </div>
@@ -370,125 +313,45 @@
 
 <!-- PLANT PAGE -->
 <div class="view" id="view-plant">
-  <div style="max-width:1100px;margin:0 auto;padding:20px 24px 80px">
-    <button class="back-btn" id="plant-back-btn">← Back to list</button>
+  <div class="plant-wrap">
+    <button class="back-btn" id="plant-back">← Back to list</button>
     <div id="plantContent"></div>
-  </div>
-</div>
-
-<!-- ADD FORM -->
-<div class="view" id="view-add">
-  <div style="max-width:800px;margin:0 auto;padding:20px 24px 80px">
-    <button class="back-btn" onclick="goBack()">← Cancel</button>
-    <div class="section-header" style="margin-bottom:28px">
-      <div><h2 style="font-family:var(--font-display)">Add a new plant</h2><div class="section-subtitle">Fields marked * are required</div></div>
-    </div>
-    <div class="form-section">
-      <h3>Identity &amp; Location</h3>
-      <div class="form-grid">
-        <div class="form-field"><label class="form-label">Scientific name *</label><input class="form-input" type="text" id="f-sci" placeholder="e.g. Acrocomia intumescens" style="font-style:italic"></div>
-        <div class="form-field"><label class="form-label">Common name (English) *</label><input class="form-input" type="text" id="f-common" placeholder="e.g. Macaúba-Barriguda Palm"></div>
-        <div class="form-field"><label class="form-label">Continent *</label>
-          <select class="form-select" id="f-continent" onchange="onContChange()">
-            <option value="">— Select —</option>
-            <option value="africa">Africa</option><option value="asia">Asia</option><option value="europe">Europe</option>
-            <option value="north-america">North America</option><option value="south-america">South America</option><option value="oceania">Oceania</option>
-          </select>
-        </div>
-        <div class="form-field"><label class="form-label">Category *</label>
-          <select class="form-select" id="f-category"><option value="">— Select continent first —</option></select>
-        </div>
-        <div class="form-field full">
-          <label class="form-label">Countries present in (type + Enter, or pick from list)</label>
-          <div style="position:relative">
-            <div class="countries-input-wrap" id="countriesWrap" onclick="document.getElementById('countryTxt').focus()">
-              <input class="countries-text-input" id="countryTxt" placeholder="e.g. Brazil, Nigeria…" autocomplete="off" oninput="onCountryInput(this.value)" onkeydown="onCountryKey(event)">
-            </div>
-            <div class="country-suggestions" id="countrySugg" style="display:none"></div>
-          </div>
-          <span style="font-size:11px;color:var(--text3);margin-top:3px">Used for flag display &amp; country filter in the species list</span>
-        </div>
-      </div>
-    </div>
-    <div class="form-section">
-      <h3>Identification</h3>
-      <div class="form-grid">
-        <div class="form-field"><label class="form-label">Ease of identification</label>
-          <div class="stars-input" id="diff-input">
-            <button class="star-btn on" data-v="1" onclick="setStars('diff',1)">★</button>
-            <button class="star-btn" data-v="2" onclick="setStars('diff',2)">★</button>
-            <button class="star-btn" data-v="3" onclick="setStars('diff',3)">★</button>
-          </div>
-        </div>
-        <div class="form-field"><label class="form-label">Frequency of appearance</label>
-          <div class="stars-input" id="freq-input">
-            <button class="star-btn on" data-v="1" onclick="setStars('freq',1)">★</button>
-            <button class="star-btn" data-v="2" onclick="setStars('freq',2)">★</button>
-            <button class="star-btn" data-v="3" onclick="setStars('freq',3)">★</button>
-          </div>
-        </div>
-        <div class="form-field full"><label class="form-label">Description *</label><textarea class="form-textarea" id="f-desc" placeholder="Describe appearance, key features, and habitat…"></textarea></div>
-        <div class="form-field full"><label class="form-label">Identification tips (one per line)</label><textarea class="form-textarea" id="f-tips" placeholder="Swollen trunk base&#10;Long drooping pinnate leaves&#10;Coastal strip only"></textarea></div>
-        <div class="form-field full"><label class="form-label">Similar species (comma-separated)</label><input class="form-input" type="text" id="f-similar" placeholder="e.g. Acrocomia aculeata, Syagrus romanzoffiana"></div>
-      </div>
-    </div>
-    <div class="form-section">
-      <h3>Taxonomy</h3>
-      <div class="form-grid">
-        <div class="form-field"><label class="form-label">Family</label><input class="form-input" type="text" id="f-family" placeholder="e.g. Arecaceae"></div>
-        <div class="form-field"><label class="form-label">Genus</label><input class="form-input" type="text" id="f-genus" placeholder="e.g. Acrocomia"></div>
-      </div>
-    </div>
-    <div class="form-section">
-      <h3>Links</h3>
-      <div class="form-grid">
-        <div class="form-field"><label class="form-label">iNaturalist URL</label><input class="form-input" type="text" id="f-inat" placeholder="https://www.inaturalist.org/taxa/…"></div>
-        <div class="form-field"><label class="form-label">Wikipedia URL</label><input class="form-input" type="text" id="f-wiki" placeholder="https://en.wikipedia.org/wiki/…"></div>
-      </div>
-    </div>
-    <button class="form-submit" onclick="submitPlant()"><span>💾</span> Save plant</button>
   </div>
 </div>
 
 <script src="plants.js"></script>
 <script>
-// ═══════════════════════ COUNTRY DATA ═══════════════════════
-const COUNTRIES=[
-  {n:"Afghanistan",f:"🇦🇫"},{n:"Albania",f:"🇦🇱"},{n:"Algeria",f:"🇩🇿"},{n:"Angola",f:"🇦🇴"},
-  {n:"Argentina",f:"🇦🇷"},{n:"Australia",f:"🇦🇺"},{n:"Austria",f:"🇦🇹"},{n:"Bangladesh",f:"🇧🇩"},
-  {n:"Belarus",f:"🇧🇾"},{n:"Belgium",f:"🇧🇪"},{n:"Benin",f:"🇧🇯"},{n:"Bolivia",f:"🇧🇴"},
-  {n:"Botswana",f:"🇧🇼"},{n:"Brazil",f:"🇧🇷"},{n:"Bulgaria",f:"🇧🇬"},{n:"Burkina Faso",f:"🇧🇫"},
-  {n:"Burundi",f:"🇧🇮"},{n:"Cambodia",f:"🇰🇭"},{n:"Cameroon",f:"🇨🇲"},{n:"Canada",f:"🇨🇦"},
-  {n:"Chad",f:"🇹🇩"},{n:"Chile",f:"🇨🇱"},{n:"China",f:"🇨🇳"},{n:"Colombia",f:"🇨🇴"},
-  {n:"Congo",f:"🇨🇬"},{n:"DR Congo",f:"🇨🇩"},{n:"Costa Rica",f:"🇨🇷"},{n:"Côte d'Ivoire",f:"🇨🇮"},
-  {n:"Croatia",f:"🇭🇷"},{n:"Cuba",f:"🇨🇺"},{n:"Czech Republic",f:"🇨🇿"},{n:"Denmark",f:"🇩🇰"},
-  {n:"Ecuador",f:"🇪🇨"},{n:"Egypt",f:"🇪🇬"},{n:"Ethiopia",f:"🇪🇹"},{n:"Finland",f:"🇫🇮"},
-  {n:"France",f:"🇫🇷"},{n:"Gabon",f:"🇬🇦"},{n:"Gambia",f:"🇬🇲"},{n:"Germany",f:"🇩🇪"},
-  {n:"Ghana",f:"🇬🇭"},{n:"Greece",f:"🇬🇷"},{n:"Guatemala",f:"🇬🇹"},{n:"Guinea",f:"🇬🇳"},
-  {n:"Haiti",f:"🇭🇹"},{n:"Honduras",f:"🇭🇳"},{n:"Hungary",f:"🇭🇺"},{n:"India",f:"🇮🇳"},
-  {n:"Indonesia",f:"🇮🇩"},{n:"Iran",f:"🇮🇷"},{n:"Iraq",f:"🇮🇶"},{n:"Ireland",f:"🇮🇪"},
-  {n:"Israel",f:"🇮🇱"},{n:"Italy",f:"🇮🇹"},{n:"Jamaica",f:"🇯🇲"},{n:"Japan",f:"🇯🇵"},
-  {n:"Jordan",f:"🇯🇴"},{n:"Kazakhstan",f:"🇰🇿"},{n:"Kenya",f:"🇰🇪"},{n:"Laos",f:"🇱🇦"},
-  {n:"Lebanon",f:"🇱🇧"},{n:"Libya",f:"🇱🇾"},{n:"Madagascar",f:"🇲🇬"},{n:"Malawi",f:"🇲🇼"},
-  {n:"Malaysia",f:"🇲🇾"},{n:"Mali",f:"🇲🇱"},{n:"Mauritania",f:"🇲🇷"},{n:"Mexico",f:"🇲🇽"},
-  {n:"Mongolia",f:"🇲🇳"},{n:"Morocco",f:"🇲🇦"},{n:"Mozambique",f:"🇲🇿"},{n:"Myanmar",f:"🇲🇲"},
-  {n:"Namibia",f:"🇳🇦"},{n:"Nepal",f:"🇳🇵"},{n:"Netherlands",f:"🇳🇱"},{n:"New Zealand",f:"🇳🇿"},
-  {n:"Nicaragua",f:"🇳🇮"},{n:"Niger",f:"🇳🇪"},{n:"Nigeria",f:"🇳🇬"},{n:"North Korea",f:"🇰🇵"},
-  {n:"Norway",f:"🇳🇴"},{n:"Pakistan",f:"🇵🇰"},{n:"Panama",f:"🇵🇦"},{n:"Papua New Guinea",f:"🇵🇬"},
-  {n:"Paraguay",f:"🇵🇾"},{n:"Peru",f:"🇵🇪"},{n:"Philippines",f:"🇵🇭"},{n:"Poland",f:"🇵🇱"},
-  {n:"Portugal",f:"🇵🇹"},{n:"Romania",f:"🇷🇴"},{n:"Russia",f:"🇷🇺"},{n:"Rwanda",f:"🇷🇼"},
-  {n:"Saudi Arabia",f:"🇸🇦"},{n:"Senegal",f:"🇸🇳"},{n:"Sierra Leone",f:"🇸🇱"},{n:"Somalia",f:"🇸🇴"},
-  {n:"South Africa",f:"🇿🇦"},{n:"South Korea",f:"🇰🇷"},{n:"Spain",f:"🇪🇸"},{n:"Sri Lanka",f:"🇱🇰"},
-  {n:"Sudan",f:"🇸🇩"},{n:"Sweden",f:"🇸🇪"},{n:"Switzerland",f:"🇨🇭"},{n:"Tanzania",f:"🇹🇿"},
-  {n:"Thailand",f:"🇹🇭"},{n:"Togo",f:"🇹🇬"},{n:"Tunisia",f:"🇹🇳"},{n:"Turkey",f:"🇹🇷"},
-  {n:"Uganda",f:"🇺🇬"},{n:"Ukraine",f:"🇺🇦"},{n:"United Kingdom",f:"🇬🇧"},{n:"United States",f:"🇺🇸"},
-  {n:"Uruguay",f:"🇺🇾"},{n:"Venezuela",f:"🇻🇪"},{n:"Vietnam",f:"🇻🇳"},{n:"Yemen",f:"🇾🇪"},
-  {n:"Zambia",f:"🇿🇲"},{n:"Zimbabwe",f:"🇿🇼"}
-];
-function cFlag(name){const c=COUNTRIES.find(x=>x.n.toLowerCase()===name.toLowerCase());return c?c.f:'🌐';}
+// ═══════════════ COUNTRY FLAGS ═══════════════
+const CTRY={
+  "Afghanistan":"🇦🇫","Albania":"🇦🇱","Algeria":"🇩🇿","Angola":"🇦🇴","Argentina":"🇦🇷",
+  "Australia":"🇦🇺","Austria":"🇦🇹","Bangladesh":"🇧🇩","Belarus":"🇧🇾","Belgium":"🇧🇪",
+  "Benin":"🇧🇯","Bolivia":"🇧🇴","Botswana":"🇧🇼","Brazil":"🇧🇷","Bulgaria":"🇧🇬",
+  "Burkina Faso":"🇧🇫","Burundi":"🇧🇮","Cambodia":"🇰🇭","Cameroon":"🇨🇲","Canada":"🇨🇦",
+  "Chad":"🇹🇩","Chile":"🇨🇱","China":"🇨🇳","Colombia":"🇨🇴","Congo":"🇨🇬",
+  "DR Congo":"🇨🇩","Costa Rica":"🇨🇷","Côte d'Ivoire":"🇨🇮","Croatia":"🇭🇷","Cuba":"🇨🇺",
+  "Czech Republic":"🇨🇿","Denmark":"🇩🇰","Ecuador":"🇪🇨","Egypt":"🇪🇬","Ethiopia":"🇪🇹",
+  "Finland":"🇫🇮","France":"🇫🇷","Gabon":"🇬🇦","Gambia":"🇬🇲","Germany":"🇩🇪",
+  "Ghana":"🇬🇭","Greece":"🇬🇷","Guatemala":"🇬🇹","Guinea":"🇬🇳","Haiti":"🇭🇹",
+  "Honduras":"🇭🇳","Hungary":"🇭🇺","India":"🇮🇳","Indonesia":"🇮🇩","Iran":"🇮🇷",
+  "Iraq":"🇮🇶","Ireland":"🇮🇪","Israel":"🇮🇱","Italy":"🇮🇹","Jamaica":"🇯🇲",
+  "Japan":"🇯🇵","Jordan":"🇯🇴","Kazakhstan":"🇰🇿","Kenya":"🇰🇪","Laos":"🇱🇦",
+  "Lebanon":"🇱🇧","Libya":"🇱🇾","Madagascar":"🇲🇬","Malawi":"🇲🇼","Malaysia":"🇲🇾",
+  "Mali":"🇲🇱","Mauritania":"🇲🇷","Mexico":"🇲🇽","Mongolia":"🇲🇳","Morocco":"🇲🇦",
+  "Mozambique":"🇲🇿","Myanmar":"🇲🇲","Namibia":"🇳🇦","Nepal":"🇳🇵","Netherlands":"🇳🇱",
+  "New Zealand":"🇳🇿","Nicaragua":"🇳🇮","Niger":"🇳🇪","Nigeria":"🇳🇬","North Korea":"🇰🇵",
+  "Norway":"🇳🇴","Pakistan":"🇵🇰","Panama":"🇵🇦","Papua New Guinea":"🇵🇬","Paraguay":"🇵🇾",
+  "Peru":"🇵🇪","Philippines":"🇵🇭","Poland":"🇵🇱","Portugal":"🇵🇹","Romania":"🇷🇴",
+  "Russia":"🇷🇺","Rwanda":"🇷🇼","Saudi Arabia":"🇸🇦","Senegal":"🇸🇳","Sierra Leone":"🇸🇱",
+  "Somalia":"🇸🇴","South Africa":"🇿🇦","South Korea":"🇰🇷","Spain":"🇪🇸","Sri Lanka":"🇱🇰",
+  "Sudan":"🇸🇩","Sweden":"🇸🇪","Switzerland":"🇨🇭","Tanzania":"🇹🇿","Thailand":"🇹🇭",
+  "Togo":"🇹🇬","Tunisia":"🇹🇳","Turkey":"🇹🇷","Uganda":"🇺🇬","Ukraine":"🇺🇦",
+  "United Kingdom":"🇬🇧","United States":"🇺🇸","Uruguay":"🇺🇾","Venezuela":"🇻🇪",
+  "Vietnam":"🇻🇳","Yemen":"🇾🇪","Zambia":"🇿🇲","Zimbabwe":"🇿🇼"
+};
+const cf=n=>CTRY[n]||'🌐';
 
-// ═══════════════════════ CONTINENTS ═══════════════════════
-const CONTINENTS={
+// ═══════════════ CONTINENTS CONFIG ═══════════════
+const CONTS={
   'africa':{name:'Africa',flag:'🌍',sub:'Savanna, tropical forest and desert flora',cats:[
     {id:'palms',name:'Palms',sci:'Arecaceae',icon:'🌴',col:'#e8c06d'},
     {id:'trees',name:'Trees',sci:'Arbres',icon:'🌳',col:'#7ec850'},
@@ -535,88 +398,82 @@ const CONTINENTS={
   ]}
 };
 
-// PLANTS is loaded from plants.js (included via <script> tag before this script)
-// No localStorage — data is shared for all visitors via GitHub
+// ═══════════════ STATE ═══════════════
+const S={view:'home',cont:null,cat:null,plant:null,diff:'all',cntry:null};
 
-// ═══════════════════════ STATE ═══════════════════════
-const S={view:'home',continent:null,category:null,plant:null,diffF:'all',cntryF:null,fDiff:1,fFreq:1,fCntries:[]};
-
-// ═══════════════════════ VIEWS ═══════════════════════
-function showView(v){document.querySelectorAll('.view').forEach(e=>e.classList.remove('active'));document.getElementById('view-'+v).classList.add('active');S.view=v;bc();window.scrollTo(0,0);}
-function goHome(){S.continent=S.category=S.plant=null;showView('home');updateStats();}
-function goBack(){if(S.view==='plant'&&S.category)goCategory(S.continent,S.category);else if(S.view==='add'&&S.category)goCategory(S.continent,S.category);else if(S.category)goContinent(S.continent);else goHome();}
-
+// ═══════════════ NAV HELPERS ═══════════════
+function showView(v){
+  document.querySelectorAll('.view').forEach(e=>e.classList.remove('active'));
+  document.getElementById('view-'+v).classList.add('active');
+  S.view=v; renderBc(); window.scrollTo(0,0);
+}
+function goHome(){S.cont=S.cat=S.plant=null;showView('home');updateStats();}
 function goContinent(id){
-  S.continent=id;S.category=S.plant=null;
-  const c=CONTINENTS[id];
+  S.cont=id;S.cat=S.plant=null;
+  const c=CONTS[id];
   document.getElementById('cont-flag').textContent=c.flag;
   document.getElementById('cont-name').textContent=c.name;
-  document.getElementById('cont-subtitle').textContent=c.sub+' · '+PLANTS.filter(p=>p.continent===id).length+' species';
-  const grid=document.getElementById('categoriesGrid');grid.innerHTML='';
+  document.getElementById('cont-sub').textContent=c.sub+' · '+PLANTS.filter(p=>p.continent===id).length+' species';
+  const g=document.getElementById('catGrid');g.innerHTML='';
   c.cats.forEach(cat=>{
     const n=PLANTS.filter(p=>p.continent===id&&p.category===cat.id).length;
-    const d=document.createElement('div');d.className='cat-card';d.style.setProperty('--cat-color',cat.col);
+    const d=document.createElement('div');d.className='cat-card';d.style.setProperty('--cc',cat.col);
     d.innerHTML=`<div class="cat-icon">${cat.icon}</div><div><div class="cat-name">${cat.name}</div><div class="cat-sci">${cat.sci}</div><div class="cat-count">${n} species</div></div>`;
-    d.onclick=()=>goCategory(id,cat.id);grid.appendChild(d);
+    d.onclick=()=>goCategory(id,cat.id);g.appendChild(d);
   });
   showView('continent');
 }
-
-function goCategory(contId,catId){
-  S.continent=contId;S.category=catId;S.plant=null;S.cntryF=null;S.diffF='all';
-  const c=CONTINENTS[contId];const cat=c.cats.find(x=>x.id===catId);
+function goCategory(cid,catid){
+  S.cont=cid;S.cat=catid;S.plant=null;S.cntry=null;S.diff='all';
+  const c=CONTS[cid];const cat=c.cats.find(x=>x.id===catid);
   document.getElementById('list-title').textContent=`${cat.name} (${cat.sci})`;
-  document.getElementById('list-subtitle').textContent=c.name+' · Sorted alphabetically by scientific name';
-  document.getElementById('list-back-btn').onclick=()=>goContinent(contId);
+  document.getElementById('list-sub').textContent=c.name+' · Sorted alphabetically by scientific name';
+  document.getElementById('list-back').onclick=()=>goContinent(cid);
   document.getElementById('listFilter').value='';
-  document.querySelectorAll('.diff-btn').forEach(b=>b.classList.remove('active'));
-  document.querySelector('.diff-btn').classList.add('active');
-  buildCntryFilter(contId,catId);
-  renderList(contId,catId,'','all',null);
+  document.querySelectorAll('.df-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.df-btn').classList.add('active');
+  buildCfilter(cid,catid);
+  renderList(cid,catid,'','all',null);
   showView('list');
 }
-
 function goPlant(id){
   const p=PLANTS.find(x=>x.id===id);if(!p)return;
   S.plant=id;renderPlant(p);
-  document.getElementById('plant-back-btn').onclick=()=>goCategory(p.continent,p.category);
+  document.getElementById('plant-back').onclick=()=>goCategory(p.continent,p.category);
   showView('plant');
 }
 
-function openAddForm(){showView('add');resetForm();}
-
-// ═══════════════════════ BREADCRUMB ═══════════════════════
-function bc(){
-  const el=document.getElementById('breadcrumb');
+// ═══════════════ BREADCRUMB ═══════════════
+function renderBc(){
+  const el=document.getElementById('bc');
   if(S.view==='home'){el.innerHTML='';return;}
   let h=`<span class="crumb" onclick="goHome()">🌍 Map</span>`;
-  if(S.continent){const c=CONTINENTS[S.continent];h+=`<span class="sep">›</span><span class="crumb" onclick="goContinent('${S.continent}')">${c.name}</span>`;}
-  if(S.category&&S.continent){const cat=CONTINENTS[S.continent].cats.find(x=>x.id===S.category);if(cat)h+=`<span class="sep">›</span><span class="crumb" onclick="goCategory('${S.continent}','${S.category}')">${cat.name}</span>`;}
+  if(S.cont){const c=CONTS[S.cont];h+=`<span class="sep">›</span><span class="crumb" onclick="goContinent('${S.cont}')">${c.name}</span>`;}
+  if(S.cat&&S.cont){const cat=CONTS[S.cont].cats.find(x=>x.id===S.cat);if(cat)h+=`<span class="sep">›</span><span class="crumb" onclick="goCategory('${S.cont}','${S.cat}')">${cat.name}</span>`;}
   if(S.view==='plant'&&S.plant){const p=PLANTS.find(x=>x.id===S.plant);if(p)h+=`<span class="sep">›</span><span class="current">${p.sci}</span>`;}
-  if(S.view==='add')h+=`<span class="sep">›</span><span class="current">Add plant</span>`;
   el.innerHTML=h;
 }
 
-// ═══════════════════════ COUNTRY FILTER ═══════════════════════
-function buildCntryFilter(cid,catid){
-  const plants=PLANTS.filter(p=>p.continent===cid&&p.category===catid);
-  const all=[...new Set(plants.flatMap(p=>p.countries||[]))].sort();
-  const bar=document.getElementById('countryFilterBar');
+// ═══════════════ COUNTRY FILTER ═══════════════
+function buildCfilter(cid,catid){
+  const ps=PLANTS.filter(p=>p.continent===cid&&p.category===catid);
+  const all=[...new Set(ps.flatMap(p=>p.countries||[]))].sort();
+  const bar=document.getElementById('cfilter');
   if(!all.length){bar.style.display='none';return;}
   bar.style.display='flex';
-  const btns=document.getElementById('countryBtns');btns.innerHTML='';
-  const allB=document.createElement('button');allB.className='country-btn active';allB.textContent='All';
-  allB.onclick=()=>{S.cntryF=null;document.querySelectorAll('.country-btn').forEach(b=>b.classList.remove('active'));allB.classList.add('active');renderList(cid,catid,document.getElementById('listFilter').value,S.diffF,null);};
+  const btns=document.getElementById('cbtns');btns.innerHTML='';
+  const allB=document.createElement('button');allB.className='cbtn active';allB.textContent='All';
+  allB.onclick=()=>{S.cntry=null;document.querySelectorAll('.cbtn').forEach(b=>b.classList.remove('active'));allB.classList.add('active');renderList(cid,catid,document.getElementById('listFilter').value,S.diff,null);};
   btns.appendChild(allB);
   all.forEach(name=>{
-    const b=document.createElement('button');b.className='country-btn';
-    b.innerHTML=`${cFlag(name)} ${name}`;
-    b.onclick=()=>{S.cntryF=name;document.querySelectorAll('.country-btn').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderList(cid,catid,document.getElementById('listFilter').value,S.diffF,name);};
+    const b=document.createElement('button');b.className='cbtn';
+    b.innerHTML=`${cf(name)} ${name}`;
+    b.onclick=()=>{S.cntry=name;document.querySelectorAll('.cbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderList(cid,catid,document.getElementById('listFilter').value,S.diff,name);};
     btns.appendChild(b);
   });
 }
 
-// ═══════════════════════ RENDER LIST ═══════════════════════
+// ═══════════════ RENDER LIST ═══════════════
 function renderList(cid,catid,filter,diff,cntry){
   let ps=PLANTS.filter(p=>p.continent===cid&&p.category===catid).sort((a,b)=>a.sci.localeCompare(b.sci));
   if(filter){const q=filter.toLowerCase();ps=ps.filter(p=>p.sci.toLowerCase().includes(q)||p.common.toLowerCase().includes(q));}
@@ -625,308 +482,163 @@ function renderList(cid,catid,filter,diff,cntry){
   if(diff==='hard')ps=ps.filter(p=>p.diff===3);
   if(cntry)ps=ps.filter(p=>(p.countries||[]).includes(cntry));
   const el=document.getElementById('plantList');el.innerHTML='';
-  if(!ps.length){el.innerHTML=`<div style="color:var(--text3);text-align:center;padding:48px;font-size:14px">No species found.<br><span style="font-size:12px">Add the first one!</span></div>`;return;}
+  if(!ps.length){el.innerHTML=`<div style="color:var(--text3);text-align:center;padding:48px;font-size:14px">No species found for this filter.</div>`;return;}
   ps.forEach((p,i)=>{
-    const d=document.createElement('div');d.className='plant-item';
-    const stars=[1,2,3].map(n=>`<span class="s ${n<=p.diff?'filled':''}">★</span>`).join('');
+    const d=document.createElement('div');d.className='pi';
+    const stars=[1,2,3].map(n=>`<span class="s ${n<=p.diff?'on':''}">★</span>`).join('');
     const fl=p.freq===1?'rare':p.freq===2?'uncommon':'common';
-    const fc=p.freq===1?'freq-rare':p.freq===2?'freq-uncommon':'freq-common';
+    const fc=p.freq===1?'fr':p.freq===2?'fu':'fc';
     const thumb=p.photos&&p.photos[0]?`<img src="${p.photos[0]}" alt="">`:`<span>🌿</span>`;
-    const flags=(p.countries||[]).map(cn=>`<span title="${cn}">${cFlag(cn)}</span>`).join('');
-    d.innerHTML=`<div class="plant-item-num">${String(i+1).padStart(2,'0')}</div>
-      <div class="plant-item-thumb">${thumb}</div>
-      <div class="plant-item-name">
-        <div class="plant-item-sci">${p.sci}</div>
-        <div class="plant-item-common">${p.common}</div>
-        ${flags?`<div class="plant-item-flags">${flags}</div>`:''}
+    const flags=(p.countries||[]).map(n=>`<span title="${n}">${cf(n)}</span>`).join('');
+    d.innerHTML=`<div class="pi-num">${String(i+1).padStart(2,'0')}</div>
+      <div class="pi-thumb">${thumb}</div>
+      <div class="pi-name">
+        <div class="pi-sci">${p.sci}</div>
+        <div class="pi-common">${p.common}</div>
+        ${flags?`<div class="pi-flags">${flags}</div>`:''}
       </div>
-      <div class="plant-item-tags"><div class="diff-stars">${stars}</div><span class="freq-tag ${fc}">${fl}</span></div>`;
+      <div class="pi-tags"><div class="dstars">${stars}</div><span class="ftag ${fc}">${fl}</span></div>`;
     d.onclick=()=>goPlant(p.id);el.appendChild(d);
   });
 }
-function filterList(v){renderList(S.continent,S.category,v,S.diffF,S.cntryF);}
-function filterDiff(btn,v){document.querySelectorAll('.diff-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');S.diffF=v;renderList(S.continent,S.category,document.getElementById('listFilter').value,v,S.cntryF);}
+function filterList(v){renderList(S.cont,S.cat,v,S.diff,S.cntry);}
+function fDiff(btn,v){document.querySelectorAll('.df-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');S.diff=v;renderList(S.cont,S.cat,document.getElementById('listFilter').value,v,S.cntry);}
 
-// ═══════════════════════ RENDER PLANT ═══════════════════════
+// ═══════════════ RENDER PLANT PAGE ═══════════════
 function renderPlant(p){
-  const cont=CONTINENTS[p.continent];const cat=cont.cats.find(c=>c.id===p.category);
+  const cont=CONTS[p.continent];
+  const cat=cont.cats.find(c=>c.id===p.category);
   const dStars=[1,2,3].map(n=>`<span class="star ${n<=p.diff?'on':''}">★</span>`).join('');
   const fStars=[1,2,3].map(n=>`<span class="star ${n<=p.freq?'on':''}">★</span>`).join('');
   const maps=p.maps||[];
+  const photos=p.photos||[];
 
-  // Photos
-  const pSlots=p.photos.map((url,i)=>`
-    <div class="photo-slot" onclick="lb('${url.replace(/'/g,"\\'")}')">
-      <img src="${url}" alt="">
-      <button class="photo-del" onclick="event.stopPropagation();delPhoto('${p.id}',${i})">✕</button>
-    </div>`).join('');
-  const photosHTML=`<div class="plant-photos"><div class="section-title">Photos</div>
-    <div class="photos-grid">${pSlots}
-      <button class="photo-add-btn" onclick="addPhoto('${p.id}')"><span style="font-size:22px">📷</span><span>Add photo</span></button>
-    </div></div>`;
+  // — PHOTOS (left col, top)
+  const photoSlots=photos.length
+    ? photos.map(url=>`<div class="photo-slot" onclick="openLb('${url.replace(/'/g,"\\'")}')" ><img src="${url}" alt="${p.sci}"></div>`).join('')
+    : `<div class="photo-empty"><span style="font-size:28px">📷</span><span>No photos yet</span></div>`;
+  const photosHTML=`<div class="photos-section">
+    <div class="sec-title">Photos</div>
+    <div class="photos-grid">${photoSlots}</div>
+  </div>`;
 
-  const tipsHTML=p.tips.length?`<div class="id-tips"><div class="section-title">Identification tips</div><ul class="tip-list">${p.tips.map(t=>`<li class="tip-item"><span class="tip-icon">✦</span>${t}</li>`).join('')}</ul></div>`:'';
-  const simHTML=p.similar.length?`<div class="similar-species"><div class="section-title">Similar species</div><div class="similar-list">${p.similar.map(s=>{const f=PLANTS.find(x=>x.sci===s);return `<span class="similar-tag" ${f?`onclick="goPlant('${f.id}')"`:''}>${s}</span>`;}).join('')}</div></div>`:'';
-  let links=`<div class="ext-links">`;
-  if(p.inat)links+=`<a class="ext-link" href="${p.inat}" target="_blank"><span>🔬</span> iNaturalist</a>`;
-  if(p.wiki)links+=`<a class="ext-link" href="${p.wiki}" target="_blank"><span>📖</span> Wikipedia</a>`;
-  links+=`</div>`;
-
-  // MAP GALLERY — tabs + contained image
-  let mapContent='';
+  // — MAPS (left col, below photos)
+  let mapsHTML='';
   if(maps.length>0){
-    const tabs=maps.map((m,i)=>`
-      <button class="map-tab${i===0?' active':''}" id="mt-${p.id}-${i}" onclick="swMap('${p.id}',${i})">
-        ${cFlag(m.label)} ${m.label}
-        <button class="map-tab-del" onclick="event.stopPropagation();delMap('${p.id}',${i})">✕</button>
-      </button>`).join('');
-    mapContent=`<div class="map-tabs">${tabs}</div>
+    const tabs=maps.map((m,i)=>`<button class="map-tab${i===0?' active':''}" id="mt-${p.id}-${i}" onclick="swMap('${p.id}',${i})">${cf(m.label)} ${m.label}</button>`).join('');
+    mapsHTML=`<div class="maps-section">
+      <div class="sec-title">Distribution maps</div>
+      <div class="map-tabs">${tabs}</div>
       <div class="map-frame" id="mframe-${p.id}">
         <img id="mimg-${p.id}" src="${maps[0].img}" alt="Distribution map">
-      </div>`;
-  } else {
-    mapContent=`<div class="map-empty">🗺️<br>No distribution maps yet</div>`;
-  }
-  const mapCard=`${mapContent}
-    <div class="map-add-row">
-      <input class="map-loc-input" id="mloc-${p.id}" placeholder="Location name (e.g. Ghana)">
-      <button class="map-add-btn" onclick="trigMap('${p.id}')">＋ Add map</button>
+      </div>
     </div>`;
+  } else {
+    mapsHTML=`<div class="maps-section">
+      <div class="sec-title">Distribution maps</div>
+      <div class="map-empty-box">🗺️ No distribution maps yet</div>
+    </div>`;
+  }
 
-  const flagLine=(p.countries||[]).map(cn=>`<span title="${cn}" style="font-size:18px">${cFlag(cn)}</span>`).join(' ');
+  // — SIDEBAR: description, tips, similar, taxonomy, links, countries
+  const flagLine=(p.countries||[]).map(n=>`<span title="${n}" style="font-size:17px">${cf(n)}</span>`).join(' ');
+
+  const tipsHTML=p.tips&&p.tips.length
+    ?`<div class="sc"><div class="sc-h">Identification tips</div><div class="sc-b"><ul class="tip-list">${p.tips.map(t=>`<li class="tip-item"><span class="tip-icon">✦</span>${t}</li>`).join('')}</ul></div></div>`:'';
+
+  const simHTML=p.similar&&p.similar.length
+    ?`<div class="sc"><div class="sc-h">Similar species</div><div class="sc-b"><div class="sim-list">${p.similar.map(s=>{const f=PLANTS.find(x=>x.sci===s);return`<span class="sim-tag" ${f?`onclick="goPlant('${f.id}')"`:''}>${s}</span>`;}).join('')}</div></div></div>`:'';
+
+  let links='';
+  if(p.inat) links+=`<a class="ext-link" href="${p.inat}" target="_blank"><span>🔬</span> iNaturalist</a>`;
+  if(p.wiki) links+=`<a class="ext-link" href="${p.wiki}" target="_blank"><span>📖</span> Wikipedia</a>`;
+  const linksHTML=links?`<div class="sc"><div class="sc-h">External links</div><div class="sc-b"><div class="ext-links">${links}</div></div></div>`:'';
+
+  const countriesHTML=flagLine?`<div class="sc"><div class="sc-h">Countries</div><div class="sc-b" style="display:flex;flex-wrap:wrap;gap:6px">${flagLine}</div></div>`:'';
 
   document.getElementById('plantContent').innerHTML=`
     <div class="plant-header">
-      <div class="plant-category-tag">${cat.icon} ${cont.name} · ${cat.name}</div>
-      <div class="plant-title-sci">${p.sci}</div>
-      <div class="plant-title-common">${p.common}</div>
-      <div class="plant-meta-bar">
-        <div class="meta-item"><div class="meta-label">Ease of ID</div><div class="meta-value stars-row">${dStars}</div></div>
-        <div class="meta-item"><div class="meta-label">Frequency</div><div class="meta-value stars-row">${fStars}</div></div>
-        <div class="meta-item"><div class="meta-label">Family</div><div class="meta-value" style="font-style:italic">${p.family||'—'}</div></div>
-        ${flagLine?`<div class="meta-item"><div class="meta-label">Countries</div><div class="meta-value" style="gap:5px;flex-wrap:wrap">${flagLine}</div></div>`:''}
+      <div class="plant-cat-tag">${cat.icon} ${cont.name} · ${cat.name}</div>
+      <div class="plant-sci">${p.sci}</div>
+      <div class="plant-common">${p.common}</div>
+      <div class="plant-meta">
+        <div class="mi"><div class="ml">Ease of ID</div><div class="mv srow">${dStars}</div></div>
+        <div class="mi"><div class="ml">Frequency</div><div class="mv srow">${fStars}</div></div>
+        <div class="mi"><div class="ml">Family</div><div class="mv" style="font-style:italic">${p.family||'—'}</div></div>
       </div>
     </div>
     <div class="plant-body">
-      <div>
+      <div class="plant-main">
         ${photosHTML}
-        <div style="margin-bottom:22px"><div class="section-title">Description</div><div class="description-block">${p.desc}</div></div>
-        ${tipsHTML}${simHTML}
+        ${mapsHTML}
       </div>
-      <div>
-        <div class="sidebar-card">
-          <div class="sidebar-card-header">Distribution maps</div>
-          <div class="sidebar-card-body">${mapCard}</div>
+      <div class="plant-sidebar">
+        <div class="sc">
+          <div class="sc-h">Description</div>
+          <div class="sc-b"><div class="desc-block">${p.desc}</div></div>
         </div>
-        <div class="sidebar-card">
-          <div class="sidebar-card-header">Taxonomy</div>
-          <div class="sidebar-card-body"><table class="taxo-table">
+        ${tipsHTML}
+        ${simHTML}
+        ${countriesHTML}
+        <div class="sc">
+          <div class="sc-h">Taxonomy</div>
+          <div class="sc-b"><table class="taxo-tbl">
             <tr><td>Family</td><td>${p.family||'—'}</td></tr>
             <tr><td>Genus</td><td>${p.genus||'—'}</td></tr>
             <tr><td>Species</td><td>${p.sci}</td></tr>
           </table></div>
         </div>
-        <div class="sidebar-card">
-          <div class="sidebar-card-header">External links</div>
-          <div class="sidebar-card-body">${links}</div>
-        </div>
+        ${linksHTML}
       </div>
     </div>`;
 }
 
-// ═══════════════════════ MAP ACTIONS ═══════════════════════
+// ═══════════════ MAP TABS ═══════════════
 function swMap(pid,i){
   const p=PLANTS.find(x=>x.id===pid);if(!p)return;
   document.querySelectorAll(`[id^="mt-${pid}-"]`).forEach(t=>t.classList.remove('active'));
   const tab=document.getElementById(`mt-${pid}-${i}`);if(tab)tab.classList.add('active');
   const img=document.getElementById(`mimg-${pid}`);if(img&&p.maps[i])img.src=p.maps[i].img;
 }
-let _mLabel='';
-function trigMap(pid){
-  const li=document.getElementById('mloc-'+pid);
-  _mLabel=(li?li.value.trim():'')||'Map';
-  const inp=document.createElement('input');inp.type='file';inp.accept='image/*';
-  inp.onchange=e=>{
-    const f=e.target.files[0];if(!f)return;
-    const r=new FileReader();
-    r.onload=ev=>{
-      const p=PLANTS.find(x=>x.id===pid);if(!p)return;
-      if(!p.maps)p.maps=[];
-      p.maps.push({label:_mLabel,img:ev.target.result});
-      renderPlant(p);toast('🗺️ Map added (session only — add URL to plants.js to persist)');
-    };r.readAsDataURL(f);
-  };inp.click();
-}
-function delMap(pid,i){
-  const p=PLANTS.find(x=>x.id===pid);if(!p||!p.maps)return;
-  p.maps.splice(i,1);renderPlant(p);toast('Map removed');
-}
 
-// ═══════════════════════ PHOTO ACTIONS ═══════════════════════
-function addPhoto(pid){
-  const inp=document.createElement('input');inp.type='file';inp.accept='image/*';
-  inp.onchange=e=>{
-    const f=e.target.files[0];if(!f)return;
-    const r=new FileReader();
-    r.onload=ev=>{const p=PLANTS.find(x=>x.id===pid);if(!p)return;p.photos.push(ev.target.result);renderPlant(p);toast('📷 Photo added (session only — add URL to plants.js to persist)');};
-    r.readAsDataURL(f);
-  };inp.click();
-}
-function delPhoto(pid,i){const p=PLANTS.find(x=>x.id===pid);if(!p)return;p.photos.splice(i,1);renderPlant(p);toast('Photo removed');}
-function lb(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').classList.add('open');}
-function closeLightbox(){document.getElementById('lightbox').classList.remove('open');}
+// ═══════════════ LIGHTBOX ═══════════════
+function openLb(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').classList.add('open');}
+function closeLb(){document.getElementById('lightbox').classList.remove('open');}
 
-// ═══════════════════════ FORM ═══════════════════════
-function onContChange(){
-  const v=document.getElementById('f-continent').value;
-  const sel=document.getElementById('f-category');sel.innerHTML='<option value="">— Select —</option>';
-  if(v&&CONTINENTS[v])CONTINENTS[v].cats.forEach(c=>{sel.innerHTML+=`<option value="${c.id}">${c.name}</option>`;});
+// ═══════════════ SEARCH ═══════════════
+function openSearch(){
+  document.getElementById('searchOverlay').classList.add('open');
+  setTimeout(()=>document.getElementById('searchInput').focus(),40);
+  filterSearch('');
 }
-function setStars(t,v){if(t==='diff')S.fDiff=v;else S.fFreq=v;document.getElementById(t+'-input').querySelectorAll('.star-btn').forEach(b=>b.classList.toggle('on',parseInt(b.dataset.v)<=v));}
-
-// Country chips
-function onCountryInput(v){
-  const s=document.getElementById('countrySugg');
-  if(!v.trim()){s.style.display='none';return;}
-  const m=COUNTRIES.filter(c=>c.n.toLowerCase().startsWith(v.toLowerCase())&&!S.fCntries.includes(c.n)).slice(0,8);
-  if(!m.length){s.style.display='none';return;}
-  s.style.display='block';
-  s.innerHTML=m.map(c=>`<div class="csugg-item" onclick="addChip('${c.n}')">${c.f} ${c.n}</div>`).join('');
-}
-function onCountryKey(e){
-  if(e.key==='Enter'){const v=document.getElementById('countryTxt').value.trim();if(v)addChip(v);e.preventDefault();}
-  if(e.key==='Backspace'&&!document.getElementById('countryTxt').value&&S.fCntries.length)rmChip(S.fCntries[S.fCntries.length-1]);
-}
-function addChip(name){
-  if(S.fCntries.includes(name))return;
-  S.fCntries.push(name);document.getElementById('countrySugg').style.display='none';document.getElementById('countryTxt').value='';renderChips();
-}
-function rmChip(name){S.fCntries=S.fCntries.filter(c=>c!==name);renderChips();}
-function renderChips(){
-  const wrap=document.getElementById('countriesWrap');const txt=document.getElementById('countryTxt');
-  wrap.innerHTML='';
-  S.fCntries.forEach(name=>{
-    const chip=document.createElement('span');chip.className='country-chip';
-    chip.innerHTML=`${cFlag(name)} ${name}<button onclick="rmChip('${name}')">✕</button>`;
-    wrap.appendChild(chip);
-  });
-  wrap.appendChild(txt);txt.focus();
-}
-function resetForm(){
-  ['f-sci','f-common','f-desc','f-tips','f-similar','f-family','f-genus','f-inat','f-wiki'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('f-continent').value='';
-  document.getElementById('f-category').innerHTML='<option value="">— Select continent first —</option>';
-  S.fCntries=[];S.fDiff=1;S.fFreq=1;renderChips();
-  ['diff','freq'].forEach(t=>document.getElementById(t+'-input').querySelectorAll('.star-btn').forEach(b=>b.classList.toggle('on',parseInt(b.dataset.v)===1)));
-}
-function submitPlant(){
-  const sci=document.getElementById('f-sci').value.trim();
-  const common=document.getElementById('f-common').value.trim();
-  const continent=document.getElementById('f-continent').value;
-  const category=document.getElementById('f-category').value;
-  const desc=document.getElementById('f-desc').value.trim();
-  if(!sci||!common||!continent||!category||!desc){toast('⚠️ Please fill required fields');return;}
-  const id=sci.toLowerCase().replace(/[^a-z0-9]+/g,'-');
-  const tips=document.getElementById('f-tips').value.split('\n').map(t=>t.trim()).filter(Boolean);
-  const similar=document.getElementById('f-similar').value.split(',').map(s=>s.trim()).filter(Boolean);
-  const plant={
-    id,sci,common,continent,category,diff:S.fDiff,freq:S.fFreq,desc,tips,similar,
-    family:document.getElementById('f-family').value.trim(),
-    genus:document.getElementById('f-genus').value.trim(),
-    countries:[...S.fCntries],
-    inat:document.getElementById('f-inat').value.trim(),
-    wiki:document.getElementById('f-wiki').value.trim(),
-    photos:[],maps:[]
-  };
-  // Add to live PLANTS array for preview in this session
-  const existing=PLANTS.find(p=>p.id===id);
-  if(existing)PLANTS[PLANTS.indexOf(existing)]=plant;else PLANTS.push(plant);
-  updateStats();
-
-  // Generate the JS block to copy into plants.js
-  const block=`  {\n    id: '${plant.id}',\n    sci: '${plant.sci}',\n    common: '${plant.common}',\n    continent: '${plant.continent}',\n    category: '${plant.category}',\n    diff: ${plant.diff},\n    freq: ${plant.freq},\n    desc: '${plant.desc.replace(/'/g,"\\'")}',\n    tips: ${JSON.stringify(plant.tips)},\n    similar: ${JSON.stringify(plant.similar)},\n    family: '${plant.family}',\n    genus: '${plant.genus}',\n    countries: ${JSON.stringify(plant.countries)},\n    inat: '${plant.inat}',\n    wiki: '${plant.wiki}',\n    photos: [],\n    maps: []\n  },`;
-
-  // Show copy modal
-  document.getElementById('copyBlock').value=block;
-  document.getElementById('copyOverlay').style.display='flex';
-}
-
-// ═══════════════════════ SEARCH ═══════════════════════
-function openSearch(){document.getElementById('searchOverlay').classList.add('open');setTimeout(()=>document.getElementById('searchInput').focus(),40);filterSearch('');}
 document.addEventListener('keydown',e=>{
   if(e.key==='Escape'){document.getElementById('searchOverlay').classList.remove('open');document.getElementById('lightbox').classList.remove('open');}
   if((e.metaKey||e.ctrlKey)&&e.key==='k'){e.preventDefault();openSearch();}
 });
 function filterSearch(v){
   const q=v.toLowerCase();
-  const res=PLANTS.filter(p=>!q||p.sci.toLowerCase().includes(q)||p.common.toLowerCase().includes(q)||(p.countries||[]).some(c=>c.toLowerCase().includes(q))).slice(0,12);
+  const res=PLANTS.filter(p=>!q||p.sci.toLowerCase().includes(q)||p.common.toLowerCase().includes(q)||(p.countries||[]).some(c=>c.toLowerCase().includes(q))).slice(0,14);
   const el=document.getElementById('searchResults');
   if(!res.length){el.innerHTML=`<div style="padding:18px 20px;color:var(--text3);font-size:13px">No results for "${v}"</div>`;return;}
   el.innerHTML=res.map(p=>{
-    const cont=CONTINENTS[p.continent];const cat=cont.cats.find(c=>c.id===p.category);
-    const flags=(p.countries||[]).slice(0,5).map(cn=>cFlag(cn)).join('');
-    return `<div class="search-result" onclick="document.getElementById('searchOverlay').classList.remove('open');goPlant('${p.id}')">
-      <span style="font-size:22px">${cat.icon}</span>
+    const cont=CONTS[p.continent];const cat=cont.cats.find(c=>c.id===p.category);
+    const flags=(p.countries||[]).slice(0,5).map(n=>cf(n)).join('');
+    return `<div class="sr" onclick="document.getElementById('searchOverlay').classList.remove('open');goPlant('${p.id}')">
+      <span style="font-size:20px">${cat.icon}</span>
       <div style="flex:1"><div class="sr-sci">${p.sci}</div><div class="sr-info">${p.common} · ${cont.name} / ${cat.name}</div></div>
-      <span style="font-size:15px;letter-spacing:1px">${flags}</span>
+      <span style="font-size:14px;letter-spacing:1px">${flags}</span>
     </div>`;
   }).join('');
 }
 
-// ═══════════════════════ STATS ═══════════════════════
+// ═══════════════ STATS ═══════════════
 function updateStats(){
   document.getElementById('stat-count').textContent=PLANTS.length;
-  const map2={'africa':'af','south-america':'sa','north-america':'na','europe':'eu','asia':'as','oceania':'oc'};
-  Object.entries(map2).forEach(([k,v])=>{const e=document.getElementById('svg-'+v+'-count');if(e)e.textContent=PLANTS.filter(p=>p.continent===k).length+' species';});
+  const m={'africa':'af','south-america':'sa','north-america':'na','europe':'eu','asia':'as','oceania':'oc'};
+  Object.entries(m).forEach(([k,v])=>{const e=document.getElementById('svg-'+v);if(e)e.textContent=PLANTS.filter(p=>p.continent===k).length+' species';});
 }
-function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2800);}
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600);}
 
-// ═══════════════════════ ADMIN / PASSWORD ═══════════════════════
-// ⚠️  Change this password before publishing!
-const ADMIN_PWD = 'geowiki2025';
-let isAdmin = false;
-
-function showPwdModal(){
-  if(isAdmin){lockAdmin();return;}
-  document.getElementById('pwdOverlay').style.display='flex';
-  document.getElementById('pwdInput').value='';
-  document.getElementById('pwdError').style.display='none';
-  setTimeout(()=>document.getElementById('pwdInput').focus(),80);
-}
-function hidePwdModal(){
-  document.getElementById('pwdOverlay').style.display='none';
-}
-function checkPwd(){
-  const v=document.getElementById('pwdInput').value;
-  if(v===ADMIN_PWD){
-    isAdmin=true;
-    hidePwdModal();
-    document.getElementById('adminBtn').style.display='flex';
-    document.getElementById('adminLockBtn').textContent='🔓';
-    document.getElementById('adminLockBtn').title='Lock admin';
-    document.getElementById('adminLockBtn').style.color='var(--accent2)';
-    toast('✓ Admin mode unlocked');
-  } else {
-    document.getElementById('pwdError').style.display='block';
-    document.getElementById('pwdInput').select();
-  }
-}
-function lockAdmin(){
-  isAdmin=false;
-  document.getElementById('adminBtn').style.display='none';
-  document.getElementById('adminLockBtn').textContent='🔒';
-  document.getElementById('adminLockBtn').title='Admin login';
-  document.getElementById('adminLockBtn').style.color='var(--text3)';
-  if(S.view==='add') goHome();
-  toast('Admin mode locked');
-}
-// Close password modal on overlay click
-document.getElementById('pwdOverlay').addEventListener('click',function(e){if(e.target===this)hidePwdModal();});
-// Also intercept add form: if not admin, block
-const _origOpenAdd=openAddForm;
-window.openAddForm=function(){if(!isAdmin){showPwdModal();return;}_origOpenAdd();};
-
-// INIT
 updateStats();
 </script>
 </body>

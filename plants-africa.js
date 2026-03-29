@@ -15,14 +15,14 @@ const PLANTS_AFRICA = [
     common: 'Senegal Date Palm',
     continent: 'africa',
     category: 'palms',
-    diff: 2, freq: 3,
+    diff: 1, freq: 2,
     desc: 'À faire.',
-    tips: [], similar: ['Phoenix canariensis'],
+    tips: [], similar: [],
     family: 'Arecaceae', genus: 'Phoenix',
-    countries: ['Senegal', 'Ghana', 'Nigeria', 'Cameroon', 'Kenya', 'Tanzania', 'South Africa', 'Uganda', 'Ethiopia'],
+    countries: ['South Africa', 'Senegal', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/126949-Phoenix-reclinata',
     wiki: 'https://en.wikipedia.org/wiki/Phoenix_reclinata',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786135/Capture_d_%C3%A9cran_2026-03-29_140644_gm927s.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786135/Capture_d_%C3%A9cran_2026-03-29_140730_pomakm.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786135/Capture_d_%C3%A9cran_2026-03-29_140823_mh3gna.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786145/senegaldatemap_ojh1or.png']
   },
 
   {
@@ -35,10 +35,10 @@ const PLANTS_AFRICA = [
     desc: 'À faire.',
     tips: [], similar: ['Hyphaene petersiana'],
     family: 'Arecaceae', genus: 'Hyphaene',
-    countries: ['Mozambique', 'Tanzania', 'Kenya', 'South Africa', 'Madagascar'],
+    countries: ['South Africa', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/126950-Hyphaene-coriacea',
     wiki: 'https://en.wikipedia.org/wiki/Hyphaene_coriacea',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786356/Capture_d_%C3%A9cran_2026-03-29_141123_o3c7kx.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786356/Capture_d_%C3%A9cran_2026-03-29_141153_z3vjbo.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786355/Capture_d_%C3%A9cran_2026-03-29_141219_irbza6.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786371/cartelalapalm_j5dfhf.png']
   },
 
   {
@@ -47,14 +47,14 @@ const PLANTS_AFRICA = [
     common: 'Makalani Palm',
     continent: 'africa',
     category: 'palms',
-    diff: 2, freq: 2,
+    diff: 2, freq: 3,
     desc: 'À faire.',
-    tips: [], similar: ['Hyphaene coriacea'],
+    tips: [], similar: ['Hyphaene coriacea', 'Borassus aethiopum'],
     family: 'Arecaceae', genus: 'Hyphaene',
-    countries: ['Namibia', 'Botswana', 'Zimbabwe', 'Zambia', 'Angola', 'Mozambique'],
+    countries: ['Namibia', 'Botswana', 'South Africa'],
     inat: 'https://www.inaturalist.org/taxa/126951-Hyphaene-petersiana',
     wiki: 'https://en.wikipedia.org/wiki/Hyphaene_petersiana',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786683/Capture_d_%C3%A9cran_2026-03-29_141642_hxlzwr.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786683/Capture_d_%C3%A9cran_2026-03-29_141732_vjepbt.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786683/Capture_d_%C3%A9cran_2026-03-29_141603_q9c2jw.png']
   },
 
   {
@@ -63,14 +63,14 @@ const PLANTS_AFRICA = [
     common: 'Kosi Palm',
     continent: 'africa',
     category: 'palms',
-    diff: 2, freq: 1,
+    diff: 1, freq: 1,
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Raphia',
-    countries: ['South Africa', 'Mozambique'],
+    countries: ['South Africa'],
     inat: 'https://www.inaturalist.org/taxa/126952-Raphia-australis',
     wiki: 'https://en.wikipedia.org/wiki/Raphia_australis',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774715372/Capture_d_%C3%A9cran_2026-03-28_172858_ru8f7n.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774714653/raffiamap_pomj8c.png']
   },
 
   // ════════════════════════════════════════
@@ -932,17 +932,17 @@ const PLANTS_AFRICA = [
   {
     id: 'borassus-akeassii',
     sci: 'Borassus akeassii',
-    common: 'Akeassii Palm',
+    common: 'West African Palmyra Palm',
     continent: 'africa',
     category: 'palms',
-    diff: 2, freq: 2,
+    diff: 1, freq: 3,
     desc: 'À faire.',
     tips: [], similar: ['Borassus aethiopum'],
     family: 'Arecaceae', genus: 'Borassus',
-    countries: ['Burkina Faso', 'Mali', 'Niger', 'Senegal', 'Ghana', 'Nigeria', 'Cameroon'],
+    countries: ['Senegal'],
     inat: 'https://www.inaturalist.org/taxa/312537-Borassus-akeassii',
     wiki: 'https://en.wikipedia.org/wiki/Borassus_akeassii',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786970/Capture_d_%C3%A9cran_2026-03-29_142140_ejj1nz.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786969/Capture_d_%C3%A9cran_2026-03-29_142234_rjixvk.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786969/Capture_d_%C3%A9cran_2026-03-29_142234_rjixvk.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786970/Capture_d_%C3%A9cran_2026-03-29_142047_z0iydw.png']
   },
 
   {
@@ -971,10 +971,10 @@ const PLANTS_AFRICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Elaeis',
-    countries: ['Nigeria', 'Ghana', 'Cameroon', 'DR Congo', 'Côte d\'Ivoire', 'Gabon', 'Benin', 'Togo', 'Sierra Leone', 'Guinea'],
+    countries: ['Nigeria', 'Ghana', 'Senegal', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/56750-Elaeis-guineensis',
     wiki: 'https://en.wikipedia.org/wiki/Elaeis_guineensis',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774787428/Capture_d_%C3%A9cran_2026-03-29_142834_cbo986.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774787430/Capture_d_%C3%A9cran_2026-03-29_142744_p3lfnq.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774787427/Capture_d_%C3%A9cran_2026-03-29_142928_ikn1ki.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774787427/Capture_d_%C3%A9cran_2026-03-29_142955_y3f5qs.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774787432/Capture_d_%C3%A9cran_2026-03-29_142540_th87gr.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774787425/Capture_d_%C3%A9cran_2026-03-29_143012_iprtse.png']
   },
 
   {
@@ -983,14 +983,14 @@ const PLANTS_AFRICA = [
     common: 'East African Doum Palm',
     continent: 'africa',
     category: 'palms',
-    diff: 2, freq: 2,
+    diff: 2, freq: 1,
     desc: 'À faire.',
     tips: [], similar: ['Hyphaene coriacea', 'Hyphaene thebaica'],
     family: 'Arecaceae', genus: 'Hyphaene',
-    countries: ['Kenya', 'Tanzania', 'Somalia', 'Ethiopia'],
+    countries: ['Kenya'],
     inat: 'https://www.inaturalist.org/taxa/126951-Hyphaene-compressa',
     wiki: 'https://en.wikipedia.org/wiki/Hyphaene_compressa',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774787676/Capture_d_%C3%A9cran_2026-03-29_143425_tuzl3p.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774787677/Capture_d_%C3%A9cran_2026-03-29_143244_izw0od.png']
   },
 
   {
@@ -1003,10 +1003,10 @@ const PLANTS_AFRICA = [
     desc: 'À faire.',
     tips: [], similar: ['Hyphaene coriacea', 'Hyphaene compressa'],
     family: 'Arecaceae', genus: 'Hyphaene',
-    countries: ['Egypt', 'Sudan', 'Ethiopia', 'Kenya', 'Chad', 'Niger', 'Mali', 'Senegal', 'Nigeria'],
+    countries: ['Nigeria'],
     inat: 'https://www.inaturalist.org/taxa/126952-Hyphaene-thebaica',
     wiki: 'https://en.wikipedia.org/wiki/Hyphaene_thebaica',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774787677/Capture_d_%C3%A9cran_2026-03-29_143314_ncfwuu.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774787679/Capture_d_%C3%A9cran_2026-03-29_143224_pyxk3u.png']
   },
 
   // ════════════════════════════════════════

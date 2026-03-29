@@ -936,8 +936,8 @@ const PLANTS_AFRICA = [
     continent: 'africa',
     category: 'palms',
     diff: 1, freq: 3,
-    desc: 'À faire.',
-    tips: [], similar: ['Borassus aethiopum'],
+    desc: 'Borassus akeassii is a palm tree of the Borassus family found exclusively in Senegal. It closely resembles its cousin, Borassus aethiopum, which is found in other African countries. Like all Borassus palms, it is recognizable by its sturdy, tall trunk and its leaves, which form a rounded shape, resembling a lollipop palm. It is found mainly in western Senegal. There is a large forest of Borassus akeassii along the road leading to Samba Dia (first image)',
+    tips: ['round, lollipop-shaped leaves', 'a very straight trunk, with a bump on some palm trees'], similar: ['Borassus aethiopum'],
     family: 'Arecaceae', genus: 'Borassus',
     countries: ['Senegal'],
     inat: 'https://www.inaturalist.org/taxa/312537-Borassus-akeassii',
@@ -951,14 +951,14 @@ const PLANTS_AFRICA = [
     common: 'African Palmyra Palm',
     continent: 'africa',
     category: 'palms',
-    diff: 1, freq: 3,
-    desc: 'À faire.',
-    tips: [], similar: ['Borassus akeassii', 'Hyphaene thebaica'],
+    diff: 1, freq: 2,
+    desc: 'Borassus aethiopum is a palm tree found in Africa, particularly in Nigeria, Ghana, and, more rarely, Kenya. It is a tall palm tree recognizable by its robust trunk and leaves, which give it the appearance of a lollipop palm. It is useful for regional identification because it is found exclusively in northern Nigeria, in several areas of Ghana, and south of Mombasa in Nigeria. Note that there is a very similar species in Senegal called Borassus akeassii, as well as a species in Asia called Borassus flabellifer.',
+    tips: ['round, lollipop-shaped leaves', 'a very straight trunk, with a bump on some palm trees'], similar: ['Borassus akeassii', 'Borassus flabellifer'],
     family: 'Arecaceae', genus: 'Borassus',
-    countries: ['Senegal', 'Gambia', 'Guinea', 'Mali', 'Burkina Faso', 'Ghana', 'Nigeria', 'Cameroon', 'Kenya', 'Tanzania', 'Uganda', 'Ethiopia', 'Sudan'],
+    countries: ['Nigeria', 'Ghana', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/126948-Borassus-aethiopum',
     wiki: 'https://en.wikipedia.org/wiki/Borassus_aethiopum',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774788716/Capture_d_%C3%A9cran_2026-03-29_145102_ufjml4.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774788715/Capture_d_%C3%A9cran_2026-03-29_145140_dy6rec.png'], maps: [{label: 'Nigeria & Ghana', img:'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774788720/Capture_d_%C3%A9cran_2026-03-29_145015_z1kcdq.png'}, {label: 'Kenya', img:'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774788717/Capture_d_%C3%A9cran_2026-03-29_145027_w1exkv.png'}]
   },
 
   {

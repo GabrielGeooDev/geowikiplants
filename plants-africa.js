@@ -925,4 +925,144 @@ const PLANTS_AFRICA = [
     photos: [], maps: []
   },
 
+  // ════════════════════════════════════════
+  // PALMS — ajouts
+  // ════════════════════════════════════════
+
+  {
+    id: 'borassus-akeassii',
+    sci: 'Borassus akeassii',
+    common: 'Akeassii Palm',
+    continent: 'africa',
+    category: 'palms',
+    diff: 2, freq: 2,
+    desc: 'À faire.',
+    tips: [], similar: ['Borassus aethiopum'],
+    family: 'Arecaceae', genus: 'Borassus',
+    countries: ['Burkina Faso', 'Mali', 'Niger', 'Senegal', 'Ghana', 'Nigeria', 'Cameroon'],
+    inat: 'https://www.inaturalist.org/taxa/312537-Borassus-akeassii',
+    wiki: 'https://en.wikipedia.org/wiki/Borassus_akeassii',
+    photos: [], maps: []
+  },
+
+  {
+    id: 'borassus-aethiopum',
+    sci: 'Borassus aethiopum',
+    common: 'African Palmyra Palm',
+    continent: 'africa',
+    category: 'palms',
+    diff: 1, freq: 3,
+    desc: 'À faire.',
+    tips: [], similar: ['Borassus akeassii', 'Hyphaene thebaica'],
+    family: 'Arecaceae', genus: 'Borassus',
+    countries: ['Senegal', 'Gambia', 'Guinea', 'Mali', 'Burkina Faso', 'Ghana', 'Nigeria', 'Cameroon', 'Kenya', 'Tanzania', 'Uganda', 'Ethiopia', 'Sudan'],
+    inat: 'https://www.inaturalist.org/taxa/126948-Borassus-aethiopum',
+    wiki: 'https://en.wikipedia.org/wiki/Borassus_aethiopum',
+    photos: [], maps: []
+  },
+
+  {
+    id: 'elaeis-guineensis-af',
+    sci: 'Elaeis guineensis',
+    common: 'Oil Palm',
+    continent: 'africa',
+    category: 'palms',
+    diff: 1, freq: 3,
+    desc: 'À faire.',
+    tips: [], similar: [],
+    family: 'Arecaceae', genus: 'Elaeis',
+    countries: ['Nigeria', 'Ghana', 'Cameroon', 'DR Congo', 'Côte d\'Ivoire', 'Gabon', 'Benin', 'Togo', 'Sierra Leone', 'Guinea'],
+    inat: 'https://www.inaturalist.org/taxa/56750-Elaeis-guineensis',
+    wiki: 'https://en.wikipedia.org/wiki/Elaeis_guineensis',
+    photos: [], maps: []
+  },
+
+  {
+    id: 'hyphaene-compressa',
+    sci: 'Hyphaene compressa',
+    common: 'East African Doum Palm',
+    continent: 'africa',
+    category: 'palms',
+    diff: 2, freq: 2,
+    desc: 'À faire.',
+    tips: [], similar: ['Hyphaene coriacea', 'Hyphaene thebaica'],
+    family: 'Arecaceae', genus: 'Hyphaene',
+    countries: ['Kenya', 'Tanzania', 'Somalia', 'Ethiopia'],
+    inat: 'https://www.inaturalist.org/taxa/126951-Hyphaene-compressa',
+    wiki: 'https://en.wikipedia.org/wiki/Hyphaene_compressa',
+    photos: [], maps: []
+  },
+
+  {
+    id: 'hyphaene-thebaica',
+    sci: 'Hyphaene thebaica',
+    common: 'Doum Palm',
+    continent: 'africa',
+    category: 'palms',
+    diff: 1, freq: 2,
+    desc: 'À faire.',
+    tips: [], similar: ['Hyphaene coriacea', 'Hyphaene compressa'],
+    family: 'Arecaceae', genus: 'Hyphaene',
+    countries: ['Egypt', 'Sudan', 'Ethiopia', 'Kenya', 'Chad', 'Niger', 'Mali', 'Senegal', 'Nigeria'],
+    inat: 'https://www.inaturalist.org/taxa/126952-Hyphaene-thebaica',
+    wiki: 'https://en.wikipedia.org/wiki/Hyphaene_thebaica',
+    photos: [], maps: []
+  },
+
+  // ════════════════════════════════════════
+  // TREES — ajouts
+  // ════════════════════════════════════════
+
+  {
+    id: 'pinus-sp-af',
+    sci: 'Pinus sp.',
+    common: 'Pine',
+    continent: 'africa',
+    category: 'trees',
+    diff: 1, freq: 2,
+    desc: 'À faire.',
+    tips: [], similar: [],
+    family: 'Pinaceae', genus: 'Pinus',
+    countries: ['South Africa', 'Morocco', 'Algeria', 'Tunisia', 'Kenya', 'Tanzania', 'Ethiopia'],
+    inat: 'https://www.inaturalist.org/taxa/47561-Pinus',
+    wiki: 'https://en.wikipedia.org/wiki/Pine',
+    photos: [], maps: []
+  },
+
+  // ════════════════════════════════════════
+  // OTHER PLANTS — ajouts
+  // ════════════════════════════════════════
+
+  {
+    id: 'leonotis-sp',
+    sci: 'Leonotis sp.',
+    common: 'Lion\'s Ear',
+    continent: 'africa',
+    category: 'others',
+    diff: 2, freq: 2,
+    desc: 'À faire.',
+    tips: [], similar: [],
+    family: 'Lamiaceae', genus: 'Leonotis',
+    countries: ['South Africa', 'Kenya', 'Tanzania', 'Ethiopia', 'Zimbabwe', 'Mozambique'],
+    inat: 'https://www.inaturalist.org/taxa/62584-Leonotis',
+    wiki: 'https://en.wikipedia.org/wiki/Leonotis',
+    photos: [], maps: []
+  },
+
+  {
+    id: 'mesembryanthemum-barklyi',
+    sci: 'Mesembryanthemum barklyi',
+    common: 'Barkly\'s Ice Plant',
+    continent: 'africa',
+    category: 'succulents',
+    diff: 2, freq: 1,
+    desc: 'À faire.',
+    tips: [], similar: [],
+    family: 'Aizoaceae', genus: 'Mesembryanthemum',
+    countries: ['South Africa', 'Namibia'],
+    inat: 'https://www.inaturalist.org/taxa/126980-Mesembryanthemum-barklyi',
+    wiki: 'https://en.wikipedia.org/wiki/Mesembryanthemum_barklyi',
+    photos: [], maps: []
+  },
+
 ];

@@ -936,13 +936,13 @@ const PLANTS_AFRICA = [
     continent: 'africa',
     category: 'palms',
     diff: 1, freq: 3,
-    desc: 'Borassus akeassii is a palm tree of the Borassus family found exclusively in Senegal. It closely resembles its cousin, Borassus aethiopum, which is found in other African countries. Like all Borassus palms, it is recognizable by its sturdy, tall trunk and its leaves, which form a rounded shape, resembling a lollipop palm. It is found mainly in western Senegal. There is a large forest of Borassus akeassii along the road leading to Samba Dia (first image)',
+    desc: 'Borassus akeassii is a palm tree of the Borassus family found exclusively in Senegal. It closely resembles its cousin, Borassus aethiopum, which is found in other African countries. Like all Borassus palms, it is recognizable by its sturdy, tall trunk and its leaves, which form a rounded shape, resembling a lollipop palm. <br> It is found mainly in western Senegal. There is a large forest of Borassus akeassii along the road leading to Samba Dia (first image)',
     tips: ['round, lollipop-shaped leaves', 'a very straight trunk, with a bump on some palm trees'], similar: ['Borassus aethiopum'],
     family: 'Arecaceae', genus: 'Borassus',
     countries: ['Senegal'],
     inat: 'https://www.inaturalist.org/taxa/312537-Borassus-akeassii',
     wiki: 'https://en.wikipedia.org/wiki/Borassus_akeassii',
-    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786970/Capture_d_%C3%A9cran_2026-03-29_142140_ejj1nz.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786969/Capture_d_%C3%A9cran_2026-03-29_142234_rjixvk.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786969/Capture_d_%C3%A9cran_2026-03-29_142234_rjixvk.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786970/Capture_d_%C3%A9cran_2026-03-29_142047_z0iydw.png']
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786970/Capture_d_%C3%A9cran_2026-03-29_142140_ejj1nz.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786969/Capture_d_%C3%A9cran_2026-03-29_142234_rjixvk.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786969/Capture_d_%C3%A9cran_2026-03-29_142234_rjixvk.png'], maps: [{label: 'Senegal', img:'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786970/Capture_d_%C3%A9cran_2026-03-29_142047_z0iydw.png'}]
   },
 
   {
@@ -952,7 +952,7 @@ const PLANTS_AFRICA = [
     continent: 'africa',
     category: 'palms',
     diff: 1, freq: 2,
-    desc: 'Borassus aethiopum is a palm tree found in Africa, particularly in Nigeria, Ghana, and, more rarely, Kenya. It is a tall palm tree recognizable by its robust trunk and leaves, which give it the appearance of a lollipop palm. It is useful for regional identification because it is found exclusively in northern Nigeria, in several areas of Ghana, and south of Mombasa in Nigeria. Note that there is a very similar species in Senegal called Borassus akeassii, as well as a species in Asia called Borassus flabellifer.',
+    desc: 'Borassus aethiopum is a palm tree found in Africa, particularly in Nigeria, Ghana, and, more rarely, Kenya. It is a tall palm tree recognizable by its robust trunk and leaves, which give it the appearance of a lollipop palm. <br> It is useful for regional identification because it is found exclusively in northern Nigeria, in several areas of Ghana, and south of Mombasa in Nigeria. <br> Note that there is a very similar species in Senegal called Borassus akeassii, as well as a species in Asia called Borassus flabellifer.',
     tips: ['round, lollipop-shaped leaves', 'a very straight trunk, with a bump on some palm trees'], similar: ['Borassus akeassii', 'Borassus flabellifer'],
     family: 'Arecaceae', genus: 'Borassus',
     countries: ['Nigeria', 'Ghana', 'Kenya'],

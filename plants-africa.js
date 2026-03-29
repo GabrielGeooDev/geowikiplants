@@ -103,10 +103,10 @@ const PLANTS_AFRICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Myrtaceae', genus: 'Eucalyptus',
-    countries: ['South Africa', 'Kenya', 'Tanzania', 'Ethiopia', 'Morocco', 'Algeria', 'Tunisia', 'Egypt'],
+    countries: ['South Africa', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/53568-Eucalyptus',
     wiki: 'https://en.wikipedia.org/wiki/Eucalyptus',
-    photos: [], maps: []
+    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811238/mapeucalyptus_oadoam.png']
   },
 
   {
@@ -119,10 +119,10 @@ const PLANTS_AFRICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Malvaceae', genus: 'Adansonia',
-    countries: ['Senegal', 'Mali', 'Burkina Faso', 'Ghana', 'Nigeria', 'Cameroon', 'Kenya', 'Tanzania', 'South Africa', 'Namibia', 'Botswana', 'Zimbabwe', 'Zambia', 'Mozambique', 'Madagascar'],
+    countries: ['Senegal', 'Ghana', 'Nigeria', 'Kenya', 'South Africa', 'Botswana'],
     inat: 'https://www.inaturalist.org/taxa/56990-Adansonia-digitata',
     wiki: 'https://en.wikipedia.org/wiki/Adansonia_digitata',
-    photos: [], maps: []
+    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811217/mapbaobab_jmlpm5.png']
   },
 
   {
@@ -135,10 +135,10 @@ const PLANTS_AFRICA = [
     desc: 'À faire.',
     tips: [], similar: ['Cussonia paniculata'],
     family: 'Araliaceae', genus: 'Cussonia',
-    countries: ['South Africa', 'Zimbabwe', 'Mozambique', 'Zambia', 'Kenya', 'Tanzania'],
+    countries: ['South Africa'],
     inat: 'https://www.inaturalist.org/taxa/126953-Cussonia-spicata',
     wiki: 'https://en.wikipedia.org/wiki/Cussonia_spicata',
-    photos: [], maps: []
+    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811234/mapspicata_rsxvyt.png']
   },
 
   {
@@ -183,10 +183,10 @@ const PLANTS_AFRICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Fabaceae', genus: 'Acacia',
-    countries: ['South Africa', 'Kenya', 'Tanzania', 'Ethiopia'],
+    countries: ['South Africa', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/63843-Acacia-mearnsii',
     wiki: 'https://en.wikipedia.org/wiki/Acacia_mearnsii',
-    photos: [], maps: []
+    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811236/blackwatti_kumm4c.png']
   },
 
   {
@@ -215,10 +215,10 @@ const PLANTS_AFRICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Rosaceae', genus: 'Pyracantha',
-    countries: ['South Africa', 'Ethiopia', 'Kenya'],
+    countries: ['South Africa', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/126955-Pyracantha-angustifolia',
     wiki: 'https://en.wikipedia.org/wiki/Pyracantha_angustifolia',
-    photos: [], maps: []
+    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811214/mapnarrowleaf_xalujp.png']
   },
 
   {
@@ -234,7 +234,7 @@ const PLANTS_AFRICA = [
     countries: ['South Africa', 'Lesotho', 'Eswatini'],
     inat: 'https://www.inaturalist.org/taxa/126956-Cussonia-paniculata',
     wiki: 'https://en.wikipedia.org/wiki/Cussonia_paniculata',
-    photos: [], maps: []
+    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811215/mappaniculata_rpekob.png']
   },
 
   {
@@ -247,10 +247,10 @@ const PLANTS_AFRICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Proteaceae', genus: 'Faurea',
-    countries: ['South Africa', 'Ethiopia', 'Kenya', 'Tanzania', 'Uganda'],
+    countries: ['South Africa', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/126957-Faurea-rochetiana',
     wiki: 'https://en.wikipedia.org/wiki/Faurea_rochetiana',
-    photos: [], maps: []
+    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811223/mapfaurea_ri0zxd.png']
   },
 
   // ════════════════════════════════════════
@@ -322,7 +322,7 @@ const PLANTS_AFRICA = [
     countries: ['South Africa'],
     inat: 'https://www.inaturalist.org/taxa/126961-Euphorbia-caerulescens',
     wiki: 'https://en.wikipedia.org/wiki/Euphorbia_caerulescens',
-    photos: [], maps: []
+    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811225/mapceara_aoyxxh.png']
   },
 
   {
@@ -367,10 +367,10 @@ const PLANTS_AFRICA = [
     desc: 'À faire.',
     tips: [], similar: ['Euphorbia ingens', 'Euphorbia triangularis'],
     family: 'Euphorbiaceae', genus: 'Euphorbia',
-    countries: ['South Africa', 'Botswana', 'Zimbabwe', 'Mozambique'],
+    countries: ['South Africa', 'Botswana'],
     inat: 'https://www.inaturalist.org/taxa/126963-Euphorbia-cooperi',
     wiki: 'https://en.wikipedia.org/wiki/Euphorbia_cooperi',
-    photos: [], maps: []
+    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811221/mapccoperoi_ra0qjo.png']
   },
 
   {
@@ -383,10 +383,10 @@ const PLANTS_AFRICA = [
     desc: 'À faire.',
     tips: [], similar: ['Euphorbia tetragona'],
     family: 'Euphorbiaceae', genus: 'Euphorbia',
-    countries: ['South Africa', 'Kenya', 'Tanzania'],
+    countries: ['South Africa', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/126964-Euphorbia-grandicornis',
     wiki: 'https://en.wikipedia.org/wiki/Euphorbia_grandicornis',
-    photos: [], maps: []
+    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811224/mapcowshorn_bigcbb.png']
   },
 
   {

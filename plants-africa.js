@@ -90,7 +90,7 @@ const PLANTS_AFRICA = [
     countries: ['South Africa', 'Kenya', 'Tanzania', 'Namibia', 'Botswana', 'Zimbabwe', 'Ethiopia', 'Sudan', 'Nigeria', 'Senegal', 'Mali'],
     inat: 'https://www.inaturalist.org/taxa/47761-Vachellia',
     wiki: 'https://en.wikipedia.org/wiki/Vachellia',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774869693/Capture_d_%C3%A9cran_2026-03-30_131326_orkk4s.png'], maps: []
   },
 
   {
@@ -106,7 +106,7 @@ const PLANTS_AFRICA = [
     countries: ['South Africa', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/53568-Eucalyptus',
     wiki: 'https://en.wikipedia.org/wiki/Eucalyptus',
-    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811238/mapeucalyptus_oadoam.png']
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774869693/Capture_d_%C3%A9cran_2026-03-30_131400_jluupq.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811238/mapeucalyptus_oadoam.png']
   },
 
   {
@@ -122,7 +122,7 @@ const PLANTS_AFRICA = [
     countries: ['Senegal', 'Ghana', 'Nigeria', 'Kenya', 'South Africa', 'Botswana'],
     inat: 'https://www.inaturalist.org/taxa/56990-Adansonia-digitata',
     wiki: 'https://en.wikipedia.org/wiki/Adansonia_digitata',
-    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811217/mapbaobab_jmlpm5.png']
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774869693/Capture_d_%C3%A9cran_2026-03-30_131437_xxjt4s.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811217/mapbaobab_jmlpm5.png']
   },
 
   {
@@ -138,7 +138,7 @@ const PLANTS_AFRICA = [
     countries: ['South Africa'],
     inat: 'https://www.inaturalist.org/taxa/126953-Cussonia-spicata',
     wiki: 'https://en.wikipedia.org/wiki/Cussonia_spicata',
-    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811234/mapspicata_rsxvyt.png']
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774869694/Capture_d_%C3%A9cran_2026-03-30_131519_rqq2zo.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811234/mapspicata_rsxvyt.png']
   },
 
   {
@@ -154,7 +154,7 @@ const PLANTS_AFRICA = [
     countries: ['South Africa', 'Morocco', 'Algeria', 'Tunisia', 'Egypt'],
     inat: 'https://www.inaturalist.org/taxa/47157-Populus',
     wiki: 'https://en.wikipedia.org/wiki/Populus',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774869693/Capture_d_%C3%A9cran_2026-03-30_131624_xbfrqz.png'], maps: []
   },
 
   {
@@ -170,7 +170,7 @@ const PLANTS_AFRICA = [
     countries: ['South Africa', 'Morocco', 'Algeria', 'Tunisia', 'Egypt', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/54860-Salix-babylonica',
     wiki: 'https://en.wikipedia.org/wiki/Salix_babylonica',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774869685/Capture_d_%C3%A9cran_2026-03-30_131720_z222l0.png'], maps: []
   },
 
   {
@@ -202,7 +202,7 @@ const PLANTS_AFRICA = [
     countries: ['South Africa', 'Namibia'],
     inat: 'https://www.inaturalist.org/taxa/126954-Aloidendron-dichotomum',
     wiki: 'https://en.wikipedia.org/wiki/Aloidendron_dichotomum',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774869684/Capture_d_%C3%A9cran_2026-03-30_131831_aijx3s.png'], maps: []
   },
 
   {
@@ -218,7 +218,7 @@ const PLANTS_AFRICA = [
     countries: ['South Africa', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/126955-Pyracantha-angustifolia',
     wiki: 'https://en.wikipedia.org/wiki/Pyracantha_angustifolia',
-    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811214/mapnarrowleaf_xalujp.png']
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774869684/Capture_d_%C3%A9cran_2026-03-30_131910_gg4rnu.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811214/mapnarrowleaf_xalujp.png']
   },
 
   {
@@ -234,7 +234,7 @@ const PLANTS_AFRICA = [
     countries: ['South Africa', 'Lesotho', 'Eswatini'],
     inat: 'https://www.inaturalist.org/taxa/126956-Cussonia-paniculata',
     wiki: 'https://en.wikipedia.org/wiki/Cussonia_paniculata',
-    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811215/mappaniculata_rpekob.png']
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774869693/Capture_d_%C3%A9cran_2026-03-30_131546_vgdgfw.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811215/mappaniculata_rpekob.png']
   },
 
   {
@@ -250,7 +250,7 @@ const PLANTS_AFRICA = [
     countries: ['South Africa', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/126957-Faurea-rochetiana',
     wiki: 'https://en.wikipedia.org/wiki/Faurea_rochetiana',
-    photos: [], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811223/mapfaurea_ri0zxd.png']
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774869684/Capture_d_%C3%A9cran_2026-03-30_131936_dhrb8r.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774811223/mapfaurea_ri0zxd.png']
   },
 
   // ════════════════════════════════════════
@@ -936,8 +936,8 @@ const PLANTS_AFRICA = [
     continent: 'africa',
     category: 'palms',
     diff: 1, freq: 3,
-    desc: 'Borassus akeassii is a palm tree of the Borassus family found exclusively in Senegal. It closely resembles its cousin, Borassus aethiopum, which is found in other African countries. Like all Borassus palms, it is recognizable by its sturdy, tall trunk and its leaves, which form a rounded shape, resembling a lollipop palm. <br> It is found mainly in western Senegal. There is a large forest of Borassus akeassii along the road leading to Samba Dia (first image)',
-    tips: ['round, lollipop-shaped leaves', 'a very straight trunk, with a bump on some palm trees'], similar: ['Borassus aethiopum'],
+    desc: 'Borassus akeassii is a palm tree of the Borassus family found exclusively in Senegal. <br> <br>It closely resembles its cousin, Borassus aethiopum, which is found in other African countries. Like all Borassus palms, it is recognizable by its sturdy, tall trunk and its leaves, which form a rounded shape, resembling a lollipop palm. <br> <br> It is found mainly in western Senegal. There is a large forest of Borassus akeassii along the road leading to Samba Dia (first image)',
+    tips: ['round, lollipop-shaped leaves', 'a very straight trunk, with a bump on some palm trees'], similar: ['Borassus aethiopum', 'Borassus flabellifer'],
     family: 'Arecaceae', genus: 'Borassus',
     countries: ['Senegal'],
     inat: 'https://www.inaturalist.org/taxa/312537-Borassus-akeassii',
@@ -951,8 +951,8 @@ const PLANTS_AFRICA = [
     common: 'African Palmyra Palm',
     continent: 'africa',
     category: 'palms',
-    diff: 1, freq: 2,
-    desc: 'Borassus aethiopum is a palm tree found in Africa, particularly in Nigeria, Ghana, and, more rarely, Kenya. It is a tall palm tree recognizable by its robust trunk and leaves, which give it the appearance of a lollipop palm. <br> It is useful for regional identification because it is found exclusively in northern Nigeria, in several areas of Ghana, and south of Mombasa in Nigeria. <br> Note that there is a very similar species in Senegal called Borassus akeassii, as well as a species in Asia called Borassus flabellifer.',
+    diff: 1, freq: 3,
+    desc: 'Borassus aethiopum is a palm tree found in Africa, particularly in Nigeria, Ghana, and, more rarely, Kenya. It is a tall palm tree recognizable by its robust trunk and leaves, which give it the appearance of a lollipop palm. <br> <br> It is useful for regional identification because it is found exclusively in northern Nigeria, in several areas of Ghana, and south of Mombasa in Nigeria. <br> <br> Note that there is a very similar species in Senegal called Borassus akeassii, as well as a species in Asia called Borassus flabellifer.',
     tips: ['round, lollipop-shaped leaves', 'a very straight trunk, with a bump on some palm trees'], similar: ['Borassus akeassii', 'Borassus flabellifer'],
     family: 'Arecaceae', genus: 'Borassus',
     countries: ['Nigeria', 'Ghana', 'Kenya'],
@@ -1023,10 +1023,10 @@ const PLANTS_AFRICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Pinaceae', genus: 'Pinus',
-    countries: ['South Africa', 'Morocco', 'Algeria', 'Tunisia', 'Kenya', 'Tanzania', 'Ethiopia'],
+    countries: ['South Africa', 'Kenya'],
     inat: 'https://www.inaturalist.org/taxa/47561-Pinus',
     wiki: 'https://en.wikipedia.org/wiki/Pine',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774869684/Capture_d_%C3%A9cran_2026-03-30_132058_rv8wfe.png'], maps: []
   },
 
   // ════════════════════════════════════════

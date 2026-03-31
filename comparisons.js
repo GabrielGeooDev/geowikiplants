@@ -38,6 +38,7 @@ const COMPARISONS = [
           'N Africa & Sahel (Egypt to Senegal)',
           'E Africa (Kenya, Somalia)'
         ]
+        // photos: [] — pas de photos pour ce critère (optionnel)
       },
       {
         label: 'Trunk forking',
@@ -46,7 +47,14 @@ const COMPARISONS = [
           'Forked, often higher',
           'Repeatedly forked',
           'Forked, slender'
-        ]
+        ],
+        // Ajoute des photos pour ce critère :
+        // photos: [
+        //   'https://res.cloudinary.com/.../coriacea-trunk.jpg',
+        //   'https://res.cloudinary.com/.../petersiana-trunk.jpg',
+        //   'https://res.cloudinary.com/.../thebaica-trunk.jpg',
+        //   null,  // pas de photo pour cette espèce sur ce critère
+        // ]
       },
       {
         label: 'Leaf colour',
@@ -86,9 +94,15 @@ const COMPARISONS = [
   //   intro: '',
   //   plantIds: ['attalea-speciosa', 'attalea-maripa', 'attalea-phalerata'],
   //   criteria: [
-  //     { label: 'Region',   values: ['...', '...', '...'] },
+  //     {
+  //       label: 'Region',
+  //       values: ['...', '...', '...'],
+  //       // photos est OPTIONNEL — omets-le si pas de photos pour ce critère
+  //       // photos: ['https://...', null, 'https://...'],
+  //     },
   //     { label: 'Height',   values: ['...', '...', '...'] },
-  //     { label: 'Trunk',    values: ['...', '...', '...'] },
+  //     { label: 'Trunk',    values: ['...', '...', '...'],
+  //       photos: ['https://...', 'https://...', 'https://...'] },
   //     { label: 'Leaves',   values: ['...', '...', '...'] },
   //   ]
   // },

@@ -187,7 +187,40 @@
   .ext-link{display:flex;align-items:center;gap:10px;padding:11px 14px;border-radius:var(--r);background:var(--bg3);border:1px solid var(--border);text-decoration:none;color:var(--text2);font-size:15px;transition:all .18s}
   .ext-link:hover{border-color:var(--accent3);color:var(--accent2)}
 
-  /* ── SEARCH OVERLAY ── */
+  /* ── SHARE BUTTON ── */
+  .share-btn{display:inline-flex;align-items:center;gap:7px;background:var(--surface);border:1px solid var(--border);color:var(--text2);padding:7px 14px;border-radius:20px;font-size:13px;font-family:var(--font-body);cursor:pointer;transition:all .18s;margin-left:auto}
+  .share-btn:hover{border-color:var(--accent);color:var(--accent)}
+  .share-btn svg{width:15px;height:15px;flex-shrink:0}
+
+  /* ── COMPARISON PAGE ── */
+  .cmp-btn{display:inline-flex;align-items:center;gap:8px;background:rgba(126,200,80,.1);border:1px solid rgba(126,200,80,.3);color:var(--accent2);padding:9px 16px;border-radius:var(--r);font-size:14px;font-family:var(--font-body);cursor:pointer;transition:all .18s;margin-top:4px;width:100%;justify-content:space-between}
+  .cmp-btn:hover{background:rgba(126,200,80,.2);border-color:var(--accent)}
+  .cmp-btn-arrow{font-size:16px}
+
+  .cmp-wrap{max-width:1200px;margin:0 auto;padding:20px 24px 80px}
+  .cmp-header{margin-bottom:28px;border-bottom:1px solid var(--border);padding-bottom:20px}
+  .cmp-title{font-family:var(--font-display);font-size:clamp(22px,3vw,38px);color:var(--text);margin-bottom:10px}
+  .cmp-intro{font-size:15px;color:var(--text2);line-height:1.75;max-width:780px}
+
+  .cmp-table-wrap{overflow-x:auto;margin-bottom:32px}
+  .cmp-table{width:100%;border-collapse:collapse;min-width:600px}
+  .cmp-table th{background:var(--surface2);padding:14px 18px;font-size:13px;font-weight:600;color:var(--text);text-align:left;border:1px solid var(--border)}
+  .cmp-table th.species-col{font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--accent2);cursor:pointer;transition:color .15s}
+  .cmp-table th.species-col:hover{color:var(--accent)}
+  .cmp-table td{padding:12px 18px;font-size:14px;color:var(--text2);border:1px solid var(--border);vertical-align:top;line-height:1.6}
+  .cmp-table td.crit-label{font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:1px;color:var(--text3);background:var(--surface);white-space:nowrap;font-weight:600}
+  .cmp-table tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+
+  .cmp-species-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px;margin-top:28px}
+  .cmp-species-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:16px;cursor:pointer;transition:all .18s}
+  .cmp-species-card:hover{border-color:var(--accent3);transform:translateY(-2px);box-shadow:var(--shadow)}
+  .cmp-species-card-sci{font-family:var(--font-display);font-style:italic;font-size:15px;color:var(--text);margin-bottom:4px}
+  .cmp-species-card-common{font-size:12px;color:var(--text2)}
+
+  /* ── LIGHTBOX WITH STREET VIEW ── */
+  .lb-footer{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:10px}
+  .lb-sv-btn{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);color:#fff;padding:9px 18px;border-radius:var(--r);font-size:14px;font-family:var(--font-body);cursor:pointer;transition:all .2s;text-decoration:none;backdrop-filter:blur(4px)}
+  .lb-sv-btn:hover{background:rgba(66,133,244,.7);border-color:rgba(66,133,244,.8)}
   .search-overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.72);backdrop-filter:blur(8px);display:none;align-items:flex-start;justify-content:center;padding-top:80px}
   .search-overlay.open{display:flex}
   .search-box{background:var(--bg2);border:1px solid var(--border);border-radius:var(--r2);width:100%;max-width:600px;box-shadow:var(--shadow-lg);overflow:hidden}
@@ -229,6 +262,12 @@
 <div class="lightbox" id="lightbox" onclick="closeLb()">
   <button class="lb-close" onclick="event.stopPropagation();closeLb()">✕</button>
   <img id="lb-img" src="" alt="">
+  <div class="lb-footer" onclick="event.stopPropagation()">
+    <a class="lb-sv-btn" id="lb-sv-link" href="#" target="_blank" style="display:none">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+      Open in Street View
+    </a>
+  </div>
 </div>
 
 <div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)this.classList.remove('open')">
@@ -365,6 +404,23 @@
   </div>
 </div>
 
+<!-- COMPARISON PAGE -->
+<div class="view" id="view-comparison">
+  <div class="cmp-wrap">
+    <button class="back-btn" id="cmp-back">← Back</button>
+    <div class="cmp-header">
+      <div class="cmp-title" id="cmp-title"></div>
+      <div class="cmp-intro" id="cmp-intro"></div>
+    </div>
+    <div class="cmp-table-wrap">
+      <table class="cmp-table" id="cmpTable"></table>
+    </div>
+    <div class="sec-title" style="margin-top:8px">Species in this comparison</div>
+    <div class="cmp-species-cards" id="cmpCards"></div>
+  </div>
+</div>
+
+<script src="comparisons.js"></script>
 <script src="plants-africa.js"></script>
 <script src="plants-south-america.js"></script>
 <script src="plants-asia.js"></script>
@@ -459,7 +515,7 @@ const CONTS={
 };
 
 // ═══════════════ STATE ═══════════════
-const S={view:'home',cont:null,cat:null,plant:null,diff:'all',cntry:null};
+const S={view:'home',cont:null,cat:null,plant:null,diff:'all',cntry:null,comparison:null};
 
 // ═══════════════ NAV HELPERS ═══════════════
 function showView(v){
@@ -511,6 +567,7 @@ function renderBc(){
   if(S.cont){const c=CONTS[S.cont];h+=`<span class="sep">›</span><span class="crumb" onclick="goContinent('${S.cont}')">${c.name}</span>`;}
   if(S.cat&&S.cont){const cat=CONTS[S.cont].cats.find(x=>x.id===S.cat);if(cat)h+=`<span class="sep">›</span><span class="crumb" onclick="goCategory('${S.cont}','${S.cat}')">${cat.name}</span>`;}
   if(S.view==='plant'&&S.plant){const p=PLANTS.find(x=>x.id===S.plant);if(p)h+=`<span class="sep">›</span><span class="current">${p.sci}</span>`;}
+  if(S.view==='comparison'&&S.comparison){const c=(typeof COMPARISONS!=='undefined'?COMPARISONS:[]).find(x=>x.id===S.comparison);if(c)h+=`<span class="sep">›</span><span class="current">🔍 Differentiation</span>`;}
   el.innerHTML=h;
 }
 
@@ -574,17 +631,23 @@ function renderPlant(p){
     typeof m === 'string' ? {label: 'Map '+(i+1), img: m} : m
   );
   const photos=p.photos||[];
+  const svLinks=p.streetviews||[];
 
-  // — PHOTOS (left col, top)
+  // — PHOTOS with Street View support
   const photoSlots=photos.length
-    ? photos.map(url=>`<div class="photo-slot" onclick="openLb('${url.replace(/'/g,"\\'")}')" ><img src="${url}" alt="${p.sci}"></div>`).join('')
+    ? photos.map((url,i)=>{
+        const sv=svLinks[i]||null;
+        const safeUrl=url.replace(/'/g,"\\'");
+        const safeSv=sv?sv.replace(/'/g,"\\'"):'';
+        return `<div class="photo-slot" onclick="openLb('${safeUrl}','${safeSv}')"><img src="${url}" alt="${p.sci}"></div>`;
+      }).join('')
     : `<div class="photo-empty"><span style="font-size:28px">📷</span><span>No photos yet</span></div>`;
   const photosHTML=`<div class="photos-section">
     <div class="sec-title">Photos</div>
     <div class="photos-grid">${photoSlots}</div>
   </div>`;
 
-  // — MAPS (left col, below photos)
+  // — MAPS
   let mapsHTML='';
   if(maps.length>0){
     const tabs=maps.map((m,i)=>`<button class="map-tab${i===0?' active':''}" id="mt-${p.id}-${i}" onclick="swMap('${p.id}',${i})">${cf(m.label)} ${m.label}</button>`).join('');
@@ -602,7 +665,7 @@ function renderPlant(p){
     </div>`;
   }
 
-  // — SIDEBAR: description, tips, similar, taxonomy, links, countries
+  // — SIDEBAR
   const flagLine=(p.countries||[]).map(n=>`<span title="${n}" style="font-size:17px">${cf(n)}</span>`).join(' ');
 
   const tipsHTML=p.tips&&p.tips.length
@@ -610,6 +673,15 @@ function renderPlant(p){
 
   const simHTML=p.similar&&p.similar.length
     ?`<div class="sc"><div class="sc-h">Similar species</div><div class="sc-b"><div class="sim-list">${p.similar.map(s=>{const f=PLANTS.find(x=>x.sci===s);return`<span class="sim-tag" ${f?`onclick="goPlant('${f.id}')"`:''}>${s}</span>`;}).join('')}</div></div></div>`:'';
+
+  // — COMPARISON BUTTON — only show if a comparison exists for this plant
+  const cmp=typeof COMPARISONS!=='undefined'?COMPARISONS.find(c=>c.plantIds.includes(p.id)):null;
+  const cmpHTML=cmp?`<div class="sc"><div class="sc-h">Differentiation guide</div><div class="sc-b">
+    <button class="cmp-btn" onclick="goComparison('${cmp.id}')">
+      <span>🔍 How to tell apart similar species</span>
+      <span class="cmp-btn-arrow">→</span>
+    </button>
+  </div></div>`:'';
 
   let links='';
   if(p.inat) links+=`<a class="ext-link" href="${p.inat}" target="_blank"><span>🔬</span> iNaturalist</a>`;
@@ -627,6 +699,10 @@ function renderPlant(p){
         <div class="mi"><div class="ml">Ease of ID</div><div class="mv srow">${dStars}</div></div>
         <div class="mi"><div class="ml">Frequency</div><div class="mv srow">${fStars}</div></div>
         <div class="mi"><div class="ml">Family</div><div class="mv" style="font-style:italic">${p.family||'—'}</div></div>
+        <button class="share-btn" onclick="sharePlant('${p.id}')">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
+          Share
+        </button>
       </div>
     </div>
     <div class="plant-body">
@@ -641,6 +717,7 @@ function renderPlant(p){
         </div>
         ${tipsHTML}
         ${simHTML}
+        ${cmpHTML}
         ${countriesHTML}
         <div class="sc">
           <div class="sc-h">Taxonomy</div>
@@ -665,8 +742,61 @@ function swMap(pid,i){
 }
 
 // ═══════════════ LIGHTBOX ═══════════════
-function openLb(src){document.getElementById('lb-img').src=src;document.getElementById('lightbox').classList.add('open');}
+function openLb(src, sv){
+  document.getElementById('lb-img').src=src;
+  document.getElementById('lightbox').classList.add('open');
+  const svBtn=document.getElementById('lb-sv-link');
+  if(sv){
+    svBtn.href=sv;
+    svBtn.style.display='flex';
+  } else {
+    svBtn.style.display='none';
+  }
+}
 function closeLb(){document.getElementById('lightbox').classList.remove('open');}
+
+// ═══════════════ SHARE ═══════════════
+function sharePlant(id){
+  const url=location.href.split('?')[0]+'?plant='+id;
+  navigator.clipboard.writeText(url).then(()=>toast('🔗 Link copied to clipboard!'));
+}
+
+// ═══════════════ COMPARISON PAGE ═══════════════
+function goComparison(id){
+  const cmp=(typeof COMPARISONS!=='undefined'?COMPARISONS:[]).find(c=>c.id===id);
+  if(!cmp)return;
+  S.comparison=id;
+
+  // Build table
+  const plants=cmp.plantIds.map(pid=>PLANTS.find(p=>p.id===pid)).filter(Boolean);
+  let thead=`<tr><th style="min-width:140px">Criterion</th>${plants.map(p=>`<th class="species-col" onclick="goPlant('${p.id}')" title="Go to species page">${p.sci}<br><span style="font-style:normal;font-size:12px;color:var(--text3)">${p.common}</span></th>`).join('')}</tr>`;
+  let tbody=cmp.criteria.map(cr=>`<tr><td class="crit-label">${cr.label}</td>${plants.map((_,i)=>`<td>${cr.values[i]||'—'}</td>`).join('')}</tr>`).join('');
+  document.getElementById('cmpTable').innerHTML=thead+tbody;
+
+  document.getElementById('cmp-title').textContent=cmp.title;
+  document.getElementById('cmp-intro').textContent=cmp.intro||'';
+
+  // Species cards
+  document.getElementById('cmpCards').innerHTML=plants.map(p=>`
+    <div class="cmp-species-card" onclick="goPlant('${p.id}')">
+      ${p.photos&&p.photos[0]?`<img src="${p.photos[0]}" style="width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:var(--r);margin-bottom:10px">`:''}
+      <div class="cmp-species-card-sci">${p.sci}</div>
+      <div class="cmp-species-card-common">${p.common}</div>
+    </div>`).join('');
+
+  // Back button goes back to the plant page
+  document.getElementById('cmp-back').onclick=()=>{
+    if(S.plant) goPlant(S.plant); else goHome();
+  };
+  showView('comparison');
+}
+
+// Handle ?plant=id on load
+window.addEventListener('load',()=>{
+  const params=new URLSearchParams(location.search);
+  const pid=params.get('plant');
+  if(pid&&PLANTS.find(p=>p.id===pid)) goPlant(pid);
+});
 
 // ═══════════════ SEARCH ═══════════════
 function openSearch(){

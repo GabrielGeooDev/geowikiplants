@@ -155,10 +155,24 @@
   .map-tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:8px}
   .map-tab{background:var(--bg3);border:1px solid var(--border);color:var(--text2);padding:4px 12px;border-radius:20px;font-size:11px;font-family:var(--font-mono);cursor:pointer;transition:all .14s}
   .map-tab.active{background:rgba(126,200,80,.2);border-color:var(--accent);color:var(--accent2)}
-  /* Map frame: natural height, no cropping, full image visible */
   .map-frame{width:100%;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r2);overflow:hidden;display:flex;align-items:center;justify-content:center}
   .map-frame img{width:100%;height:auto;max-height:600px;object-fit:contain;display:block}
   .map-empty-box{padding:40px;text-align:center;color:var(--text3);font-size:13px;background:var(--surface);border:1px dashed var(--border);border-radius:var(--r2)}
+
+  /* ── GEOGUESSR SECTION ── */
+  .geo-section{margin-top:28px;border:1px solid rgba(126,200,80,.25);border-radius:var(--r2);overflow:hidden;background:rgba(126,200,80,.04)}
+  .geo-section-header{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid rgba(126,200,80,.2);background:rgba(126,200,80,.08)}
+  .geo-section-icon{font-size:18px}
+  .geo-section-title{font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--accent2);font-family:var(--font-mono);font-weight:600}
+  .geo-section-body{padding:18px}
+  .geo-tips-text{font-size:15px;line-height:1.8;color:var(--text);margin-bottom:16px}
+  .geo-tips-text em{color:var(--accent2);font-style:italic}
+  .geo-photos-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+  .geo-photo-slot{aspect-ratio:16/9;background:var(--bg3);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;cursor:pointer;position:relative;transition:transform .18s;display:flex;align-items:center;justify-content:center}
+  .geo-photo-slot:hover{transform:scale(1.02)}
+  .geo-photo-slot img{width:100%;height:100%;object-fit:cover}
+  .geo-photo-slot-overlay{position:absolute;inset:0;background:rgba(0,0,0,.4);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:600;opacity:0;transition:opacity .18s}
+  .geo-photo-slot:hover .geo-photo-slot-overlay{opacity:1}
 
   /* RIGHT SIDEBAR */
   .plant-sidebar{display:flex;flex-direction:column;gap:14px;position:sticky;top:70px}
@@ -732,6 +746,24 @@ function renderPlant(p){
     </div>`;
   }
 
+  // — GEOGUESSR SECTION (only if geo_tips or geo_photos are present)
+  const geoPhotos=p.geo_photos||[];
+  const geoSection=(p.geo_tips||geoPhotos.length>0)?`
+    <div class="geo-section">
+      <div class="geo-section-header">
+        <span class="geo-section-icon">🌍</span>
+        <span class="geo-section-title">GeoGuessr Usage</span>
+      </div>
+      <div class="geo-section-body">
+        ${p.geo_tips?`<div class="geo-tips-text">${p.geo_tips}</div>`:''}
+        ${geoPhotos.length>0?`<div class="geo-photos-grid">${geoPhotos.map(url=>`
+          <div class="geo-photo-slot" onclick="openLb('${url.replace(/'/g,"\\'")}','')">
+            <img src="${url}" alt="GeoGuessr view">
+            <div class="geo-photo-slot-overlay">🔍 Enlarge</div>
+          </div>`).join('')}</div>`:''}
+      </div>
+    </div>`:'';
+
   // — SIDEBAR
   const flagLine=(p.countries||[]).map(n=>`<span title="${n}" style="font-size:17px">${cf(n)}</span>`).join(' ');
 
@@ -776,6 +808,7 @@ function renderPlant(p){
       <div class="plant-main">
         ${photosHTML}
         ${mapsHTML}
+        ${geoSection}
       </div>
       <div class="plant-sidebar">
         <div class="sc">

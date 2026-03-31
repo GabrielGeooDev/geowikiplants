@@ -25,6 +25,7 @@ const COMPARISONS = [
   // ── EXEMPLE : Hyphaene africains ────────────────────────────
   {
     id: 'hyphaene-africa',
+    continent: 'africa',                 // ← continent de la comparaison
     title: 'African Doum Palms — How to tell them apart',
     intro: 'Three Hyphaene species are commonly encountered in African GeoGuessr coverage. All share the characteristic forked trunk, but their distribution, leaf colour and fruit shape differ significantly.',
     plantIds: ['hyphaene-coriacea', 'hyphaene-petersiana', 'hyphaene-thebaica', 'hyphaene-compressa'],
@@ -80,6 +81,7 @@ const COMPARISONS = [
   // ── AJOUTE TES COMPARAISONS ICI ─────────────────────────────
   // {
   //   id: 'attalea-brazil',
+  //   continent: 'south-america',          // ← continent de la comparaison
   //   title: 'Brazilian Attalea Palms — How to tell them apart',
   //   intro: '',
   //   plantIds: ['attalea-speciosa', 'attalea-maripa', 'attalea-phalerata'],

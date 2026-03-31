@@ -23,6 +23,7 @@ const PLANTS_AFRICA = [
     inat: 'https://www.inaturalist.org/taxa/126949-Phoenix-reclinata',
     wiki: 'https://en.wikipedia.org/wiki/Phoenix_reclinata',
     photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786135/Capture_d_%C3%A9cran_2026-03-29_140644_gm927s.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786135/Capture_d_%C3%A9cran_2026-03-29_140730_pomakm.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786135/Capture_d_%C3%A9cran_2026-03-29_140823_mh3gna.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786145/senegaldatemap_ojh1or.png']
+    streetviews: ['https://maps.app.goo.gl/hsdwsJjxC93vCTwE6','https://maps.app.goo.gl/EqwnQxrSFpPjZ8u37','https://maps.app.goo.gl/beArd3JPwzCbQoYw5'],
   },
 
   {
@@ -942,7 +943,8 @@ const PLANTS_AFRICA = [
     countries: ['Senegal'],
     inat: 'https://www.inaturalist.org/taxa/312537-Borassus-akeassii',
     wiki: 'https://en.wikipedia.org/wiki/Borassus_akeassii',
-    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786970/Capture_d_%C3%A9cran_2026-03-29_142140_ejj1nz.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786969/Capture_d_%C3%A9cran_2026-03-29_142234_rjixvk.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786969/Capture_d_%C3%A9cran_2026-03-29_142234_rjixvk.png'], maps: [{label: 'Senegal', img:'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786970/Capture_d_%C3%A9cran_2026-03-29_142047_z0iydw.png'}]
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786970/Capture_d_%C3%A9cran_2026-03-29_142140_ejj1nz.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786969/Capture_d_%C3%A9cran_2026-03-29_142234_rjixvk.png'], maps: [{label: 'Senegal', img:'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774786970/Capture_d_%C3%A9cran_2026-03-29_142047_z0iydw.png'}]
+    streetviews: ['https://maps.app.goo.gl/dfogHuPTeUDYVRfm7','https://maps.app.goo.gl/V5e5MP3tXBV2u1yB6'],
   },
 
   {
@@ -959,6 +961,7 @@ const PLANTS_AFRICA = [
     inat: 'https://www.inaturalist.org/taxa/126948-Borassus-aethiopum',
     wiki: 'https://en.wikipedia.org/wiki/Borassus_aethiopum',
     photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774788716/Capture_d_%C3%A9cran_2026-03-29_145102_ufjml4.png', 'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774788715/Capture_d_%C3%A9cran_2026-03-29_145140_dy6rec.png'], maps: [{label: 'Nigeria & Ghana', img:'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774788720/Capture_d_%C3%A9cran_2026-03-29_145015_z1kcdq.png'}, {label: 'Kenya', img:'https://res.cloudinary.com/dpmxwhdoi/image/upload/v1774788717/Capture_d_%C3%A9cran_2026-03-29_145027_w1exkv.png'}]
+    streetviews: ['https://maps.app.goo.gl/5GKhFCurDexXYuzZA','https://maps.app.goo.gl/Q3Qxu4bypWJ397Cn8'],
   },
 
   {

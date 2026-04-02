@@ -382,7 +382,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-sylvestris-na', sci: 'Pinus sylvestris', common: 'Scots Pine',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 2,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 2,
     desc: 'À faire.', tips: [], similar: ['Pinus resinosa', 'Pinus strobus'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States', 'Canada'],
@@ -393,7 +393,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-strobus-na', sci: 'Pinus strobus', common: 'Eastern White Pine',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 2,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 2,
     desc: 'À faire.', tips: [], similar: ['Pinus sylvestris', 'Pinus resinosa'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States', 'Canada'],
@@ -404,7 +404,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-jeffreyi-na', sci: 'Pinus jeffreyi', common: 'Jeffrey Pine',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Pinus ponderosa', 'Pinus contorta'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States', 'Mexico'],
@@ -415,7 +415,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-resinosa-na', sci: 'Pinus resinosa', common: 'Red Pine',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Pinus sylvestris', 'Pinus strobus'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States', 'Canada'],
@@ -426,7 +426,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-patula', sci: 'Pinus patula', common: 'Patula Pine',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Pinus taeda'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['Mexico'],
@@ -437,7 +437,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'larix-laricina-na', sci: 'Larix laricina', common: 'Tamarack',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: [],
     family: 'Pinaceae', genus: 'Larix',
     countries: ['United States', 'Canada'],
@@ -448,7 +448,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'picea-glauca-na', sci: 'Picea glauca', common: 'White Spruce',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Picea mariana', 'Picea abies'],
     family: 'Pinaceae', genus: 'Picea',
     countries: ['United States', 'Canada'],
@@ -459,7 +459,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'abies-lasiocarpa', sci: 'Abies lasiocarpa', common: 'Subalpine Fir',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Abies religiosa'],
     family: 'Pinaceae', genus: 'Abies',
     countries: ['United States', 'Canada'],
@@ -470,7 +470,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'picea-mariana-na', sci: 'Picea mariana', common: 'Black Spruce',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Picea glauca', 'Picea abies'],
     family: 'Pinaceae', genus: 'Picea',
     countries: ['United States', 'Canada'],
@@ -481,7 +481,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'cedrus-deodara-na', sci: 'Cedrus deodara', common: 'Himalayan Cedar',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: [],
     family: 'Pinaceae', genus: 'Cedrus',
     countries: ['United States', 'Mexico'],
@@ -492,7 +492,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-lumholtzii', sci: 'Pinus lumholtzii', common: "Lumholtz's Pine",
-    continent: 'north-america', category: 'trees', diff: 3, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 3, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Pinus hartwegii'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['Mexico'],
@@ -503,7 +503,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'araucaria-columnaris', sci: 'Araucaria columnaris', common: 'Cook Pine',
-    continent: 'north-america', category: 'trees', diff: 1, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 1, freq: 1,
     desc: 'À faire.', tips: [], similar: [],
     family: 'Araucariaceae', genus: 'Araucaria',
     countries: ['United States', 'Mexico'],
@@ -514,7 +514,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-taeda-na', sci: 'Pinus taeda', common: 'Loblolly Pine',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Pinus elliottii'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States'],
@@ -525,7 +525,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-ponderosa-na', sci: 'Pinus ponderosa', common: 'Ponderosa Pine',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 2,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 2,
     desc: 'À faire.', tips: [], similar: ['Pinus jeffreyi'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States', 'Mexico', 'Canada'],
@@ -536,7 +536,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-hartwegii', sci: 'Pinus hartwegii', common: 'Mexican Mountain Pine',
-    continent: 'north-america', category: 'trees', diff: 3, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 3, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Pinus lumholtzii'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['Mexico'],
@@ -547,7 +547,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-contorta-na', sci: 'Pinus contorta', common: 'Lodgepole Pine',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Pinus jeffreyi', 'Pinus ponderosa'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States', 'Canada'],
@@ -558,7 +558,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-rigida-na', sci: 'Pinus rigida', common: 'Pitch Pine',
-    continent: 'north-america', category: 'trees', diff: 3, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 3, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Pinus taeda'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States'],
@@ -569,7 +569,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-arizonica-na', sci: 'Pinus arizonica', common: 'Arizona Pine',
-    continent: 'north-america', category: 'trees', diff: 3, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 3, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Pinus ponderosa'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States', 'Mexico'],
@@ -679,7 +679,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'juniperus-deppeana-na', sci: 'Juniperus deppeana', common: 'Alligator Juniper',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Juniperus occidentalis', 'Juniperus osteosperma'],
     family: 'Cupressaceae', genus: 'Juniperus',
     countries: ['United States', 'Mexico'],
@@ -690,7 +690,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'juniperus-occidentalis', sci: 'Juniperus occidentalis', common: 'Western Juniper',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Juniperus deppeana', 'Juniperus osteosperma'],
     family: 'Cupressaceae', genus: 'Juniperus',
     countries: ['United States'],
@@ -701,7 +701,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'juniperus-osteosperma', sci: 'Juniperus osteosperma', common: 'Utah Juniper',
-    continent: 'north-america', category: 'trees', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Juniperus deppeana', 'Juniperus occidentalis'],
     family: 'Cupressaceae', genus: 'Juniperus',
     countries: ['United States'],
@@ -712,7 +712,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'abies-religiosa', sci: 'Abies religiosa', common: 'Sacred Fir',
-    continent: 'north-america', category: 'trees', diff: 3, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 3, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Abies lasiocarpa'],
     family: 'Pinaceae', genus: 'Abies',
     countries: ['Mexico'],
@@ -907,7 +907,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'yucca-gigantea', sci: 'Yucca gigantea', common: 'Spineless Yucca',
-    continent: 'north-america', category: 'others', diff: 1, freq: 2,
+    continent: 'north-america', category: 'yuccas', diff: 1, freq: 2,
     desc: 'À faire.', tips: [], similar: ['Yucca capensis', 'Yucca valida', 'Yucca jaegeriana'],
     family: 'Asparagaceae', genus: 'Yucca',
     countries: ['Mexico'],
@@ -918,7 +918,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'yucca-capensis', sci: 'Yucca capensis', common: 'Cape Region Yucca',
-    continent: 'north-america', category: 'others', diff: 3, freq: 1,
+    continent: 'north-america', category: 'yuccas', diff: 3, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Yucca gigantea', 'Yucca valida'],
     family: 'Asparagaceae', genus: 'Yucca',
     countries: ['Mexico'],
@@ -929,7 +929,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'yucca-valida', sci: 'Yucca valida', common: 'Datilillo',
-    continent: 'north-america', category: 'others', diff: 2, freq: 1,
+    continent: 'north-america', category: 'yuccas', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Yucca gigantea', 'Yucca capensis'],
     family: 'Asparagaceae', genus: 'Yucca',
     countries: ['Mexico'],
@@ -940,7 +940,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'yucca-jaegeriana-na', sci: 'Yucca jaegeriana', common: 'Las Vegas Yucca',
-    continent: 'north-america', category: 'others', diff: 2, freq: 1,
+    continent: 'north-america', category: 'yuccas', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Yucca gigantea'],
     family: 'Asparagaceae', genus: 'Yucca',
     countries: ['United States', 'Mexico'],
@@ -951,7 +951,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'yucca-sp', sci: 'Yucca sp.', common: 'Yucca',
-    continent: 'north-america', category: 'others', diff: 2, freq: 2,
+    continent: 'north-america', category: 'yuccas', diff: 2, freq: 2,
     desc: 'À faire.', tips: [], similar: ['Yucca gigantea', 'Yucca jaegeriana'],
     family: 'Asparagaceae', genus: 'Yucca',
     countries: ['United States', 'Mexico'],
@@ -962,7 +962,7 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'agave-tequilana', sci: 'Agave tequilana', common: 'Blue Agave',
-    continent: 'north-america', category: 'others', diff: 1, freq: 2,
+    continent: 'north-america', category: 'yuccas', diff: 1, freq: 2,
     desc: 'À faire.', tips: [], similar: [],
     family: 'Asparagaceae', genus: 'Agave',
     countries: ['Mexico'],

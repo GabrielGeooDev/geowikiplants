@@ -415,6 +415,115 @@ const PLANTS_NORTH_AMERICA = [
     photos: [], maps: []
   },
 
+ {
+    id: 'pinus-scopulorum', sci: 'Pinus scopulorum', common: 'Rocky Mountains Ponderosa Pine',
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    desc: 'À faire.', tips: [], similar: [],
+    family: 'Pinaceae', genus: 'Pinus',
+    countries: ['United States'],
+    inat: 'https://www.inaturalist.org/taxa/1592845-Pinus-scopulorum',
+    photos: [], maps: []
+  },
+
+  {
+    id: 'pinus-serotina', sci: 'Pinus serotina', common: 'Pond Pine',
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    desc: 'À faire.', tips: [], similar: [],
+    family: 'Pinaceae', genus: 'Pinus',
+    countries: ['United States'],
+    inat: 'https://www.inaturalist.org/taxa/135664-Pinus-serotina',
+    wiki: 'https://en.wikipedia.org/wiki/Pinus_serotina',
+    photos: [], maps: ['https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Pinus_serotina_range_map.png/1280px-Pinus_serotina_range_map.png']
+  },
+
+  {
+    id: 'pinus-echinata', sci: 'Pinus echinata', common: 'Shortleaf Pine',
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    desc: 'À faire.', tips: [], similar: [],
+    family: 'Pinaceae', genus: 'Pinus',
+    countries: ['United States'],
+    inat: 'https://www.inaturalist.org/taxa/49396-Pinus-echinata',
+    wiki: 'https://en.wikipedia.org/wiki/Pinus_echinata',
+    photos: [], maps: ['https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Pinus_echinata_range_map.png/1280px-Pinus_echinata_range_map.png']
+  },
+
+  {
+    id: 'pinus-banksiana', sci: 'Pinus banksiana', common: 'Jack / Grey Pine',
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    desc: 'À faire.', tips: [], similar: [],
+    family: 'Pinaceae', genus: 'Pinus',
+    countries: ['United States', 'Canada'],
+    inat: 'https://www.inaturalist.org/taxa/58724-Pinus-banksiana',
+    wiki: 'https://en.wikipedia.org/wiki/Jack_pine',
+    photos: [], maps: ['https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Pinus_banksiana_range_map.png/1280px-Pinus_banksiana_range_map.png']
+  },
+
+  {
+    id: 'pinus-pungens', sci: 'Pinus pungens', common: 'Table mountain pine',
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    desc: 'À faire.', tips: [], similar: [],
+    family: 'Pinaceae', genus: 'Pinus',
+    countries: ['United States'],
+    inat: 'https://www.inaturalist.org/taxa/135662-Pinus-pungens',
+    wiki: 'https://en.wikipedia.org/wiki/Table_mountain_pine',
+    photos: [], maps: ['https://upload.wikimedia.org/wikipedia/commons/b/b2/Pinus_pungens_distribution_map.png']
+  },
+
+  {
+    id: 'pinus-glabra', sci: 'Pinus glabra', common: 'Spruce pine',
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    desc: 'À faire.', tips: [], similar: [],
+    family: 'Pinaceae', genus: 'Pinus',
+    countries: ['United States'],
+    inat: 'https://www.inaturalist.org/taxa/135781-Pinus-glabra',
+    wiki: 'https://en.wikipedia.org/wiki/Pinus_glabra',
+    photos: [], maps: ['https://upload.wikimedia.org/wikipedia/commons/4/49/Pinus_glabra_range_map.png']
+  },
+
+  {
+    id: 'pinus-palustris', sci: 'Pinus palustris', common: 'Longleaf pine',
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    desc: 'À faire.', tips: [], similar: [],
+    family: 'Pinaceae', genus: 'Pinus',
+    countries: ['United States'],
+    inat: 'https://www.inaturalist.org/taxa/81901-Pinus-palustris',
+    wiki: 'https://en.wikipedia.org/wiki/Longleaf_pine',
+    photos: [], maps: ['https://upload.wikimedia.org/wikipedia/commons/6/63/Pinus_palustris_range_map.png']
+  },
+
+  {
+    id: 'pinus-clausa', sci: 'Pinus clausa', common: 'Sand pine',
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    desc: 'À faire.', tips: [], similar: [],
+    family: 'Pinaceae', genus: 'Pinus',
+    countries: ['United States'],
+    inat: 'https://www.inaturalist.org/taxa/126590-Pinus-clausa',
+    wiki: 'https://en.wikipedia.org/wiki/Pinus_clausa',
+    photos: [], maps: ['https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Pinus_clausa_range_map_1.png/1280px-Pinus_clausa_range_map_1.png']
+  },
+
+  {
+    id: 'pinus-virginiana', sci: 'Pinus virginiana', common: 'Virginia pine',
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    desc: 'À faire.', tips: [], similar: [],
+    family: 'Pinaceae', genus: 'Pinus',
+    countries: ['United States'],
+    inat: 'https://www.inaturalist.org/taxa/49395-Pinus-virginiana',
+    wiki: 'https://en.wikipedia.org/wiki/Pinus_virginiana',
+    photos: [], maps: ['https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Pinus_virginiana_distribution_map.png/1280px-Pinus_virginiana_distribution_map.png']
+  },
+
+  {
+    id: 'pinus-monticola', sci: 'Pinus monticola', common: 'Western white pine',
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    desc: 'À faire.', tips: [], similar: [],
+    family: 'Pinaceae', genus: 'Pinus',
+    countries: ['United States', 'Canada'],
+    inat: 'https://www.inaturalist.org/taxa/68084-Pinus-monticola',
+    wiki: 'https://en.wikipedia.org/wiki/Western_white_pine',
+    photos: [], maps: ['https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Pinus_monticola_range_map_1.png/960px-Pinus_monticola_range_map_1.png']
+  },
+  
   {
     id: 'pinus-resinosa-na', sci: 'Pinus resinosa', common: 'Red Pine',
     continent: 'north-america', category: 'conifers', diff: 2, freq: 2,

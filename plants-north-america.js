@@ -14,10 +14,10 @@ const PLANTS_NORTH_AMERICA = [
     continent: 'north-america', category: 'palms', diff: 1, freq: 3,
     desc: 'À faire.', tips: [], similar: [],
     family: 'Arecaceae', genus: 'Elaeis',
-    countries: ['Mexico', 'Cuba', 'Dominican Republic', 'Jamaica', 'Haiti'],
+    countries: ['Mexico','Costa Rica', 'Guatemala'],
     inat: 'https://www.inaturalist.org/taxa/56750-Elaeis-guineensis',
     wiki: 'https://en.wikipedia.org/wiki/Elaeis_guineensis',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120245/Capture_d_%C3%A9cran_2026-04-02_101849_qpages.png'], maps: []
   },
 
   {
@@ -25,10 +25,10 @@ const PLANTS_NORTH_AMERICA = [
     continent: 'north-america', category: 'palms', diff: 1, freq: 3,
     desc: 'À faire.', tips: [], similar: [],
     family: 'Arecaceae', genus: 'Cocos',
-    countries: ['Mexico', 'United States', 'Cuba', 'Jamaica', 'Dominican Republic'],
+    countries: ['Mexico', 'United States', 'Panama', 'Costa Rica'],
     inat: 'https://www.inaturalist.org/taxa/57819-Cocos-nucifera',
     wiki: 'https://en.wikipedia.org/wiki/Cocos_nucifera',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120244/Capture_d_%C3%A9cran_2026-04-02_103551_j9vv4w.png'], maps: []
   },
 
   {
@@ -36,10 +36,10 @@ const PLANTS_NORTH_AMERICA = [
     continent: 'north-america', category: 'palms', diff: 2, freq: 2,
     desc: 'À faire.', tips: [], similar: [],
     family: 'Arecaceae', genus: 'Sabal',
-    countries: ['Mexico', 'Colombia', 'Venezuela'],
+    countries: ['Mexico', 'Panama'],
     inat: 'https://www.inaturalist.org/taxa/127005-Sabal-mauritiiformis',
     wiki: 'https://en.wikipedia.org/wiki/Sabal_mauritiiformis',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120244/Capture_d_%C3%A9cran_2026-04-02_103803_o1smwy.png'], maps: []
   },
 
   {
@@ -47,10 +47,10 @@ const PLANTS_NORTH_AMERICA = [
     continent: 'north-america', category: 'palms', diff: 1, freq: 2,
     desc: 'À faire.', tips: [], similar: [],
     family: 'Arecaceae', genus: 'Acrocomia',
-    countries: ['Mexico', 'Cuba', 'Dominican Republic', 'Jamaica', 'Haiti'],
+    countries: ['Mexico', 'Panama'],
     inat: 'https://www.inaturalist.org/taxa/126895-Acrocomia-aculeata',
     wiki: 'https://en.wikipedia.org/wiki/Acrocomia_aculeata',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120244/Capture_d_%C3%A9cran_2026-04-02_103853_zmvs2k.png'], maps: []
   },
 
   {
@@ -58,10 +58,10 @@ const PLANTS_NORTH_AMERICA = [
     continent: 'north-america', category: 'palms', diff: 2, freq: 2,
     desc: 'À faire.', tips: [], similar: [],
     family: 'Arecaceae', genus: 'Attalea',
-    countries: ['Mexico', 'Colombia', 'Venezuela', 'Panama', 'Costa Rica'],
+    countries: ['Mexico', 'Panama', 'Costa Rica'],
     inat: 'https://www.inaturalist.org/taxa/126917-Attalea-butyracea',
     wiki: 'https://en.wikipedia.org/wiki/Attalea_butyracea',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120243/Capture_d_%C3%A9cran_2026-04-02_104134_jrkkdj.png'], maps: []
   },
 
   {
@@ -69,10 +69,10 @@ const PLANTS_NORTH_AMERICA = [
     continent: 'north-america', category: 'palms', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: [],
     family: 'Arecaceae', genus: 'Bactris',
-    countries: ['Mexico', 'Panama', 'Costa Rica', 'Nicaragua', 'Honduras'],
+    countries: ['Panama', 'Costa Rica'],
     inat: 'https://www.inaturalist.org/taxa/126911-Bactris-gasipaes',
     wiki: 'https://en.wikipedia.org/wiki/Bactris_gasipaes',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120243/Capture_d_%C3%A9cran_2026-04-02_104211_twov0h.png'], maps: []
   },
 
   {
@@ -83,7 +83,7 @@ const PLANTS_NORTH_AMERICA = [
     countries: ['Mexico', 'United States'],
     inat: 'https://www.inaturalist.org/taxa/127008-Sabal-mexicana',
     wiki: 'https://en.wikipedia.org/wiki/Sabal_mexicana',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120243/Capture_d_%C3%A9cran_2026-04-02_104255_g5t6hs.png'], maps: []
   },
 
   {
@@ -94,7 +94,7 @@ const PLANTS_NORTH_AMERICA = [
     countries: ['Mexico'],
     inat: 'https://www.inaturalist.org/taxa/127009-Sabal-rosei',
     wiki: 'https://en.wikipedia.org/wiki/Sabal_rosei',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120243/Capture_d_%C3%A9cran_2026-04-02_104337_pbbwex.png'], maps: []
   },
 
   {
@@ -105,7 +105,7 @@ const PLANTS_NORTH_AMERICA = [
     countries: ['United States'],
     inat: 'https://www.inaturalist.org/taxa/57822-Sabal-palmetto',
     wiki: 'https://en.wikipedia.org/wiki/Sabal_palmetto',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120234/Capture_d_%C3%A9cran_2026-04-02_104429_uiekbr.png'], maps: []
   },
 
   {
@@ -116,7 +116,7 @@ const PLANTS_NORTH_AMERICA = [
     countries: ['Mexico'],
     inat: 'https://www.inaturalist.org/taxa/127011-Brahea-brandegeei',
     wiki: 'https://en.wikipedia.org/wiki/Brahea_brandegeei',
-    photos: [], maps: []
+    photos: [''], maps: []
   },
 
   {
@@ -127,7 +127,7 @@ const PLANTS_NORTH_AMERICA = [
     countries: ['Mexico'],
     inat: 'https://www.inaturalist.org/taxa/127012-Sabal-uresana',
     wiki: 'https://en.wikipedia.org/wiki/Sabal_uresana',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120234/Capture_d_%C3%A9cran_2026-04-02_104537_w2hhr1.png'], maps: []
   },
 
   {
@@ -146,8 +146,8 @@ const PLANTS_NORTH_AMERICA = [
     continent: 'north-america', category: 'palms', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: [],
     family: 'Arecaceae', genus: 'Acoelorraphe',
-    countries: ['United States', 'Mexico', 'Cuba'],
-    inat: 'https://www.inaturalist.org/taxa/127013-Acoelorraphe-wrightii',
+    countries: ['United States', 'Mexico'],
+    inat: 'https://www.inaturalist.org/taxa/155598-Acoelorraphe-wrightii',
     wiki: 'https://en.wikipedia.org/wiki/Acoelorraphe_wrightii',
     photos: [], maps: []
   },
@@ -157,7 +157,7 @@ const PLANTS_NORTH_AMERICA = [
     continent: 'north-america', category: 'palms', diff: 3, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Sabal mexicana'],
     family: 'Arecaceae', genus: 'Sabal',
-    countries: ['Mexico', 'Cuba'],
+    countries: ['Mexico'],
     inat: 'https://www.inaturalist.org/taxa/127014-Sabal-yapa',
     wiki: 'https://en.wikipedia.org/wiki/Sabal_yapa',
     photos: [], maps: []
@@ -171,7 +171,7 @@ const PLANTS_NORTH_AMERICA = [
     countries: ['Mexico'],
     inat: 'https://www.inaturalist.org/taxa/127015-Sabal-pumos',
     wiki: 'https://en.wikipedia.org/wiki/Sabal_pumos',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120233/Capture_d_%C3%A9cran_2026-04-02_104646_xmoeew.png'], maps: []
   },
 
   {
@@ -182,7 +182,7 @@ const PLANTS_NORTH_AMERICA = [
     countries: ['Mexico'],
     inat: 'https://www.inaturalist.org/taxa/126922-Attalea-guacuyule',
     wiki: 'https://en.wikipedia.org/wiki/Attalea_guacuyule',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120232/Capture_d_%C3%A9cran_2026-04-02_104916_fjtaxx.png'], maps: []
   },
 
   {
@@ -215,7 +215,7 @@ const PLANTS_NORTH_AMERICA = [
     countries: ['United States'],
     inat: 'https://www.inaturalist.org/taxa/57824-Sabal-minor',
     wiki: 'https://en.wikipedia.org/wiki/Sabal_minor',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120232/Capture_d_%C3%A9cran_2026-04-02_105122_ij3ifb.png'], maps: []
   },
 
   {
@@ -223,10 +223,10 @@ const PLANTS_NORTH_AMERICA = [
     continent: 'north-america', category: 'palms', diff: 3, freq: 1,
     desc: 'À faire.', tips: [], similar: [],
     family: 'Arecaceae', genus: 'Attalea',
-    countries: ['Mexico', 'Panama', 'Costa Rica', 'Colombia'],
+    countries: ['Mexico', 'Panama', 'Costa Rica'],
     inat: 'https://www.inaturalist.org/taxa/126927-Attalea-rostrata',
     wiki: 'https://en.wikipedia.org/wiki/Attalea_rostrata',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120231/Capture_d_%C3%A9cran_2026-04-02_105245_bztcm6.png'], maps: []
   },
 
   {
@@ -237,7 +237,7 @@ const PLANTS_NORTH_AMERICA = [
     countries: ['Mexico'],
     inat: 'https://www.inaturalist.org/taxa/127017-Brahea-dulcis',
     wiki: 'https://en.wikipedia.org/wiki/Brahea_dulcis',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775120231/Capture_d_%C3%A9cran_2026-04-02_105605_akci7u.png'], maps: []
   },
 
   // ════════════════════════════════════════

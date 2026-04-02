@@ -12,14 +12,15 @@ const PLANTS_SOUTH_AMERICA = [
     common: 'Babassu Palm',
     continent: 'south-america',
     category: 'palms',
-    diff: 1, freq: 3,
+    diff: 2, freq: 3,
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Attalea',
     countries: ['Brazil', 'Bolivia', 'Peru', 'Colombia'],
     inat: 'https://www.inaturalist.org/taxa/126914-Attalea-speciosa',
     wiki: 'https://en.wikipedia.org/wiki/Attalea_speciosa',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775135249/Capture_d_%C3%A9cran_2026-04-02_150631_l6cvdx.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775135248/Capture_d_%C3%A9cran_2026-04-02_150656_n1g682.png'],
+    streetviews: ['https://maps.app.goo.gl/nieUNPiskpWhd2Et8'],
   },
 
   {
@@ -32,10 +33,11 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Attalea',
-    countries: ['Brazil', 'Venezuela', 'Colombia', 'Guyana', 'Suriname', 'Peru', 'Ecuador'],
+    countries: ['Brazil', 'Colombia'],
     inat: 'https://www.inaturalist.org/taxa/126919-Attalea-maripa',
     wiki: 'https://en.wikipedia.org/wiki/Attalea_maripa',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775135448/Capture_d_%C3%A9cran_2026-04-02_150924_ern2ik.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775135448/Capture_d_%C3%A9cran_2026-04-02_150941_ykfwfq.png'],
+    streetviews: ['https://maps.app.goo.gl/uG1hGHgCjeQSsG8UA'],
   },
 
   {

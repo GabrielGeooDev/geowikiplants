@@ -382,24 +382,26 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-sylvestris-na', sci: 'Pinus sylvestris', common: 'Scots Pine',
-    continent: 'north-america', category: 'conifers', diff: 2, freq: 2,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
     desc: 'À faire.', tips: [], similar: ['Pinus resinosa', 'Pinus strobus'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States', 'Canada'],
     inat: 'https://www.inaturalist.org/taxa/54837-Pinus-sylvestris',
     wiki: 'https://en.wikipedia.org/wiki/Pinus_sylvestris',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775136229/Capture_d_%C3%A9cran_2026-04-02_152324_z4see7.png'], maps: [],
+    streetviews: ['https://maps.app.goo.gl/q6EQ2xVKnVdD2n7D6'],
   },
 
   {
     id: 'pinus-strobus-na', sci: 'Pinus strobus', common: 'Eastern White Pine',
-    continent: 'north-america', category: 'conifers', diff: 2, freq: 2,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 3,
     desc: 'À faire.', tips: [], similar: ['Pinus sylvestris', 'Pinus resinosa'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States', 'Canada'],
     inat: 'https://www.inaturalist.org/taxa/54839-Pinus-strobus',
     wiki: 'https://en.wikipedia.org/wiki/Pinus_strobus',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775136354/Capture_d_%C3%A9cran_2026-04-02_152518_ealgpl.png'], maps: ['https://tinytimbers.com/wp-content/uploads/pinus-strobus-map.jpg'],
+    streetviews: ['https://maps.app.goo.gl/X9LzEfoozJxEPrYj7'],
   },
 
   {
@@ -415,13 +417,14 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-resinosa-na', sci: 'Pinus resinosa', common: 'Red Pine',
-    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 2, freq: 2,
     desc: 'À faire.', tips: [], similar: ['Pinus sylvestris', 'Pinus strobus'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States', 'Canada'],
     inat: 'https://www.inaturalist.org/taxa/54841-Pinus-resinosa',
     wiki: 'https://en.wikipedia.org/wiki/Pinus_resinosa',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775136482/Capture_d_%C3%A9cran_2026-04-02_152747_svjrve.png'], maps: ['https://upload.wikimedia.org/wikipedia/commons/5/55/Pinus_resinosa_range_map_1.png'],
+    streetviews: ['https://maps.app.goo.gl/eQDTzBLGV1tQ2DhJ8'],
   },
 
   {
@@ -514,13 +517,14 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-taeda-na', sci: 'Pinus taeda', common: 'Loblolly Pine',
-    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 3, freq: 3,
     desc: 'À faire.', tips: [], similar: ['Pinus elliottii'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States'],
     inat: 'https://www.inaturalist.org/taxa/54845-Pinus-taeda',
     wiki: 'https://en.wikipedia.org/wiki/Pinus_taeda',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775136637/Capture_d_%C3%A9cran_2026-04-02_153025_x7p5g9.png'], maps: ['https://conifersociety.org/images/coniferimages/32054/Pinus_taeda_distribution_map.png'],
+    streetviews: ['https://maps.app.goo.gl/KQ5kdek8Lfa2GtPh7'],
   },
 
   {
@@ -547,13 +551,14 @@ const PLANTS_NORTH_AMERICA = [
 
   {
     id: 'pinus-contorta-na', sci: 'Pinus contorta', common: 'Lodgepole Pine',
-    continent: 'north-america', category: 'conifers', diff: 2, freq: 1,
+    continent: 'north-america', category: 'conifers', diff: 3, freq: 2,
     desc: 'À faire.', tips: [], similar: ['Pinus jeffreyi', 'Pinus ponderosa'],
     family: 'Pinaceae', genus: 'Pinus',
     countries: ['United States', 'Canada'],
     inat: 'https://www.inaturalist.org/taxa/54847-Pinus-contorta',
     wiki: 'https://en.wikipedia.org/wiki/Pinus_contorta',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775136906/Capture_d_%C3%A9cran_2026-04-02_153450_qnsvjl.png'], maps: ['https://upload.wikimedia.org/wikipedia/commons/a/a5/Pinus_contorta_range_map_0.png'],
+    streetviews: ['https://maps.app.goo.gl/9pv54eXxUsLhYYgUA'],
   },
 
   {
@@ -564,7 +569,8 @@ const PLANTS_NORTH_AMERICA = [
     countries: ['United States'],
     inat: 'https://www.inaturalist.org/taxa/54848-Pinus-rigida',
     wiki: 'https://en.wikipedia.org/wiki/Pinus_rigida',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775137001/Capture_d_%C3%A9cran_2026-04-02_153628_le7lpm.png'], maps: ['https://conifersociety.org/images/coniferimages/32129/Pinus_rigida_range_map-350x350_190314_205340.png'],
+    streetviews: ['https://maps.app.goo.gl/9jXzfNkkA7w6Kvu67'],
   },
 
   {

@@ -466,7 +466,7 @@ const PLANTS_NORTH_AMERICA = [
     countries: ['United States'],
     inat: 'https://www.inaturalist.org/taxa/135662-Pinus-pungens',
     wiki: 'https://en.wikipedia.org/wiki/Table_mountain_pine',
-    photos: [], maps: ['https://upload.wikimedia.org/wikipedia/commons/b/b2/Pinus_pungens_distribution_map.png']
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775142897/Capture_d_%C3%A9cran_2026-04-02_171431_ozgg4a.png'], maps: ['https://upload.wikimedia.org/wikipedia/commons/b/b2/Pinus_pungens_distribution_map.png']
   },
 
   {

@@ -465,8 +465,16 @@
   <div class="cmp-wrap">
     <button class="back-btn" id="cmp-back">← Back</button>
     <div class="cmp-header">
-      <div class="cmp-title" id="cmp-title"></div>
-      <div class="cmp-intro" id="cmp-intro"></div>
+      <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap">
+        <div>
+          <div class="cmp-title" id="cmp-title"></div>
+          <div class="cmp-intro" id="cmp-intro"></div>
+        </div>
+        <button class="share-btn" id="cmp-share-btn" onclick="shareComparison()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8M16 6l-4-4-4 4M12 2v13"/></svg>
+          Share
+        </button>
+      </div>
     </div>
     <div class="cmp-table-wrap">
       <table class="cmp-table" id="cmpTable"></table>
@@ -557,11 +565,12 @@ const CONTS={
   ]},
   'north-america':{name:'North America',flag:'🌎',sub:'Temperate, tropical and desert flora',cats:[
     {id:'palms',name:'Palms',sci:'Arecaceae',icon:'🌴',col:'#e8806d'},
-    {id:'conifers',name:'Conifers',sci:'Pinaceae / Cupressaceae',icon:'🌲',col:'#4a9e2f'},
-    {id:'trees',name:'Other Trees',sci:'Arbres',icon:'🌳',col:'#7ec850'},
+    {id:'pines',name:'Pines',sci:'Pinus',icon:'🌲',col:'#4a9e2f'},
+    {id:'other-conifers',name:'Other Conifers',sci:'Pinaceae / Cupressaceae',icon:'🌳',col:'#7ec850'},
+    {id:'trees',name:'Other Trees',sci:'Arbres',icon:'🌿',col:'#a8d87a'},
     {id:'cacti',name:'Cacti',sci:'Cactaceae',icon:'🌵',col:'#d4a843'},
-    {id:'yuccas',name:'Yuccas & Agaves',sci:'Asparagaceae',icon:'🪴',col:'#a8d87a'},
-    {id:'others',name:'Other Plants',sci:'Autres plantes',icon:'🌿',col:'#6de8c0'},
+    {id:'yuccas',name:'Yuccas & Agaves',sci:'Asparagaceae',icon:'🪴',col:'#6de8c0'},
+    {id:'others',name:'Other Plants',sci:'Autres plantes',icon:'🌱',col:'#6db8e8'},
     {id:'crops',name:'Crops / Fields',sci:'Cultures',icon:'🌾',col:'#f0c96a'},
   ]},
   'oceania':{name:'Oceania',flag:'🌏',sub:'Australian and Pacific island flora',cats:[

@@ -152,133 +152,260 @@ const COMPARISONS = [
     ]
   },
 
-  // ── WESTERN US PINES ────────────────────────────────────────
+  // ── SE COASTAL PLAIN PINES ──────────────────────────────────
   {
-    id: 'pines-western-us',
+    id: 'pines-se-coastal',
     continent: 'north-america',
-    title: 'Western US Pines — How to tell them apart',
-    intro: 'Several large pines dominate the mountain ranges and high plains of the western United States and Mexico. Ponderosa and Jeffrey are easily confused; Lodgepole is slimmer; Lumholtz and Patula are Mexican species with drooping needles.',
-    plantIds: ['pinus-ponderosa-na', 'pinus-jeffreyi-na', 'pinus-contorta-na', 'pinus-arizonica-na', 'pinus-lumholtzii', 'pinus-hartwegii'],
+    title: 'SE Coastal Plain Pines — How to tell them apart',
+    intro: 'The southeastern United States hosts one of the most diverse pine forests in the world. Several species grow on the Coastal Plain, often in similar sandy or wetland habitats. Needle count and length, bark texture and cone shape are the main ID clues.',
+    plantIds: ['pinus-taeda-na', 'pinus-palustris', 'pinus-elliottii', 'pinus-serotina', 'pinus-clausa', 'pinus-glabra', 'pinus-echinata'],
     criteria: [
       {
         label: 'Region',
         values: [
-          'W US & Canada, W Mexico — very widespread',
-          'Sierra Nevada (California), SW Oregon, Baja',
-          'W US & Canada — widespread, coastal to alpine',
-          'SE Arizona, SW New Mexico, NW Mexico',
-          'W Mexico (Sierra Madre Occidental)',
-          'Mexico & Guatemala highlands',
-        ]
-      },
-      {
-        label: 'Needles',
-        values: [
-          '3 per bundle, 12–25 cm, yellow-green',
-          '3 per bundle, 12–25 cm, blue-green, vanilla scent',
-          '2 per bundle, short 3–7 cm, twisted',
-          '3–5 per bundle, 8–18 cm',
-          '3 per bundle, very long 25–45 cm, drooping',
-          '3–5 per bundle, 10–20 cm',
-        ]
-      },
-      {
-        label: 'Bark',
-        values: [
-          'Orange-brown plates ("puzzle bark") on mature trees',
-          'Similar to Ponderosa but darker, no turpentine smell',
-          'Thin, scaly, grey-brown on young trees',
-          'Dark, rough, furrowed',
-          'Dark, rough',
-          'Dark grey, rough, furrowed',
-        ]
-      },
-      {
-        label: 'Silhouette / Habitat',
-        values: [
-          'Tall, open crown — dry mountain slopes & plateaus',
-          'Tall — higher elevations than Ponderosa',
-          'Slender, dense crown — subalpine & coastal',
-          'Medium tree — dry mountain slopes',
-          'Long drooping needles — very distinctive look',
-          'High altitude (3000+ m) — near treeline',
-        ]
-      },
-      {
-        label: 'GeoGuessr clue',
-        values: [
-          'Most common large pine of W US — orange bark is key',
-          'Similar to Ponderosa but only in Sierra Nevada / Baja',
-          'Shorter, denser — common in Pacific NW & Rockies',
-          'SE Arizona / NW Mexico only',
-          'Only in W Mexico — instantly recognizable drooping needles',
-          'Mexico & Guatemala highlands only',
-        ]
-      }
-    ]
-  },
-
-  // ── EASTERN US PINES ────────────────────────────────────────
-  {
-    id: 'pines-eastern-us',
-    continent: 'north-america',
-    title: 'Eastern US Pines — How to tell them apart',
-    intro: 'The eastern and southeastern United States host several distinct pine species. Loblolly and Slash dominate the South; Scots Pine is an introduced European species now widespread in the North; Red Pine and Eastern White Pine are native northern species.',
-    plantIds: ['pinus-taeda-na', 'pinus-sylvestris-na', 'pinus-strobus-na', 'pinus-resinosa-na', 'pinus-rigida-na', 'pinus-elliottii'],
-    criteria: [
-      {
-        label: 'Region',
-        values: [
-          'SE US (Virginia to Texas)',
-          'N US & Canada (introduced from Europe)',
-          'NE US & SE Canada',
-          'NE US & SE Canada',
-          'E US (Mid-Atlantic to New England)',
-          'SE US (South Carolina to Florida)',
+          'SE US — Virginia to Texas, most widespread',
+          'SE Coastal Plain — longleaf savanna ecosystem',
+          'S Carolinas to Florida & Gulf Coast',
+          'SE North Carolina to Florida (pocosins & wetlands)',
+          'Florida only (sand scrub)',
+          'SE Atlantic & Gulf Coast (Carolinas to Louisiana)',
+          'SE US — wider range than other SE pines',
         ]
       },
       {
         label: 'Needles',
         values: [
           '3 per bundle, 15–22 cm, flexible',
-          '2 per bundle, 4–7 cm, twisted, blue-green',
-          '5 per bundle, 6–13 cm, soft blue-green',
-          '2 per bundle, 12–16 cm, dark green',
-          '3 per bundle, 7–12 cm, stiff',
+          '3 per bundle, very long 25–45 cm — longest of all',
           '2–3 per bundle, 18–30 cm',
+          '3 per bundle, 10–18 cm, twisted',
+          '2 per bundle, short 5–8 cm, twisted',
+          '2–3 per bundle, 5–10 cm, soft',
+          '2–3 per bundle, 7–12 cm',
         ]
       },
       {
         label: 'Bark',
         values: [
-          'Grey-brown, plated',
-          'Orange upper bark — very distinctive',
-          'Grey-brown, thin, flaky',
-          'Orange-red upper bark',
-          'Dark, furrowed',
-          'Orange-brown, plated',
+          'Grey-brown, plated, scaly',
+          'Orange-brown, large plates on mature trees',
+          'Orange-brown, plated, similar to Loblolly',
+          'Reddish-brown, plated',
+          'Dark, rough, scaly',
+          'Grey-brown, irregular furrows',
+          'Grey-brown, irregular plates',
         ]
       },
       {
         label: 'Key ID feature',
         values: [
-          'Very tall, straight — plantation & logging landscapes',
-          'Orange upper bark + twisted short needles',
-          '5-needle pine — soft, drooping long cone',
-          'Red bark similar to Scots — only 2 needles',
-          'Sprouts from trunk after fire',
-          'Very long needles (18–30 cm) — SE coastal plains',
+          'Most common SE pine — tall, dense plantation stands',
+          'Grass stage seedling — very long needles as adult',
+          'Very long needles — SE coastal plain only',
+          'Serotinous cones stay closed until fire',
+          'Florida scrub only — short twisted needles',
+          'Smooth grey bark on branches — very soft needles',
+          'Mid-continent range — broader than most SE pines',
         ]
       },
       {
         label: 'GeoGuessr clue',
         values: [
-          'Most common pine of SE US — often in dense plantations',
-          'Widespread in N US & Canada — orange upper bark key',
-          'NE US forests — elegant long cones hanging from branches',
-          'NE US & Canada — red bark easy to spot',
-          'Mid-Atlantic — barrens and sandy soils',
-          'SE Coastal Plain — very long needles distinguish it',
+          'Ubiquitous in SE US landscapes and plantations',
+          'Open savanna landscapes — fire-dependent ecosystem',
+          'Similar to Loblolly but longer needles, more southern',
+          'NC/SC pocosins — serotinous cones on branches',
+          'Florida only — sandy scrub habitat',
+          'Rare — coastal Carolinas to Louisiana',
+          'SE US — appears with other SE pines',
+        ]
+      }
+    ]
+  },
+
+  // ── NE / CANADA PINES ───────────────────────────────────────
+  {
+    id: 'pines-ne-canada',
+    continent: 'north-america',
+    title: 'NE United States & Canada Pines — How to tell them apart',
+    intro: 'The northeastern US and Canada host several pine species ranging from boreal forests to the Appalachian mountains. Eastern White Pine is the tallest, Red Pine has distinctive reddish bark, Scots Pine is an introduced European species, and Jack Pine thrives in the boreal zone.',
+    plantIds: ['pinus-strobus-na', 'pinus-resinosa-na', 'pinus-sylvestris-na', 'pinus-banksiana', 'pinus-rigida-na', 'pinus-pungens', 'pinus-virginiana'],
+    criteria: [
+      {
+        label: 'Region',
+        values: [
+          'NE US & SE Canada — mixed forests',
+          'NE US & SE Canada — boreal & Great Lakes',
+          'N US & Canada — introduced from Europe, widespread',
+          'Canada & N US — boreal forest specialist',
+          'E US Mid-Atlantic — sandy barrens',
+          'Appalachians (Virginia to Pennsylvania)',
+          'E US (NJ to Georgia, Appalachian Piedmont)',
+        ]
+      },
+      {
+        label: 'Needles',
+        values: [
+          '5 per bundle, 6–13 cm, soft, blue-green',
+          '2 per bundle, 12–16 cm, stiff, dark green',
+          '2 per bundle, 4–7 cm, twisted, blue-green',
+          '2 per bundle, 2–4 cm, very short, twisted',
+          '3 per bundle, 7–12 cm, stiff',
+          '2 per bundle, 4–7 cm, very stiff, sharp',
+          '2 per bundle, 4–8 cm, twisted',
+        ]
+      },
+      {
+        label: 'Bark',
+        values: [
+          'Grey-brown, thin plates — green-grey on upper branches',
+          'Orange-red bark on upper trunk — very distinctive',
+          'Orange upper bark — red-brown lower',
+          'Dark, rough, furrowed — no orange tint',
+          'Dark, rough, irregular furrows — often multi-trunked',
+          'Dark, rough, scaly — small tree',
+          'Dark, rough — scraggly appearance',
+        ]
+      },
+      {
+        label: 'Key ID feature',
+        values: [
+          'Only 5-needle pine in NE — tall elegant silhouette',
+          'Orange-red upper bark = immediate ID clue',
+          'Orange bark + short twisted needles — very common in N US',
+          'Very short needles (2–4 cm) + serotinous cones',
+          'Sprouts from trunk base after fire — NJ barrens',
+          'Table Mountain only — stiff sharp needles',
+          'Scraggly, open crown — disturbed sites & Piedmont',
+        ]
+      },
+      {
+        label: 'GeoGuessr clue',
+        values: [
+          'NE forests — distinctive long soft blue-green needles',
+          'Reddish bark on upper trunk — NE US & Canada',
+          'Very widespread in N US & Canada — orange bark key',
+          'Boreal Canada & northern states — tiny twisted needles',
+          'NJ Pine Barrens & mid-Atlantic sandy soils',
+          'Table Mountain, VA/PA ridges only',
+          'Piedmont & Appalachian foothills — open scrubby look',
+        ]
+      }
+    ]
+  },
+
+  // ── WESTERN US / CANADA PINES ───────────────────────────────
+  {
+    id: 'pines-western-us',
+    continent: 'north-america',
+    title: 'Western US & Canada Pines — How to tell them apart',
+    intro: 'The mountain ranges of the western United States host several large and iconic pines. Ponderosa is the most widespread; Jeffrey looks nearly identical but grows at higher elevations; Lodgepole is slimmer and more northern; Western White Pine has 5 needles.',
+    plantIds: ['pinus-ponderosa-na', 'pinus-scopulorum', 'pinus-jeffreyi-na', 'pinus-contorta-na', 'pinus-monticola'],
+    criteria: [
+      {
+        label: 'Region',
+        values: [
+          'W US & Canada — Pacific Coast to Rockies, widespread',
+          'Rocky Mountains — Colorado, Wyoming, New Mexico',
+          'Sierra Nevada, SW Oregon, N Baja California',
+          'W US & Canada — coastal to subalpine, very widespread',
+          'Pacific NW — Washington, Oregon, Idaho, Montana',
+        ]
+      },
+      {
+        label: 'Needles',
+        values: [
+          '3 per bundle, 12–25 cm, yellow-green',
+          '3 per bundle, 10–18 cm, similar to Ponderosa',
+          '3 per bundle, 12–25 cm, blue-green, vanilla/butterscotch scent',
+          '2 per bundle, 3–7 cm, short, often twisted',
+          '5 per bundle, 5–10 cm, blue-green, soft',
+        ]
+      },
+      {
+        label: 'Bark',
+        values: [
+          'Orange-brown "puzzle piece" plates — iconic',
+          'Similar orange-brown plates but smaller',
+          'Similar to Ponderosa — but smell the sap: vanilla = Jeffrey',
+          'Thin, grey-brown, scaly on young trees',
+          'Grey-brown, thin, furrowed',
+        ]
+      },
+      {
+        label: 'Key ID feature',
+        values: [
+          'Puzzle bark + 3 long needles — most common W pine',
+          'Rocky Mtn form of Ponderosa — slightly smaller',
+          'Vanilla/butterscotch smell of bark — Sierra Nevada only',
+          'Short 2-needle bundles + small oval cones',
+          'Only 5-needle pine of NW — tall straight trunk',
+        ]
+      },
+      {
+        label: 'GeoGuessr clue',
+        values: [
+          'Dominant large pine of W US — orange puzzle bark',
+          'Same look as Ponderosa but Rocky Mtn landscapes',
+          'High Sierra & S Oregon — smell test distinguishes from Ponderosa',
+          'Widespread from sea level to subalpine — slimmer than Ponderosa',
+          'Pacific NW mountain forests — 5-needle clue',
+        ]
+      }
+    ]
+  },
+
+  // ── MEXICAN PINES ───────────────────────────────────────────
+  {
+    id: 'pines-mexico',
+    continent: 'north-america',
+    title: 'Mexican Pines — How to tell them apart',
+    intro: 'Mexico has the highest pine diversity in the world, with over 50 native species. These four are the most commonly encountered in GeoGuessr coverage of Mexican mountain landscapes.',
+    plantIds: ['pinus-patula', 'pinus-hartwegii', 'pinus-arizonica-na', 'pinus-lumholtzii'],
+    criteria: [
+      {
+        label: 'Region',
+        values: [
+          'E Sierra Madre (Hidalgo, Oaxaca, Veracruz)',
+          'High volcanoes & Sierra Madre — above 3000 m',
+          'SE Arizona, SW New Mexico, N Mexico (Sierra Madre)',
+          'W Sierra Madre Occidental (Durango, Chihuahua)',
+        ]
+      },
+      {
+        label: 'Needles',
+        values: [
+          '3–5 per bundle, 15–30 cm, very drooping — distinctive',
+          '3–5 per bundle, 10–18 cm, stiff',
+          '3–5 per bundle, 8–15 cm, blue-green',
+          '3 per bundle, 25–45 cm, very long and weeping',
+        ]
+      },
+      {
+        label: 'Bark',
+        values: [
+          'Orange-brown, plated',
+          'Dark grey, rough, furrowed',
+          'Dark, rough, deeply furrowed',
+          'Dark, rough',
+        ]
+      },
+      {
+        label: 'Key ID feature',
+        values: [
+          'Graceful drooping needles — very elegant silhouette',
+          'Near-treeline species — dense, windswept crown',
+          'Extends into SE AZ/NM — most accessible for N US GeoGuessr',
+          'Extremely long weeping needles — unmistakable',
+        ]
+      },
+      {
+        label: 'GeoGuessr clue',
+        values: [
+          'E Mexico highlands — drooping needles = instant ID',
+          'High altitude Mexican landscapes near treeline',
+          'Both AZ/NM & N Mexico — similar to Ponderosa group',
+          'W Sierra Madre — extremely long pendulous needles',
         ]
       }
     ]

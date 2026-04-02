@@ -400,8 +400,8 @@ const PLANTS_NORTH_AMERICA = [
     countries: ['United States', 'Canada'],
     inat: 'https://www.inaturalist.org/taxa/54839-Pinus-strobus',
     wiki: 'https://en.wikipedia.org/wiki/Pinus_strobus',
-    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775136354/Capture_d_%C3%A9cran_2026-04-02_152518_ealgpl.png'], maps: ['https://tinytimbers.com/wp-content/uploads/pinus-strobus-map.jpg'],
-    streetviews: ['https://maps.app.goo.gl/X9LzEfoozJxEPrYj7'],
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775136354/Capture_d_%C3%A9cran_2026-04-02_152518_ealgpl.png','https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775143308/Capture_d_%C3%A9cran_2026-04-02_172113_xth2qw.png','https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775143423/Capture_d_%C3%A9cran_2026-04-02_172335_r7urzu.png'], maps: ['https://tinytimbers.com/wp-content/uploads/pinus-strobus-map.jpg'],
+    streetviews: ['https://maps.app.goo.gl/X9LzEfoozJxEPrYj7','https://maps.app.goo.gl/nCw8Li6grheQPUZB8','https://maps.app.goo.gl/A2XT692njPQQ38kg7'],
   },
 
   {

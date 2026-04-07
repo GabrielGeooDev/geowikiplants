@@ -53,7 +53,8 @@ const PLANTS_SOUTH_AMERICA = [
     countries: ['Brazil', 'Bolivia', 'Peru', 'Argentina'],
     inat: 'https://www.inaturalist.org/taxa/126916-Attalea-phalerata',
     wiki: 'https://en.wikipedia.org/wiki/Attalea_phalerata',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775583449/Capture_d_%C3%A9cran_2026-04-07_193636_mdzgwt.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775583449/Capture_d_%C3%A9cran_2026-04-07_193610_ohvy9d.png'],
+    streetviews: ['https://maps.app.goo.gl/12HQxZqFfM7gPGkGA'],
   },
 
   {
@@ -251,7 +252,9 @@ const PLANTS_SOUTH_AMERICA = [
     countries: ['Brazil', 'Peru', 'Bolivia', 'Colombia', 'Venezuela', 'Ecuador', 'Guyana', 'Suriname'],
     inat: 'https://www.inaturalist.org/taxa/126908-Mauritia-flexuosa',
     wiki: 'https://en.wikipedia.org/wiki/Mauritia_flexuosa',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775583449/Capture_d_%C3%A9cran_2026-04-07_193319_jqhyyq.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775583449/Capture_d_%C3%A9cran_2026-04-07_193346_ttebqy.png'],
+    streetviews: ['https://maps.app.goo.gl/iErSAjEVAhgeWKn36'],
+    
   },
 
   // ── EUTERPE ─────────────────────────────────────────────────
@@ -487,7 +490,8 @@ const PLANTS_SOUTH_AMERICA = [
     countries: ['Brazil'],
     inat: 'https://www.inaturalist.org/taxa/126901-Syagrus-oleracea',
     wiki: 'https://en.wikipedia.org/wiki/Syagrus_oleracea',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775583449/Capture_d_%C3%A9cran_2026-04-07_193504_qunskt.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775583449/Capture_d_%C3%A9cran_2026-04-07_193433_rbfbrs.png'],
+    streetviews: ['https://maps.app.goo.gl/GrNapzC62wTuzF6j6'],
   },
 
   {

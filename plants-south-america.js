@@ -50,7 +50,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Attalea',
-    countries: ['Brazil', 'Bolivia', 'Peru', 'Argentina'],
+    countries: ['Brazil'],
     inat: 'https://www.inaturalist.org/taxa/126916-Attalea-phalerata',
     wiki: 'https://en.wikipedia.org/wiki/Attalea_phalerata',
     photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775583449/Capture_d_%C3%A9cran_2026-04-07_193636_mdzgwt.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775583449/Capture_d_%C3%A9cran_2026-04-07_193610_ohvy9d.png'],
@@ -67,7 +67,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Attalea',
-    countries: ['Colombia', 'Venezuela', 'Ecuador', 'Peru', 'Bolivia', 'Brazil'],
+    countries: ['Colombia'],
     inat: 'https://www.inaturalist.org/taxa/126917-Attalea-butyracea',
     wiki: 'https://en.wikipedia.org/wiki/Attalea_butyracea',
     photos: [], maps: []
@@ -179,7 +179,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Attalea',
-    countries: ['Mexico', 'Guatemala', 'Belize', 'Honduras', 'Nicaragua', 'Colombia'],
+    countries: ['Mexico', 'Colombia'],
     inat: 'https://www.inaturalist.org/taxa/126926-Attalea-cohune',
     wiki: 'https://en.wikipedia.org/wiki/Attalea_cohune',
     photos: [], maps: []
@@ -195,7 +195,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Attalea',
-    countries: ['Colombia', 'Panama', 'Costa Rica'],
+    countries: ['Mexico'],
     inat: 'https://www.inaturalist.org/taxa/126927-Attalea-rostrata',
     wiki: 'https://en.wikipedia.org/wiki/Attalea_rostrata',
     photos: [], maps: []
@@ -231,7 +231,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Cocos',
-    countries: ['Brazil', 'Colombia', 'Venezuela', 'Ecuador', 'Peru', 'Guyana', 'Suriname'],
+    countries: ['Brazil', 'Colombia', 'Ecuador', 'Peru'],
     inat: 'https://www.inaturalist.org/taxa/57819-Cocos-nucifera',
     wiki: 'https://en.wikipedia.org/wiki/Cocos_nucifera',
     photos: [], maps: []
@@ -249,7 +249,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Mauritia',
-    countries: ['Brazil', 'Peru', 'Bolivia', 'Colombia', 'Venezuela', 'Ecuador', 'Guyana', 'Suriname'],
+    countries: ['Brazil', 'Peru', 'Bolivia', 'Colombia', 'Ecuador'],
     inat: 'https://www.inaturalist.org/taxa/126908-Mauritia-flexuosa',
     wiki: 'https://en.wikipedia.org/wiki/Mauritia_flexuosa',
     photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775583449/Capture_d_%C3%A9cran_2026-04-07_193319_jqhyyq.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1775583449/Capture_d_%C3%A9cran_2026-04-07_193346_ttebqy.png'],
@@ -269,7 +269,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: ['Euterpe edulis'],
     family: 'Arecaceae', genus: 'Euterpe',
-    countries: ['Brazil', 'Colombia', 'Venezuela', 'Guyana', 'Suriname', 'Ecuador', 'Peru'],
+    countries: ['Brazil', 'Colombia', 'Ecuador', 'Peru'],
     inat: 'https://www.inaturalist.org/taxa/126909-Euterpe-oleracea',
     wiki: 'https://en.wikipedia.org/wiki/Euterpe_oleracea',
     photos: [], maps: []
@@ -303,7 +303,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Sabal',
-    countries: ['Colombia', 'Venezuela', 'Trinidad and Tobago', 'Brazil'],
+    countries: ['Colombia'],
     inat: 'https://www.inaturalist.org/taxa/127005-Sabal-mauritiiformis',
     wiki: 'https://en.wikipedia.org/wiki/Sabal_mauritiiformis',
     photos: [], maps: []
@@ -353,7 +353,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Copernicia',
-    countries: ['Colombia', 'Venezuela'],
+    countries: ['Colombia'],
     inat: 'https://www.inaturalist.org/taxa/126936-Copernicia-tectorum',
     wiki: 'https://en.wikipedia.org/wiki/Copernicia_tectorum',
     photos: [], maps: []
@@ -371,7 +371,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: ['Acrocomia intumescens', 'Acrocomia totai'],
     family: 'Arecaceae', genus: 'Acrocomia',
-    countries: ['Brazil', 'Bolivia', 'Paraguay', 'Argentina', 'Colombia', 'Venezuela', 'Peru'],
+    countries: ['Brazil', 'Bolivia', 'Paraguay', 'Argentina', 'Colombia', 'Peru'],
     inat: 'https://www.inaturalist.org/taxa/126895-Acrocomia-aculeata',
     wiki: 'https://en.wikipedia.org/wiki/Acrocomia_aculeata',
     photos: [], maps: []
@@ -421,7 +421,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: ['Astrocaryum vulgare', 'Astrocaryum jauari'],
     family: 'Arecaceae', genus: 'Astrocaryum',
-    countries: ['Brazil', 'Venezuela', 'Colombia', 'Guyana', 'Suriname', 'Peru'],
+    countries: ['Brazil', 'Colombia', 'Peru'],
     inat: 'https://www.inaturalist.org/taxa/126897-Astrocaryum-aculeatum',
     wiki: 'https://en.wikipedia.org/wiki/Astrocaryum_aculeatum',
     photos: [], maps: []
@@ -437,7 +437,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: ['Astrocaryum aculeatum'],
     family: 'Arecaceae', genus: 'Astrocaryum',
-    countries: ['Brazil', 'Venezuela', 'Guyana', 'Suriname'],
+    countries: ['Brazil'],
     inat: 'https://www.inaturalist.org/taxa/126898-Astrocaryum-vulgare',
     wiki: 'https://en.wikipedia.org/wiki/Astrocaryum_vulgare',
     photos: [], maps: []
@@ -453,7 +453,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: ['Astrocaryum aculeatum'],
     family: 'Arecaceae', genus: 'Astrocaryum',
-    countries: ['Brazil', 'Peru', 'Colombia', 'Venezuela'],
+    countries: ['Brazil', 'Peru', 'Colombia'],
     inat: 'https://www.inaturalist.org/taxa/126899-Astrocaryum-jauari',
     wiki: 'https://en.wikipedia.org/wiki/Astrocaryum_jauari',
     photos: [], maps: []
@@ -520,7 +520,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Syagrus',
-    countries: ['Colombia', 'Venezuela', 'Ecuador', 'Peru', 'Bolivia'],
+    countries: ['Colombia', 'Ecuador', 'Peru', 'Bolivia'],
     inat: 'https://www.inaturalist.org/taxa/126903-Syagrus-sancona',
     wiki: 'https://en.wikipedia.org/wiki/Syagrus_sancona',
     photos: [], maps: []
@@ -618,7 +618,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Bactris',
-    countries: ['Brazil', 'Colombia', 'Venezuela', 'Ecuador', 'Peru', 'Bolivia', 'Panama', 'Costa Rica'],
+    countries: ['Brazil', 'Colombia', 'Ecuador', 'Peru', 'Bolivia'],
     inat: 'https://www.inaturalist.org/taxa/126911-Bactris-gasipaes',
     wiki: 'https://en.wikipedia.org/wiki/Bactris_gasipaes',
     photos: [], maps: []
@@ -754,7 +754,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: ['Oenocarpus distichus'],
     family: 'Arecaceae', genus: 'Oenocarpus',
-    countries: ['Brazil', 'Colombia', 'Venezuela', 'Ecuador', 'Peru', 'Bolivia', 'Guyana', 'Suriname'],
+    countries: ['Brazil', 'Colombia', 'Ecuador', 'Peru', 'Bolivia'],
     inat: 'https://www.inaturalist.org/taxa/126932-Oenocarpus-bataua',
     wiki: 'https://en.wikipedia.org/wiki/Oenocarpus_bataua',
     photos: [], maps: []
@@ -788,7 +788,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: ['Ceroxylon quindiuense'],
     family: 'Arecaceae', genus: 'Ceroxylon',
-    countries: ['Colombia', 'Venezuela', 'Ecuador', 'Peru', 'Bolivia'],
+    countries: ['Colombia', 'Ecuador', 'Peru', 'Bolivia'],
     inat: 'https://www.inaturalist.org/taxa/126934-Ceroxylon-parvifrons',
     wiki: 'https://en.wikipedia.org/wiki/Ceroxylon_parvifrons',
     photos: [], maps: []
@@ -806,7 +806,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Dictyocaryum',
-    countries: ['Colombia', 'Venezuela', 'Ecuador', 'Peru', 'Bolivia'],
+    countries: ['Colombia'],
     inat: 'https://www.inaturalist.org/taxa/126935-Dictyocaryum-lamarckianum',
     wiki: 'https://en.wikipedia.org/wiki/Dictyocaryum_lamarckianum',
     photos: [], maps: []
@@ -878,7 +878,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Welfia',
-    countries: ['Colombia', 'Ecuador', 'Panama', 'Costa Rica'],
+    countries: ['Colombia', 'Ecuador'],
     inat: 'https://www.inaturalist.org/taxa/126937-Welfia-regia',
     wiki: 'https://en.wikipedia.org/wiki/Welfia_regia',
     photos: [], maps: []
@@ -896,7 +896,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Socratea',
-    countries: ['Brazil', 'Colombia', 'Venezuela', 'Ecuador', 'Peru', 'Bolivia', 'Guyana', 'Suriname', 'Panama'],
+    countries: ['Brazil', 'Colombia', 'Ecuador', 'Peru', 'Bolivia'],
     inat: 'https://www.inaturalist.org/taxa/126938-Socratea-exorrhiza',
     wiki: 'https://en.wikipedia.org/wiki/Socratea_exorrhiza',
     photos: [], maps: []
@@ -932,7 +932,7 @@ const PLANTS_SOUTH_AMERICA = [
     desc: 'À faire.',
     tips: [], similar: [],
     family: 'Arecaceae', genus: 'Iriartea',
-    countries: ['Brazil', 'Colombia', 'Venezuela', 'Ecuador', 'Peru', 'Bolivia'],
+    countries: ['Brazil', 'Colombia', 'Ecuador', 'Peru', 'Bolivia'],
     inat: 'https://www.inaturalist.org/taxa/126940-Iriartea-deltoidea',
     wiki: 'https://en.wikipedia.org/wiki/Iriartea_deltoidea',
     photos: [], maps: []

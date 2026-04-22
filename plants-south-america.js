@@ -424,7 +424,8 @@ const PLANTS_SOUTH_AMERICA = [
     countries: ['Brazil', 'Colombia', 'Peru'],
     inat: 'https://www.inaturalist.org/taxa/126897-Astrocaryum-aculeatum',
     wiki: 'https://en.wikipedia.org/wiki/Astrocaryum_aculeatum',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1776850188/Capture_d_%C3%A9cran_2026-04-22_112935_virics.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1776850187/Capture_d_%C3%A9cran_2026-04-22_112807_enuqpy.png'],
+    streetviews: ['https://maps.app.goo.gl/dGUf2oTjzS4BFWmZ6'],
   },
 
   {
@@ -440,7 +441,8 @@ const PLANTS_SOUTH_AMERICA = [
     countries: ['Brazil'],
     inat: 'https://www.inaturalist.org/taxa/126898-Astrocaryum-vulgare',
     wiki: 'https://en.wikipedia.org/wiki/Astrocaryum_vulgare',
-    photos: [], maps: []
+    photos: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1776850188/Capture_d_%C3%A9cran_2026-04-22_112902_awva5t.png'], maps: ['https://res.cloudinary.com/dpmxwhdoi/image/upload/v1776850187/Capture_d_%C3%A9cran_2026-04-22_112824_tnvsba.png'],
+    streetviews: ['https://maps.app.goo.gl/bTDkibANt85wb6t17'],
   },
 
   {
